@@ -29,7 +29,7 @@ export default function RodarLibreLanding() {
           <div className="max-w-md mx-auto space-y-8">
             {/* Logo */}
             <div className="flex justify-center">
-              <img src="/rodar-libre-logo.png" alt="Rodar Libre Logo" className="w-48 h-48 object-contain" />
+              <img src="/logo.jpg" alt="Rodar Libre Logo" className="w-60 h-60 md:w-96 md:h-96 object-contain" />
             </div>
 
             {/* Title and Subtitle */}

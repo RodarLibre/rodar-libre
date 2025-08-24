@@ -22,6 +22,28 @@ export const metadata: Metadata = {
   title: "Rodar Libre - La primera app para moteros en Colombia",
   description: "Rueda libre, vive la ruta. Únete a la lista de espera.",
   generator: "v0.app",
+  openGraph: {
+    title: "Rodar Libre - La primera app para moteros en Colombia",
+    description: "Rueda libre, vive la ruta. Únete a la lista de espera.",
+    url: "https://rodarlibre.co/",
+    siteName: "Rodar Libre",
+    images: [
+      {
+        url: "/logo.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Rodar Libre - App para moteros en Colombia",
+      },
+    ],
+    locale: "es_CO",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rodar Libre - La primera app para moteros en Colombia",
+    description: "Rueda libre, vive la ruta. Únete a la lista de espera.",
+    images: ["/logo.jpg"],
+  },
 }
 
 export default function RootLayout({
