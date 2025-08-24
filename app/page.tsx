@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { EngineOilIcon } from "@/components/ui/engine-oil-icon"
+import { HelmetIcon } from "@/components/ui/helmet-icon"
 import { InstagramIcon } from "@/components/ui/instagram-icon"
+import { MaintenanceIcon } from "@/components/ui/maintenance-icon"
 import { MotorcycleIcon } from "@/components/ui/motorcycle-icon"
-import { Fuel, Wrench, BellRing, Star, Mountain, Users, Route, ScrollText, TriangleAlert, Scale, DollarSign, Store } from "lucide-react"
+import { Fuel, Wrench, Star, Mountain, Users, Route, ScrollText, TriangleAlert, Scale, DollarSign, Store } from "lucide-react"
 import Image from "next/image"
 
 export default function RodarLibreLanding() {
@@ -113,7 +116,7 @@ export default function RodarLibreLanding() {
                 <CardContent className="p-6 text-center space-y-4">
                   <div className="flex justify-center">
                     <div className="p-3 bg-primary/10 rounded-lg">
-                      <Wrench className="w-6 h-6 text-primary" />
+                      <EngineOilIcon className="w-6 h-6 text-primary" />
                     </div>
                   </div>
                   <div>
@@ -127,7 +130,7 @@ export default function RodarLibreLanding() {
                 <CardContent className="p-6 text-center space-y-4">
                   <div className="flex justify-center">
                     <div className="p-3 bg-primary/10 rounded-lg">
-                      <BellRing className="w-6 h-6 text-primary" />
+                      <MaintenanceIcon className="w-6 h-6 text-primary" />
                     </div>
                   </div>
                   <div>
@@ -191,7 +194,7 @@ export default function RodarLibreLanding() {
                 <CardContent className="p-6 text-center space-y-4">
                   <div className="flex justify-center">
                     <div className="p-3 bg-primary/10 rounded-lg">
-                      <DollarSign className="w-6 h-6 text-primary" />
+                      <HelmetIcon className="w-6 h-6 text-primary" />
                     </div>
                   </div>
                   <div>
