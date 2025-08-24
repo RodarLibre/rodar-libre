@@ -49,9 +49,15 @@ export default function RodarLibreLanding() {
           <div className="max-w-md mx-auto text-center space-y-8">
             <h2 className="font-serif font-bold text-2xl text-foreground">Síguenos en Instagram</h2>
             <div className="flex justify-center">
-              <a href="https://instagram.com/rodarlibre.co/" target="_blank" rel="noopener noreferrer">
+              <a 
+                href="https://instagram.com/rodarlibre.co/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="Seguir a Rodar Libre en Instagram"
+                className="block"
+              >
                 <div className="p-8 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-3xl hover:scale-105 transition-transform cursor-pointer">
-                  <Instagram className="w-16 h-16 text-white" />
+                  <Instagram className="w-16 h-16 text-white" aria-hidden="true" />
                 </div>
               </a>
             </div>
@@ -60,9 +66,14 @@ export default function RodarLibreLanding() {
               <br />
               <span className="text-primary font-semibold">tips de moteros y actualizaciones de la app</span>
             </p>
-            <a href="https://instagram.com/rodarlibre.co/" target="_blank" rel="noopener noreferrer">
+            <a 
+              href="https://instagram.com/rodarlibre.co/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Seguir a Rodar Libre en Instagram (se abre en nueva ventana)"
+            >
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
-                Seguir @ruedalibre.co
+                Seguir @rodarlibre.co
               </Button>
             </a>
           </div>
@@ -186,7 +197,13 @@ export default function RodarLibreLanding() {
           <div className="max-w-md mx-auto text-center space-y-4">
             <p className="text-sm text-muted-foreground">© 2025 Rodar Libre. Todos los derechos reservados.</p>
             <div className="flex justify-center gap-6">
-              <a href="https://instagram.com/rodarlibre.co/" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+              <a 
+                href="https://instagram.com/rodarlibre.co/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Seguir a Rodar Libre en Instagram (se abre en nueva ventana)"
+              >
                 Instagram
               </a>
             </div>

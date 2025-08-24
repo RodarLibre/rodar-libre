@@ -19,12 +19,12 @@ const openSans = Open_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Rodar Libre - La primera app para moteros en Colombia",
-  description: "Rueda libre, vive la ruta. Únete a la lista de espera.",
+  title: "Rodar Libre - La primera app para moter@s en Colombia",
+  description: "Rueda libre, vive la ruta. Cuida tu moto. Síguenos en @rodarlibre.co",
   generator: "v0.app",
   openGraph: {
-    title: "Rodar Libre - La primera app para moteros en Colombia",
-    description: "Rueda libre, vive la ruta. Únete a la lista de espera.",
+    title: "Rodar Libre - La primera app para moter@s en Colombia",
+    description: "Rueda libre, vive la ruta. Cuida tu moto. Síguenos en @rodarlibre.co",
     url: "https://rodarlibre.co/",
     siteName: "Rodar Libre",
     images: [
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Rodar Libre - La primera app para moteros en Colombia",
-    description: "Rueda libre, vive la ruta. Únete a la lista de espera.",
+    description: "Rueda libre, vive la ruta. Cuida tu moto. Síguenos en @rodarlibre.co",
     images: ["/logo.jpg"],
   },
 }
