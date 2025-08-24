@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Fuel, Wrench, BellRing, Star, Mountain, Users, Route, Instagram, ScrollText, TriangleAlert, Scale } from "lucide-react"
+import { InstagramIcon } from "@/components/ui/instagram-icon"
+import { Fuel, Wrench, BellRing, Star, Mountain, Users, Route, ScrollText, TriangleAlert, Scale, DollarSign } from "lucide-react"
 
 export default function RodarLibreLanding() {
   return (
@@ -57,7 +58,7 @@ export default function RodarLibreLanding() {
                 className="block"
               >
                 <div className="p-8 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-3xl hover:scale-105 transition-transform cursor-pointer">
-                  <Instagram className="w-16 h-16 text-white" aria-hidden="true" />
+                  <InstagramIcon className="w-16 h-16 text-white" size={64} aria-hidden="true" />
                 </div>
               </a>
             </div>
@@ -140,6 +141,52 @@ export default function RodarLibreLanding() {
                   <div>
                     <h3 className="font-sans font-semibold text-card-foreground">Guarda tus documentos</h3>
                     <p className="text-sm text-muted-foreground">Mantén ordenados en un solo lugar tu SOAT y RTM</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-card border-border">
+                <CardContent className="p-6 text-center space-y-4">
+                  <div className="flex justify-center">
+                    <div className="p-3 bg-primary/10 rounded-lg">
+                      <TriangleAlert className="w-6 h-6 text-primary" />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="font-sans font-semibold text-card-foreground">Notificaciones de vencimiento</h3>
+                    <p className="text-sm text-muted-foreground">Recibe a tiempo notificaciones sobre vencimiento de tus papeles</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-card border-border">
+                <CardContent className="p-6 text-center space-y-4">
+                  <div className="flex justify-center">
+                    <div className="p-3 bg-primary/10 rounded-lg">
+                      <Scale className="w-6 h-6 text-primary" />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="font-sans font-semibold text-card-foreground">Consulta constantemente infracciones</h3>
+                    <p className="text-sm text-muted-foreground">Revisa si tienes multas en el SIMIT</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          <div className="max-w-4xl mx-auto mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Card className="bg-card border-border">
+                <CardContent className="p-6 text-center space-y-4">
+                  <div className="flex justify-center">
+                    <div className="p-3 bg-primary/10 rounded-lg">
+                      <DollarSign className="w-6 h-6 text-primary" />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="font-sans font-semibold text-card-foreground">Descuentos exclusivos para moter@s</h3>
+                    <p className="text-sm text-muted-foreground">Tendremos alianzas con talleres y tiendas.</p>
                   </div>
                 </CardContent>
               </Card>
