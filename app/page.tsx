@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { InstagramIcon } from "@/components/ui/instagram-icon"
-import { Fuel, Wrench, BellRing, Star, Mountain, Users, Route, ScrollText, TriangleAlert, Scale, DollarSign } from "lucide-react"
+import { MotorcycleIcon } from "@/components/ui/motorcycle-icon"
+import { Fuel, Wrench, BellRing, Star, Mountain, Users, Route, ScrollText, TriangleAlert, Scale, DollarSign, Store } from "lucide-react"
+import Image from "next/image"
 
 export default function RodarLibreLanding() {
   return (
@@ -30,7 +32,15 @@ export default function RodarLibreLanding() {
           <div className="max-w-md mx-auto space-y-8">
             {/* Logo */}
             <div className="flex justify-center">
-              <img src="/logo.jpg" alt="Rodar Libre Logo" className="w-60 h-60 md:w-96 md:h-96 object-contain" />
+              <Image
+                src="/logo.jpg"
+                alt="Rodar Libre Logo"
+                width={384}
+                height={384}
+                className="w-60 h-60 md:w-96 md:h-96 object-contain"
+                priority
+                sizes="(max-width: 768px) 240px, 384px"
+              />
             </div>
 
             {/* Title and Subtitle */}
@@ -83,7 +93,7 @@ export default function RodarLibreLanding() {
         {/* Features Section */}
         <section className="px-4 py-12">
           <div className="max-w-4xl mx-auto">
-            <h2 className="font-serif font-bold text-2xl text-center mb-8 text-foreground">Funciones</h2>
+            <h2 className="font-serif font-bold text-2xl text-center mb-8 text-foreground">¿Qué puedes hacer?</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Card className="bg-card border-border">
                 <CardContent className="p-6 text-center space-y-4">
@@ -195,12 +205,12 @@ export default function RodarLibreLanding() {
                 <CardContent className="p-6 text-center space-y-4">
                   <div className="flex justify-center">
                     <div className="p-3 bg-primary/10 rounded-lg">
-                      <TriangleAlert className="w-6 h-6 text-primary" />
+                      <Store className="w-6 h-6 text-primary" />
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-sans font-semibold text-card-foreground">Notificaciones de vencimiento</h3>
-                    <p className="text-sm text-muted-foreground">Recibe a tiempo notificaciones sobre vencimiento de tus papeles</p>
+                    <h3 className="font-sans font-semibold text-card-foreground">Encuentra talleres, accesorios y más.</h3>
+                    <p className="text-sm text-muted-foreground">Encuentra todo en un solo lugar.</p>
                   </div>
                 </CardContent>
               </Card>
@@ -209,12 +219,12 @@ export default function RodarLibreLanding() {
                 <CardContent className="p-6 text-center space-y-4">
                   <div className="flex justify-center">
                     <div className="p-3 bg-primary/10 rounded-lg">
-                      <Scale className="w-6 h-6 text-primary" />
+                      <MotorcycleIcon className="w-6 h-6 text-primary" />
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-sans font-semibold text-card-foreground">Consulta constantemente infracciones</h3>
-                    <p className="text-sm text-muted-foreground">Revisa si tienes multas en el SIMIT</p>
+                    <h3 className="font-sans font-semibold text-card-foreground">Únete a clubes de tu ciudad.</h3>
+                    <p className="text-sm text-muted-foreground">Encuentra clubes de moter@s en tu región para salir a rodar y conectar.</p>
                   </div>
                 </CardContent>
               </Card>
