@@ -135,7 +135,7 @@ export default function RodarLibreLanding() {
                   </div>
                   <div>
                     <h3 className="font-sans font-semibold text-card-foreground">Recordatorios inteligentes</h3>
-                    <p className="text-sm text-muted-foreground">Nunca olvides el mantenimiento</p>
+                    <p className="text-sm text-muted-foreground">Nunca olvides los mantenimientos</p>
                   </div>
                 </CardContent>
               </Card>
