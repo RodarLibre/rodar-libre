@@ -43,9 +43,9 @@ export const metadata: Metadata = {
     siteName: "Rodar Libre",
     images: [
       {
-        url: "/logo.jpg",
-        width: 1200,
-        height: 630,
+        url: "/squared-logo.png",
+        width: 1024,
+        height: 1024,
         alt: "Rodar Libre - App para moteros en Colombia",
       },
     ],
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Rodar Libre - La primera app para moteros en Colombia",
     description: "Rueda libre, vive la ruta. Cuida tu moto. Síguenos en @rodarlibre.co",
-    images: ["/logo.jpg"],
+    images: ["/logo-og.jpg"],
   },
 }
 
