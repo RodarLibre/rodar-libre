@@ -258,6 +258,12 @@ export default function RodarLibreLanding() {
             <p className="text-sm text-muted-foreground">© 2025 Rodar Libre. Todos los derechos reservados.</p>
             <div className="flex justify-center gap-6">
               <a 
+                href="/privacy" 
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                Privacidad
+              </a>
+              <a 
                 href="https://instagram.com/rodarlibre.co/" 
                 target="_blank" 
                 rel="noopener noreferrer"
