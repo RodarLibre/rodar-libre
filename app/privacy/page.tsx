@@ -226,7 +226,11 @@ export default function PrivacyPolicyPage() {
                     </li>
                     <li>
                       <strong className="text-foreground">Eliminar tus Datos:</strong> Tienes derecho a solicitar la eliminación de tu cuenta y
-                      todos los datos asociados. Para hacerlo, envía una solicitud a nuestro email de contacto de privacidad:
+                      todos los datos asociados. Puedes hacerlo fácilmente visitando nuestra página de eliminación de cuenta:
+                      <a href="/delete-account" className="text-primary hover:text-primary/80 font-medium ml-1">
+                        Solicitar Eliminación de Cuenta
+                      </a>
+                      o enviando una solicitud a nuestro email de contacto de privacidad:
                       <strong className="text-primary"> rodarlibre.co@gmail.com</strong>. Procesaremos tu solicitud de manera oportuna.
                     </li>
                   </ul>
