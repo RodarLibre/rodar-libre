@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { Shield, Mail, Lock, Eye, UserCheck, FileText, Calendar, AlertCircle } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Política de Privacidad - Rodar Libre",
+  title: "Política de Privacidad - RodarLibre",
   description: "Política de privacidad de RodaLibre - Protegemos tu información personal y respetamos tu privacidad.",
 }
 
@@ -28,8 +28,8 @@ export default function PrivacyPolicyPage() {
         <header className="px-4 py-8 border-b border-border bg-muted/20">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-4 mb-6">
-              <a 
-                href="/" 
+              <a
+                href="/"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="Volver al inicio"
               >
@@ -51,7 +51,7 @@ export default function PrivacyPolicyPage() {
         {/* Content Section */}
         <main className="px-4 py-12">
           <div className="max-w-4xl mx-auto">
-            
+
             {/* Introduction */}
             <section className="mb-12">
               <div className="flex items-start gap-4 mb-6">
@@ -62,8 +62,8 @@ export default function PrivacyPolicyPage() {
                   <h2 className="font-serif font-bold text-2xl text-foreground mb-4">1. Introducción</h2>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
-                      Bienvenido a RodaLibre ("nosotros," "nuestro," "nos"). Estamos comprometidos con proteger tu privacidad 
-                      y manejar tus datos de manera abierta y transparente. Esta Política de Privacidad explica cómo recopilamos, 
+                      Bienvenido a RodaLibre ("nosotros," "nuestro," "nos"). Estamos comprometidos con proteger tu privacidad
+                      y manejar tus datos de manera abierta y transparente. Esta Política de Privacidad explica cómo recopilamos,
                       usamos, procesamos y protegemos tu información cuando usas nuestra aplicación móvil, RodaLibre (la "App").
                     </p>
                     <p>
@@ -88,7 +88,7 @@ export default function PrivacyPolicyPage() {
                 <div className="w-full">
                   <h2 className="font-serif font-bold text-2xl text-foreground mb-4">2. Información que Recopilamos</h2>
                   <p className="text-muted-foreground mb-6">
-                    Recopilamos una cantidad limitada de información personal y del vehículo para proporcionar y mejorar 
+                    Recopilamos una cantidad limitada de información personal y del vehículo para proporcionar y mejorar
                     nuestros servicios. Los datos que recopilamos son estrictamente necesarios para la funcionalidad de la App.
                   </p>
 
@@ -96,7 +96,7 @@ export default function PrivacyPolicyPage() {
                   <p className="text-muted-foreground mb-4">
                     Cuando creas una cuenta y registras tu vehículo, recopilamos la siguiente información:
                   </p>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-card border border-border rounded-lg p-4">
                       <h4 className="font-sans font-semibold text-foreground mb-3">Información de la Cuenta:</h4>
@@ -119,7 +119,7 @@ export default function PrivacyPolicyPage() {
 
                   <h3 className="font-serif font-bold text-xl text-foreground mb-4 mt-8">2.2. Datos que NO Recopilamos</h3>
                   <p className="text-muted-foreground">
-                    No recopilamos ningún dato personal más allá de lo listado anteriormente. No rastreamos tu ubicación, 
+                    No recopilamos ningún dato personal más allá de lo listado anteriormente. No rastreamos tu ubicación,
                     no accedemos a tus contactos, ni recopilamos ninguna otra información sensible sin tu consentimiento explícito.
                   </p>
                 </div>
@@ -139,16 +139,16 @@ export default function PrivacyPolicyPage() {
                   </p>
                   <ul className="space-y-4 text-muted-foreground">
                     <li>
-                      <strong className="text-foreground">Para Proporcionar la Funcionalidad Principal de la App:</strong> Tu email y contraseña 
-                      se usan para crear y asegurar tu cuenta. La información de tu vehículo es necesaria para entregar las 
+                      <strong className="text-foreground">Para Proporcionar la Funcionalidad Principal de la App:</strong> Tu email y contraseña
+                      se usan para crear y asegurar tu cuenta. La información de tu vehículo es necesaria para entregar las
                       características principales de la App, como seguimiento de mantenimiento y gestión de documentos.
                     </li>
                     <li>
-                      <strong className="text-foreground">Para Comunicarnos Contigo:</strong> Podemos usar tu dirección de email para enviarte 
+                      <strong className="text-foreground">Para Comunicarnos Contigo:</strong> Podemos usar tu dirección de email para enviarte
                       información importante sobre tu cuenta o actualizaciones del servicio. No la usaremos para propósitos de marketing.
                     </li>
                     <li>
-                      <strong className="text-foreground">Para Mejorar Nuestros Servicios:</strong> Podemos analizar datos agregados y no identificables 
+                      <strong className="text-foreground">Para Mejorar Nuestros Servicios:</strong> Podemos analizar datos agregados y no identificables
                       para entender patrones de uso y mejorar las características de la App y la experiencia del usuario.
                     </li>
                   </ul>
@@ -169,15 +169,15 @@ export default function PrivacyPolicyPage() {
                   </p>
                   <ul className="space-y-4 text-muted-foreground">
                     <li>
-                      <strong className="text-foreground">Encriptación:</strong> Todos los datos transmitidos entre la App y nuestros servidores 
+                      <strong className="text-foreground">Encriptación:</strong> Todos los datos transmitidos entre la App y nuestros servidores
                       están encriptados usando protocolos de seguridad modernos. Tus datos también están encriptados en reposo en nuestros sistemas backend.
                     </li>
                     <li>
-                      <strong className="text-foreground">Infraestructura Segura:</strong> Nuestro backend está alojado en una infraestructura segura 
+                      <strong className="text-foreground">Infraestructura Segura:</strong> Nuestro backend está alojado en una infraestructura segura
                       que usa Cloudflare Zero Trust para proteger contra accesos no autorizados.
                     </li>
                     <li>
-                      <strong className="text-foreground">Acceso Limitado:</strong> El acceso a tus datos personales está restringido al personal 
+                      <strong className="text-foreground">Acceso Limitado:</strong> El acceso a tus datos personales está restringido al personal
                       autorizado que lo requiere para realizar sus funciones.
                     </li>
                   </ul>
@@ -194,11 +194,11 @@ export default function PrivacyPolicyPage() {
                 <div>
                   <h2 className="font-serif font-bold text-2xl text-foreground mb-4">5. Compartir y Divulgación de Datos</h2>
                   <p className="text-muted-foreground mb-4">
-                    No vendemos, rentamos o compartimos tu información personal con terceros para marketing o cualquier otro propósito. 
+                    No vendemos, rentamos o compartimos tu información personal con terceros para marketing o cualquier otro propósito.
                     Tus datos se usan exclusivamente para proporcionar el servicio RodaLibre.
                   </p>
                   <p className="text-muted-foreground">
-                    Solo podemos divulgar tu información si es requerido por ley o en respuesta a solicitudes válidas de autoridades 
+                    Solo podemos divulgar tu información si es requerido por ley o en respuesta a solicitudes válidas de autoridades
                     públicas (ej., un tribunal o una agencia gubernamental).
                   </p>
                 </div>
@@ -221,12 +221,12 @@ export default function PrivacyPolicyPage() {
                       <strong className="text-foreground">Acceder a tus Datos:</strong> Puedes ver la información de tu cuenta y vehículo dentro de la App.
                     </li>
                     <li>
-                      <strong className="text-foreground">Corregir tus Datos:</strong> Puedes actualizar o corregir la información de tu vehículo 
+                      <strong className="text-foreground">Corregir tus Datos:</strong> Puedes actualizar o corregir la información de tu vehículo
                       a través de la interfaz de la App.
                     </li>
                     <li>
-                      <strong className="text-foreground">Eliminar tus Datos:</strong> Tienes derecho a solicitar la eliminación de tu cuenta y 
-                      todos los datos asociados. Para hacerlo, envía una solicitud a nuestro email de contacto de privacidad: 
+                      <strong className="text-foreground">Eliminar tus Datos:</strong> Tienes derecho a solicitar la eliminación de tu cuenta y
+                      todos los datos asociados. Para hacerlo, envía una solicitud a nuestro email de contacto de privacidad:
                       <strong className="text-primary"> rodarlibre.co@gmail.com</strong>. Procesaremos tu solicitud de manera oportuna.
                     </li>
                   </ul>
@@ -243,8 +243,8 @@ export default function PrivacyPolicyPage() {
                 <div>
                   <h2 className="font-serif font-bold text-2xl text-foreground mb-4">7. Características Futuras</h2>
                   <p className="text-muted-foreground">
-                    Como se anunció en nuestra página de inicio (rodarlibre.co), planeamos introducir nuevas características en el futuro. 
-                    Esta Política de Privacidad se actualizará para reflejar cualquier cambio en nuestras prácticas de recopilación o uso de datos. 
+                    Como se anunció en nuestra página de inicio (rodarlibre.co), planeamos introducir nuevas características en el futuro.
+                    Esta Política de Privacidad se actualizará para reflejar cualquier cambio en nuestras prácticas de recopilación o uso de datos.
                     Te notificaremos de cualquier cambio significativo y obtendremos tu consentimiento si es requerido.
                   </p>
                 </div>
@@ -260,7 +260,7 @@ export default function PrivacyPolicyPage() {
                 <div>
                   <h2 className="font-serif font-bold text-2xl text-foreground mb-4">8. Privacidad de Menores</h2>
                   <p className="text-muted-foreground">
-                    Nuestra App no está destinada para uso de menores de 13 años. No recopilamos conscientemente información personal 
+                    Nuestra App no está destinada para uso de menores de 13 años. No recopilamos conscientemente información personal
                     de menores de 13 años. Si nos damos cuenta de que hemos recopilado dicha información, tomaremos medidas para eliminarla.
                   </p>
                 </div>
@@ -276,8 +276,8 @@ export default function PrivacyPolicyPage() {
                 <div>
                   <h2 className="font-serif font-bold text-2xl text-foreground mb-4">9. Cambios a esta Política de Privacidad</h2>
                   <p className="text-muted-foreground">
-                    Podemos actualizar esta Política de Privacidad de vez en cuando. Te notificaremos de cualquier cambio publicando 
-                    la nueva política en esta página y actualizando la fecha de "Última actualización". Se te recomienda revisar 
+                    Podemos actualizar esta Política de Privacidad de vez en cuando. Te notificaremos de cualquier cambio publicando
+                    la nueva política en esta página y actualizando la fecha de "Última actualización". Se te recomienda revisar
                     esta Política de Privacidad periódicamente para cualquier cambio.
                   </p>
                 </div>
@@ -312,20 +312,20 @@ export default function PrivacyPolicyPage() {
         <footer className="px-4 py-8 bg-muted/20 border-t border-border">
           <div className="max-w-4xl mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-sm text-muted-foreground">© 2025 Rodar Libre. Todos los derechos reservados.</p>
+              <p className="text-sm text-muted-foreground">© 2025 RodarLibre. Todos los derechos reservados.</p>
               <div className="flex gap-6">
-                <a 
-                  href="/" 
+                <a
+                  href="/"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Inicio
                 </a>
-                <a 
-                  href="https://instagram.com/rodarlibre.co/" 
-                  target="_blank" 
+                <a
+                  href="https://instagram.com/rodarlibre.co/"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
-                  aria-label="Seguir a Rodar Libre en Instagram (se abre en nueva ventana)"
+                  aria-label="Seguir a RodarLibre en Instagram (se abre en nueva ventana)"
                 >
                   Instagram
                 </a>
