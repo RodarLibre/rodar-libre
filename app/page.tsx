@@ -5,7 +5,7 @@ import { HelmetIcon } from "@/components/ui/helmet-icon"
 import { InstagramIcon } from "@/components/ui/instagram-icon"
 import { MaintenanceIcon } from "@/components/ui/maintenance-icon"
 import { MotorcycleIcon } from "@/components/ui/motorcycle-icon"
-import { Fuel, Wrench, Star, Mountain, Users, Route, ScrollText, TriangleAlert, Scale, DollarSign, Store } from "lucide-react"
+import { Fuel, Star, Mountain, Users, Route, ScrollText, TriangleAlert, Scale, Store } from "lucide-react"
 import Image from "next/image"
 
 export default function RodarLibreLanding() {
@@ -60,36 +60,77 @@ export default function RodarLibreLanding() {
 
         {/* Instagram Follow Section */}
         <section className="px-4 py-16 bg-muted/20">
-          <div className="max-w-md mx-auto text-center space-y-8">
-            <h2 className="font-serif font-bold text-2xl text-foreground">Síguenos en Instagram</h2>
-            <div className="flex justify-center">
-              <a 
-                href="https://instagram.com/rodarlibre.co/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                aria-label="Seguir a Rodar Libre en Instagram"
-                className="block"
-              >
-                <div className="p-8 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-3xl hover:scale-105 transition-transform cursor-pointer">
-                  <InstagramIcon className="w-16 h-16 text-white" size={64} aria-hidden="true" />
-                </div>
-              </a>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-serif font-bold text-2xl text-center mb-12 text-foreground">
+              Descarga la app y síguenos
+            </h2>
+
+            {/* Horizontal layout with Instagram and Google Play */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              {/* Instagram Section */}
+              <div className="flex flex-col items-center justify-center space-y-6 p-8 bg-card border border-border rounded-2xl">
+                <p className="font-sans text-sm text-muted-foreground font-medium">Síguenos en Instagram</p>
+                <a
+                  href="https://instagram.com/rodarlibre.co/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Seguir a Rodar Libre en Instagram"
+                  className="block"
+                >
+                  <div className="p-8 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-3xl hover:scale-105 transition-transform cursor-pointer w-40 h-40 flex items-center justify-center">
+                    <InstagramIcon className="w-20 h-20 text-white" size={80} aria-hidden="true" />
+                  </div>
+                </a>
+                <a
+                  href="https://instagram.com/rodarlibre.co/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Seguir a Rodar Libre en Instagram (se abre en nueva ventana)"
+                >
+                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
+                    Seguir @rodarlibre.co
+                  </Button>
+                </a>
+              </div>
+
+              {/* Google Play Section */}
+              <div className="flex flex-col items-center justify-center space-y-6 p-8 bg-card border border-border rounded-2xl">
+                <p className="font-sans text-sm text-muted-foreground font-medium">Descarga en Google Play</p>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.rodarlibre"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Descargar Rodar Libre en Google Play"
+                  className="block w-full"
+                >
+                  <Image
+                    src="/google-play-es.svg"
+                    alt="Google Play Store"
+                    width={200}
+                    height={60}
+                    className="w-full max-w-xs mx-auto hover:opacity-90 transition-opacity cursor-pointer"
+                  />
+                </a>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.rodarlibre"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Descargar Rodar Libre en Google Play (se abre en nueva ventana)"
+                >
+                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
+                    Descargar
+                  </Button>
+                </a>
+              </div>
             </div>
-            <p className="font-sans text-lg text-muted-foreground">
-              Mantente al día con las últimas noticias,
-              <br />
-              <span className="text-primary font-semibold">tips de moteros y actualizaciones de la app</span>
-            </p>
-            <a 
-              href="https://instagram.com/rodarlibre.co/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="Seguir a Rodar Libre en Instagram (se abre en nueva ventana)"
-            >
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
-                Seguir @rodarlibre.co
-              </Button>
-            </a>
+
+            <div className="text-center">
+              <p className="font-sans text-lg text-muted-foreground leading-relaxed">
+                Mantente al día con las últimas noticias,
+                <br />
+                <span className="text-primary font-semibold">tips de moteros, actualizaciones de la app y más</span>
+              </p>
+            </div>
           </div>
         </section>
 
@@ -167,7 +208,9 @@ export default function RodarLibreLanding() {
                   </div>
                   <div>
                     <h3 className="font-sans font-semibold text-card-foreground">Notificaciones de vencimiento</h3>
-                    <p className="text-sm text-muted-foreground">Recibe a tiempo notificaciones sobre vencimiento de tus papeles</p>
+                    <p className="text-sm text-muted-foreground">
+                      Recibe a tiempo notificaciones sobre vencimiento de tus papeles
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -180,7 +223,9 @@ export default function RodarLibreLanding() {
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-sans font-semibold text-card-foreground">Consulta constantemente infracciones</h3>
+                    <h3 className="font-sans font-semibold text-card-foreground">
+                      Consulta constantemente infracciones
+                    </h3>
                     <p className="text-sm text-muted-foreground">Revisa si tienes multas en el SIMIT</p>
                   </div>
                 </CardContent>
@@ -212,7 +257,9 @@ export default function RodarLibreLanding() {
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-sans font-semibold text-card-foreground">Encuentra talleres, accesorios y más.</h3>
+                    <h3 className="font-sans font-semibold text-card-foreground">
+                      Encuentra talleres, accesorios y más.
+                    </h3>
                     <p className="text-sm text-muted-foreground">Encuentra todo en un solo lugar.</p>
                   </div>
                 </CardContent>
@@ -227,7 +274,9 @@ export default function RodarLibreLanding() {
                   </div>
                   <div>
                     <h3 className="font-sans font-semibold text-card-foreground">Únete a clubes de tu ciudad.</h3>
-                    <p className="text-sm text-muted-foreground">Encuentra clubes de moter@s en tu región para salir a rodar y conectar.</p>
+                    <p className="text-sm text-muted-foreground">
+                      Encuentra clubes de moter@s en tu región para salir a rodar y conectar.
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -257,15 +306,9 @@ export default function RodarLibreLanding() {
           <div className="max-w-md mx-auto text-center space-y-4">
             <p className="text-sm text-muted-foreground">© 2025 Rodar Libre. Todos los derechos reservados.</p>
             <div className="flex justify-center gap-6">
-              <a 
-                href="/privacy" 
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                Privacidad
-              </a>
-              <a 
-                href="https://instagram.com/rodarlibre.co/" 
-                target="_blank" 
+              <a
+                href="https://instagram.com/rodarlibre.co/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="Seguir a Rodar Libre en Instagram (se abre en nueva ventana)"
