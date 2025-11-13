@@ -58,38 +58,75 @@ export default function RodarLibreLanding() {
           </div>
         </section>
 
-        {/* Instagram Follow Section */}
+                {/* Instagram Follow Section */}
         <section className="px-4 py-16 bg-muted/20">
-          <div className="max-w-md mx-auto text-center space-y-8">
-            <h2 className="font-serif font-bold text-2xl text-foreground">Síguenos en Instagram</h2>
-            <div className="flex justify-center">
-              <a 
-                href="https://instagram.com/rodarlibre.co/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                aria-label="Seguir a Rodar Libre en Instagram"
-                className="block"
-              >
-                <div className="p-8 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-3xl hover:scale-105 transition-transform cursor-pointer">
-                  <InstagramIcon className="w-16 h-16 text-white" size={64} aria-hidden="true" />
-                </div>
-              </a>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-serif font-bold text-2xl text-center mb-12 text-foreground">
+              Descarga la app y síguenos
+            </h2>
+
+            {/* Horizontal layout with Instagram and Google Play */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              {/* Instagram Section */}
+              <div className="flex flex-col items-center justify-center space-y-6 p-8 bg-card border border-border rounded-2xl">
+                <p className="font-sans text-sm text-muted-foreground font-medium">Síguenos en Instagram</p>
+                <a
+                  href="https://instagram.com/rodarlibre.co/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Seguir a Rodar Libre en Instagram"
+                  className="block"
+                >
+                  <div className="p-8 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-3xl hover:scale-105 transition-transform cursor-pointer w-40 h-40 flex items-center justify-center">
+                    <InstagramIcon className="w-20 h-20 text-white" size={80} aria-hidden="true" />
+                  </div>
+                </a>
+                <a
+                  href="https://instagram.com/rodarlibre.co/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Seguir a Rodar Libre en Instagram (se abre en nueva ventana)"
+                >
+                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
+                    Seguir @rodarlibre.co
+                  </Button>
+                </a>
+              </div>
+
+              {/* Google Play Section */}
+              <div className="flex flex-col items-center justify-center space-y-6 p-8 bg-card border border-border rounded-2xl">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.rodarlibre"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Descargar Rodar Libre en Google Play"
+                  className="block w-full"
+                >
+                  <Image
+                    src="/google-play-es.svg"
+                    alt="Google Play Store"
+                    width={200}
+                    height={60}
+                    className="w-full max-w-xs mx-auto hover:opacity-90 transition-opacity cursor-pointer"
+                  />
+                </a>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.rodarlibre"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Descargar Rodar Libre en Google Play (se abre en nueva ventana)"
+                >
+                </a>
+              </div>
             </div>
-            <p className="font-sans text-lg text-muted-foreground">
-              Mantente al día con las últimas noticias,
-              <br />
-              <span className="text-primary font-semibold">tips de moteros y actualizaciones de la app</span>
-            </p>
-            <a 
-              href="https://instagram.com/rodarlibre.co/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="Seguir a Rodar Libre en Instagram (se abre en nueva ventana)"
-            >
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
-                Seguir @rodarlibre.co
-              </Button>
-            </a>
+
+            <div className="text-center">
+              <p className="font-sans text-lg text-muted-foreground leading-relaxed">
+                Mantente al día con las últimas noticias,
+                <br />
+                <span className="text-primary font-semibold">tips de moteros, actualizaciones de la app y más</span>
+              </p>
+            </div>
           </div>
         </section>
 
@@ -271,6 +308,15 @@ export default function RodarLibreLanding() {
                 aria-label="Seguir a Rodar Libre en Instagram (se abre en nueva ventana)"
               >
                 Instagram
+              </a>
+              <a 
+                href="https://play.google.com/store/apps/details?id=com.rodarlibre" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Descarga la app en Google Play"
+              >
+                Descarga la app
               </a>
             </div>
           </div>
