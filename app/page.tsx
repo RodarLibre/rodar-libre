@@ -50,9 +50,9 @@ export default function RodarLibreLanding() {
             <div className="space-y-4">
               <h1 className="font-serif font-black text-4xl md:text-5xl text-foreground">Rodar Libre</h1>
               <p className="font-sans text-lg text-muted-foreground leading-relaxed">
-                La primera app para moteros en Colombia.
+                La primera app para conductores en Colombia.
                 <br />
-                <span className="text-primary font-medium">Rueda libre, vive la ruta, cuida tu moto.</span>
+                <span className="text-primary font-medium">Rueda libre, vive la ruta, cuida tu vehículo.</span>
               </p>
             </div>
           </div>
@@ -124,7 +124,7 @@ export default function RodarLibreLanding() {
               <p className="font-sans text-lg text-muted-foreground leading-relaxed">
                 Mantente al día con las últimas noticias,
                 <br />
-                <span className="text-primary font-semibold">tips de moteros, actualizaciones de la app y más</span>
+                <span className="text-primary font-semibold">tips, actualizaciones de la app y más</span>
               </p>
             </div>
           </div>
@@ -235,7 +235,7 @@ export default function RodarLibreLanding() {
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-sans font-semibold text-card-foreground">Descuentos exclusivos para moter@s</h3>
+                    <h3 className="font-sans font-semibold text-card-foreground">Descuentos exclusivos</h3>
                     <p className="text-sm text-muted-foreground">Tendremos alianzas con talleres y tiendas.</p>
                   </div>
                 </CardContent>
@@ -264,7 +264,68 @@ export default function RodarLibreLanding() {
                   </div>
                   <div>
                     <h3 className="font-sans font-semibold text-card-foreground">Únete a clubes de tu ciudad.</h3>
-                    <p className="text-sm text-muted-foreground">Encuentra clubes de moter@s en tu región para salir a rodar y conectar.</p>
+                    <p className="text-sm text-muted-foreground">Encuentra clubes de moter@s y conductores en tu región para salir a rodar y conectar.</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Our Team Section */}
+        <section className="px-4 py-12">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-serif font-bold text-2xl text-center mb-8 text-foreground">Nuestro Equipo</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Card className="bg-card border-border overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="aspect-square relative">
+                    <Image
+                      src="/juanroa.jpg"
+                      alt="Juan Roa"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                  <div className="p-6 text-center space-y-2">
+                    <h3 className="font-sans font-semibold text-card-foreground text-lg">Juan Roa</h3>
+                    <p className="text-sm text-muted-foreground">Co-founder</p>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card className="bg-card border-border overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="aspect-square relative">
+                    <Image
+                      src="/adri.jpg"
+                      alt="Adri"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                  <div className="p-6 text-center space-y-2">
+                    <h3 className="font-sans font-semibold text-card-foreground text-lg">Adri</h3>
+                    <p className="text-sm text-muted-foreground">Co-founder</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-card border-border overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="aspect-square relative">
+                    <Image
+                      src="/juandmazuera.jpeg"
+                      alt="Juan David Mazuera"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                  <div className="p-6 text-center space-y-2">
+                    <h3 className="font-sans font-semibold text-card-foreground text-lg">Juan David Mazuera</h3>
+                    <p className="text-sm text-muted-foreground">Co-founder</p>
                   </div>
                 </CardContent>
               </Card>
