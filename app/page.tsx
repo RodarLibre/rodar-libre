@@ -290,7 +290,7 @@ export default function RodarLibreLanding() {
                   </div>
                   <div className="p-6 text-center space-y-2">
                     <h3 className="font-sans font-semibold text-card-foreground text-lg">Juan Roa</h3>
-                    <p className="text-sm text-muted-foreground">Co-founder</p>
+                    <p className="text-sm text-muted-foreground">CEO & Founder, Software Engineer</p>
                   </div>
                 </CardContent>
               </Card>
@@ -306,8 +306,8 @@ export default function RodarLibreLanding() {
                     />
                   </div>
                   <div className="p-6 text-center space-y-2">
-                    <h3 className="font-sans font-semibold text-card-foreground text-lg">Adri</h3>
-                    <p className="text-sm text-muted-foreground">Co-founder</p>
+                    <h3 className="font-sans font-semibold text-card-foreground text-lg">Adriana Guerrero</h3>
+                    <p className="text-sm text-muted-foreground">Co-founder, Designer</p>
                   </div>
                 </CardContent>
               </Card>
@@ -325,7 +325,7 @@ export default function RodarLibreLanding() {
                   </div>
                   <div className="p-6 text-center space-y-2">
                     <h3 className="font-sans font-semibold text-card-foreground text-lg">Juan David Mazuera</h3>
-                    <p className="text-sm text-muted-foreground">Co-founder</p>
+                    <p className="text-sm text-muted-foreground">Co-founder, Software Engineer</p>
                   </div>
                 </CardContent>
               </Card>
