@@ -294,41 +294,6 @@ export default function RodarLibreLanding() {
                   </div>
                 </CardContent>
               </Card>
-              <Card className="bg-card border-border overflow-hidden">
-                <CardContent className="p-0">
-                  <div className="aspect-square relative">
-                    <Image
-                      src="/adri.jpg"
-                      alt="Adri"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                  </div>
-                  <div className="p-6 text-center space-y-2">
-                    <h3 className="font-sans font-semibold text-card-foreground text-lg">Adriana Guerrero</h3>
-                    <p className="text-sm text-muted-foreground">Co-founder, Designer</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-card border-border overflow-hidden">
-                <CardContent className="p-0">
-                  <div className="aspect-square relative">
-                    <Image
-                      src="/juandmazuera.jpeg"
-                      alt="Juan David Mazuera"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                  </div>
-                  <div className="p-6 text-center space-y-2">
-                    <h3 className="font-sans font-semibold text-card-foreground text-lg">Juan David Mazuera</h3>
-                    <p className="text-sm text-muted-foreground">Co-founder, Software Engineer</p>
-                  </div>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </section>
