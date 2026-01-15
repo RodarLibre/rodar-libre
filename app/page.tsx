@@ -318,7 +318,7 @@ export default function RodarLibreLanding() {
         {/* Footer */}
         <footer className="px-4 py-8 bg-background border-t border-border">
           <div className="max-w-md mx-auto text-center space-y-4">
-            <p className="text-sm text-muted-foreground">© 2025 Rodar Libre. Todos los derechos reservados.</p>
+            <p className="text-sm text-muted-foreground">© 2026 Rodar Libre. Todos los derechos reservados.</p>
             <div className="flex justify-center gap-6">
               <a 
                 href="/privacy" 
