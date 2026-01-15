@@ -326,14 +326,23 @@ export default function RodarLibreLanding() {
               >
                 Privacidad
               </a>
-              <a 
-                href="https://instagram.com/rodarlibre.co/" 
-                target="_blank" 
+              <a
+                href="https://instagram.com/rodarlibre.co/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="Seguir a Rodar Libre en Instagram (se abre en nueva ventana)"
               >
                 Instagram
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=61585988519951"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Seguir a Rodar Libre en Facebook (se abre en nueva ventana)"
+              >
+                Facebook
               </a>
               <a 
                 href="https://play.google.com/store/apps/details?id=com.rodarlibre" 
