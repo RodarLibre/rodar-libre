@@ -42,7 +42,7 @@ export default function PrivacyPolicyPage() {
               </div>
               <div>
                 <h1 className="font-serif font-bold text-3xl md:text-4xl text-foreground">Política de Privacidad</h1>
-                <p className="text-muted-foreground">Última actualización: 14 de octubre, 2025</p>
+                <p className="text-muted-foreground">Última actualización: 28 de enero, 2026</p>
               </div>
             </div>
           </div>
@@ -62,7 +62,7 @@ export default function PrivacyPolicyPage() {
                   <h2 className="font-serif font-bold text-2xl text-foreground mb-4">1. Introducción</h2>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
-                      Bienvenido a RodaLibre ("nosotros," "nuestro," "nos"). Estamos comprometidos con proteger tu privacidad
+                      Bienvenid@ a RodaLibre ("nosotros," "nuestro," "nos"). Estamos comprometidos con proteger tu privacidad
                       y manejar tus datos de manera abierta y transparente. Esta Política de Privacidad explica cómo recopilamos,
                       usamos, procesamos y protegemos tu información cuando usas nuestra aplicación móvil, RodaLibre (la "App").
                     </p>
@@ -103,7 +103,6 @@ export default function PrivacyPolicyPage() {
                       <ul className="space-y-2 text-muted-foreground">
                         <li><strong className="text-foreground">Nombre:</strong> Usado para comunicación dentro de la app</li>
                         <li><strong className="text-foreground">Dirección de Email:</strong> Usado para crear la cuenta, autenticación y comunicación.</li>
-                        <li><strong className="text-foreground">Contraseña:</strong> Usado para asegurar tu cuenta. Lo almacenamos en formato encriptado.</li>
                       </ul>
                     </div>
 
@@ -113,6 +112,13 @@ export default function PrivacyPolicyPage() {
                         <li><strong className="text-foreground">Marca, Modelo y Año:</strong> Para identificar las especificaciones de tu vehículo.</li>
                         <li><strong className="text-foreground">Placa:</strong> Para identificar únicamente tu vehículo dentro de la App.</li>
                         <li><strong className="text-foreground">Lectura del Odómetro:</strong> Para rastrear el kilometraje del vehículo y horarios de mantenimiento.</li>
+                        <li><strong className="text-foreground">Ubicación:</strong> La usamos exclusivamente para listar los talleres y tiendas de tu ciudad.</li>
+                        <li><strong className="text-foreground">
+                          Otros datos recopilados desde el RUNT sobre vehículo y documentos como SOAT y RTM (Revisión Técnnico Mecánica).
+                          </strong></li>
+                        <li><strong className="text-foreground">
+                          Otros datos recopilados desde el RUNT sobre vehículo y documentos como SOAT y RTM (Revisión Técnnico Mecánica).
+                          </strong></li>
                       </ul>
                     </div>
                   </div>
@@ -185,20 +191,29 @@ export default function PrivacyPolicyPage() {
               </div>
             </section>
 
-            {/* Data Sharing */}
+            {/* Data Sharing & Ads */}
             <section className="mb-12">
               <div className="flex items-start gap-4 mb-6">
                 <div className="p-2 bg-primary/10 rounded-lg mt-1">
                   <AlertCircle className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h2 className="font-serif font-bold text-2xl text-foreground mb-4">5. Compartir y Divulgación de Datos</h2>
+                  <h2 className="font-serif font-bold text-2xl text-foreground mb-4">5. Compartir Datos y Publicidad</h2>
+                  
+                  <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 mb-6">
+                    <h3 className="font-serif font-bold text-lg text-foreground mb-2">🚫 Sin Anuncios ni Venta de Datos</h3>
+                    <p className="text-muted-foreground">
+                      <strong>RodaLibre es una experiencia 100% libre de publicidad.</strong> No mostramos anuncios de terceros, 
+                      no rastreamos tu comportamiento para fines publicitarios y <strong>nunca vendemos tus datos</strong>.
+                    </p>
+                  </div>
+
                   <p className="text-muted-foreground mb-4">
                     No vendemos, rentamos o compartimos tu información personal con terceros para marketing o cualquier otro propósito.
-                    Tus datos se usan exclusivamente para proporcionar el servicio RodaLibre.
+                    Tus datos se usan exclusivamente para proporcionar el servicio RodaLibre y mejorar tu experiencia personal.
                   </p>
                   <p className="text-muted-foreground">
-                    Solo podemos divulgar tu información si es requerido por ley o en respuesta a solicitudes válidas de autoridades
+                    Solo podemos divulgar tu información si es requerido estrictamente por ley o en respuesta a solicitudes válidas de autoridades
                     públicas (ej., un tribunal o una agencia gubernamental).
                   </p>
                 </div>
@@ -316,7 +331,7 @@ export default function PrivacyPolicyPage() {
         <footer className="px-4 py-8 bg-muted/20 border-t border-border">
           <div className="max-w-4xl mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-sm text-muted-foreground">© 2025 RodarLibre. Todos los derechos reservados.</p>
+              <p className="text-sm text-muted-foreground">© 2026 RodarLibre. Todos los derechos reservados.</p>
               <div className="flex gap-6">
                 <a
                   href="/"

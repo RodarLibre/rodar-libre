@@ -274,9 +274,9 @@ export default function RodarLibreLanding() {
 
         {/* Our Team Section */}
         <section className="px-4 py-12">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-2xl mx-auto">
             <h2 className="font-serif font-bold text-2xl text-center mb-8 text-foreground">Nuestro Equipo</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Card className="bg-card border-border overflow-hidden">
                 <CardContent className="p-0">
                   <div className="aspect-square relative">
@@ -291,6 +291,23 @@ export default function RodarLibreLanding() {
                   <div className="p-6 text-center space-y-2">
                     <h3 className="font-sans font-semibold text-card-foreground text-lg">Juan Roa</h3>
                     <p className="text-sm text-muted-foreground">CEO & Founder, Software Engineer</p>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card className="bg-card border-border overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="aspect-square relative">
+                    <Image
+                      src="/jess.jpeg"
+                      alt="Jessica Giraldo"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                  <div className="p-6 text-center space-y-2">
+                    <h3 className="font-sans font-semibold text-card-foreground text-lg">Jessica Giraldo</h3>
+                    <p className="text-sm text-muted-foreground">Co-Founder, Diseñadora</p>
                   </div>
                 </CardContent>
               </Card>
