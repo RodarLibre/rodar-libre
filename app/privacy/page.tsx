@@ -62,9 +62,9 @@ export default function PrivacyPolicyPage() {
                   <h2 className="font-serif font-bold text-2xl text-foreground mb-4">1. Introducción</h2>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
-                      Bienvenid@ a RodaLibre ("nosotros," "nuestro," "nos"). Estamos comprometidos con proteger tu privacidad
+                      Bienvenid@ a RodaLibre (&quot;nosotros,&quot; &quot;nuestro,&quot; &quot;nos&quot;). Estamos comprometidos con proteger tu privacidad
                       y manejar tus datos de manera abierta y transparente. Esta Política de Privacidad explica cómo recopilamos,
-                      usamos, procesamos y protegemos tu información cuando usas nuestra aplicación móvil, RodaLibre (la "App").
+                      usamos, procesamos y protegemos tu información cuando usas nuestra aplicación móvil, RodaLibre (la &quot;App&quot;).
                     </p>
                     <p>
                       Esta política está diseñada para cumplir con los requisitos de Google Play Store para aplicaciones Android.
@@ -296,7 +296,7 @@ export default function PrivacyPolicyPage() {
                   <h2 className="font-serif font-bold text-2xl text-foreground mb-4">9. Cambios a esta Política de Privacidad</h2>
                   <p className="text-muted-foreground">
                     Podemos actualizar esta Política de Privacidad de vez en cuando. Te notificaremos de cualquier cambio publicando
-                    la nueva política en esta página y actualizando la fecha de "Última actualización". Se te recomienda revisar
+                    la nueva política en esta página y actualizando la fecha de &quot;Última actualización&quot;. Se te recomienda revisar
                     esta Política de Privacidad periódicamente para cualquier cambio.
                   </p>
                 </div>

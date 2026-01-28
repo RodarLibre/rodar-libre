@@ -5,7 +5,7 @@ import { HelmetIcon } from "@/components/ui/helmet-icon"
 import { InstagramIcon } from "@/components/ui/instagram-icon"
 import { MaintenanceIcon } from "@/components/ui/maintenance-icon"
 import { MotorcycleIcon } from "@/components/ui/motorcycle-icon"
-import { Fuel, Wrench, Star, Mountain, Users, Route, ScrollText, TriangleAlert, Scale, DollarSign, Store } from "lucide-react"
+import { Fuel, Star, Mountain, Users, Route, ScrollText, TriangleAlert, Scale, Store } from "lucide-react"
 import Image from "next/image"
 
 export default function RodarLibreLanding() {
@@ -353,7 +353,7 @@ export default function RodarLibreLanding() {
                 Instagram
               </a>
               <a
-                href="https://www.facebook.com/profile.php?id=61585988519951"
+                href="https://www.facebook.com/rodarlibre.co"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"

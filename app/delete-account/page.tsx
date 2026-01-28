@@ -131,7 +131,7 @@ export default function DeleteAccountPage() {
                         <div>
                           <h3 className="font-semibold text-foreground mb-2">Envía tu solicitud por email</h3>
                           <p className="text-muted-foreground mb-3">
-                            Envía un email a nuestro equipo de soporte con el asunto "Solicitud de Eliminación de Cuenta":
+                            Envía un email a nuestro equipo de soporte con el asunto &quot;Solicitud de Eliminación de Cuenta&quot;:
                           </p>
                           <div className="bg-muted/50 border border-border rounded-lg p-4">
                             <p className="text-foreground font-semibold mb-2">Email:</p>
