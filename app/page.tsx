@@ -1,8 +1,7 @@
-import { Button } from "@/components/ui/button"
+
 import { Card, CardContent } from "@/components/ui/card"
 import { EngineOilIcon } from "@/components/ui/engine-oil-icon"
 import { HelmetIcon } from "@/components/ui/helmet-icon"
-import { InstagramIcon } from "@/components/ui/instagram-icon"
 import { MaintenanceIcon } from "@/components/ui/maintenance-icon"
 import { MotorcycleIcon } from "@/components/ui/motorcycle-icon"
 import { Fuel, Star, Mountain, Users, Route, ScrollText, TriangleAlert, Scale, Store } from "lucide-react"
@@ -58,38 +57,31 @@ export default function RodarLibreLanding() {
           </div>
         </section>
 
-                {/* Instagram Follow Section */}
+        {/* Download App Section */}
         <section className="px-4 py-16 bg-muted/20">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-serif font-bold text-2xl text-center mb-12 text-foreground">
-              Descarga la app y síguenos
+              Descarga la app
             </h2>
 
-            {/* Horizontal layout with Instagram and Google Play */}
+            {/* Horizontal layout with App Store and Google Play */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-              {/* Instagram Section */}
-              <div className="flex flex-col items-center justify-center space-y-6 p-8 bg-card border border-border rounded-2xl">
-                <p className="font-sans text-sm text-muted-foreground font-medium">Síguenos en Instagram</p>
+              {/* App Store Section */}
+              <div className="flex flex-col items-center justify-center space-y-6 p-8 bg-card border border-border rounded-2xl h-full">
                 <a
-                  href="https://instagram.com/rodarlibre.co/"
+                  href="https://ios.rodarlibre.co"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Seguir a Rodar Libre en Instagram"
-                  className="block"
+                  aria-label="Descargar Rodar Libre en App Store"
+                  className="block w-full"
                 >
-                  <div className="p-8 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-3xl hover:scale-105 transition-transform cursor-pointer w-40 h-40 flex items-center justify-center">
-                    <InstagramIcon className="w-20 h-20 text-white" size={80} aria-hidden="true" />
-                  </div>
-                </a>
-                <a
-                  href="https://instagram.com/rodarlibre.co/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Seguir a Rodar Libre en Instagram (se abre en nueva ventana)"
-                >
-                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
-                    Seguir @rodarlibre.co
-                  </Button>
+                  <Image
+                    src="/web-ios-banner.jpg"
+                    alt="Descargar en App Store"
+                    width={200}
+                    height={60}
+                    className="w-full max-w-xs mx-auto hover:opacity-90 transition-opacity cursor-pointer"
+                  />
                 </a>
               </div>
 
