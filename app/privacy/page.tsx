@@ -42,7 +42,7 @@ export default function PrivacyPolicyPage() {
               </div>
               <div>
                 <h1 className="font-serif font-bold text-3xl md:text-4xl text-foreground">Política de Privacidad</h1>
-                <p className="text-muted-foreground">Última actualización: 28 de enero, 2026</p>
+                <p className="text-muted-foreground">Última actualización: 04 de marzo, 2026</p>
               </div>
             </div>
           </div>
@@ -67,7 +67,7 @@ export default function PrivacyPolicyPage() {
                       usamos, procesamos y protegemos tu información cuando usas nuestra aplicación móvil, RodaLibre (la &quot;App&quot;).
                     </p>
                     <p>
-                      Esta política está diseñada para cumplir con los requisitos de Google Play Store para aplicaciones Android.
+                      Esta política está diseñada para cumplir tanto con la legislación colombiana de protección de datos personales (Ley 1581 de 2012 y sus decretos reglamentarios) como con los requisitos de Google Play Store y Apple App Store.
                     </p>
                     <div className="bg-card border border-border rounded-lg p-4 space-y-2">
                       <p><strong className="text-foreground">Nombre de la App:</strong> RodaLibre</p>
@@ -111,22 +111,36 @@ export default function PrivacyPolicyPage() {
                       <ul className="space-y-2 text-muted-foreground">
                         <li><strong className="text-foreground">Marca, Modelo y Año:</strong> Para identificar las especificaciones de tu vehículo.</li>
                         <li><strong className="text-foreground">Placa:</strong> Para identificar únicamente tu vehículo dentro de la App.</li>
-                        <li><strong className="text-foreground">Lectura del Odómetro:</strong> Para rastrear el kilometraje del vehículo y horarios de mantenimiento.</li>
-                        <li><strong className="text-foreground">Ubicación:</strong> La usamos exclusivamente para listar los talleres y tiendas de tu ciudad.</li>
-                        <li><strong className="text-foreground">
-                          Otros datos recopilados desde el RUNT sobre vehículo y documentos como SOAT y RTM (Revisión Técnnico Mecánica).
-                          </strong></li>
-                        <li><strong className="text-foreground">
-                          Otros datos recopilados desde el RUNT sobre vehículo y documentos como SOAT y RTM (Revisión Técnnico Mecánica).
-                          </strong></li>
+                        <li><strong className="text-foreground">Lectura del Odómetro:</strong> Para rastrear el kilometraje del vehículo y horarios de mantenimiento preventivo.</li>
+                        <li><strong className="text-foreground">Ubicación:</strong> Se utiliza exclusivamente cuando lo autorizas para sugerir talleres o comercios aliados cercanos a tu ciudad.</li>
                       </ul>
                     </div>
                   </div>
 
-                  <h3 className="font-serif font-bold text-xl text-foreground mb-4 mt-8">2.2. Datos que NO Recopilamos</h3>
+                  <h3 className="font-serif font-bold text-xl text-foreground mb-4 mt-8">2.2. Datos obtenidos de Fuentes Públicas (Mandato Tecnológico)</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Para facilitarte la gestión de tus documentos y notificaciones, incluimos herramientas que consultan portales públicos a tu nombre. Al utilizar la App y dar tu consentimiento explícito, nos otorgas un <strong>mandato tecnológico</strong> (una autorización expresa, previa e informada) para actuar en tu representación y realizar las consultas correspondientes a nombre tuyo:
+                  </p>
+                  
+                  <div className="space-y-6">
+                    <div className="bg-card border border-border rounded-lg p-4 border-l-4 border-l-blue-500">
+                      <h4 className="font-sans font-semibold text-foreground mb-3">Consulta en el RUNT (SOAT y RTM):</h4>
+                      <p className="text-muted-foreground text-sm leading-relaxed">
+                        Obtenemos información sobre la vigencia de tus documentos oficiales. <strong>Nota crítica de privacidad:</strong> La cédula de ciudadanía requerida para esta consulta se procesa de forma <strong>estrictamente efímera</strong> (en tránsito). Entra a nuestro sistema, se usa para la consulta ante el RUNT, y se destruye inmediatamente de la memoria del servidor. <strong>NUNCA almacenamos tu número de cédula en nuestras bases de datos</strong>. Así mismo, no extraemos ni almacenamos datos sensibles de identificación vehicular como el número de chasis, número de motor o código VIN.
+                      </p>
+                    </div>
+
+                    <div className="bg-card border border-border rounded-lg p-4 border-l-4 border-l-blue-500">
+                      <h4 className="font-sans font-semibold text-foreground mb-3">Consulta en el SIMIT (Comparendos y Multas):</h4>
+                      <p className="text-muted-foreground text-sm leading-relaxed">
+                        Utilizamos únicamente la placa de tu vehículo almacenada para que, <strong>cuando tú lo solicites manualmente desde la App</strong>, consultemos el estado de multas y comparendos. No realizamos estas búsquedas en segundo plano ni de forma periódica sin tu intervención directa.
+                      </p>
+                    </div>
+                  </div>
+
+                  <h3 className="font-serif font-bold text-xl text-foreground mb-4 mt-8">2.3. Datos que NO Recopilamos</h3>
                   <p className="text-muted-foreground">
-                    No recopilamos ningún dato personal más allá de lo listado anteriormente. No rastreamos tu ubicación,
-                    no accedemos a tus contactos, ni recopilamos ninguna otra información sensible sin tu consentimiento explícito.
+                    No rastreamos tu ubicación en segundo plano, no leemos ni guardamos tus contactos, no almacenamos tu documento de identidad (cédula) y no recopilamos el código VIN ni el número de chasis de tus vehículos.
                   </p>
                 </div>
               </div>
