@@ -4,7 +4,7 @@ import { EngineOilIcon } from "@/components/ui/engine-oil-icon"
 import { HelmetIcon } from "@/components/ui/helmet-icon"
 import { MaintenanceIcon } from "@/components/ui/maintenance-icon"
 import { MotorcycleIcon } from "@/components/ui/motorcycle-icon"
-import { Fuel, Star, Mountain, Users, Route, ScrollText, TriangleAlert, Scale, Store } from "lucide-react"
+import { Fuel, Star, Mountain, Users, Route, ScrollText, TriangleAlert, Scale, Store, Instagram, Linkedin, Github } from "lucide-react"
 import Image from "next/image"
 
 export default function RodarLibreLanding() {
@@ -276,6 +276,35 @@ export default function RodarLibreLanding() {
                   <div className="p-6 text-center space-y-2">
                     <h3 className="font-sans font-semibold text-card-foreground text-lg">Juan Roa</h3>
                     <p className="text-sm text-muted-foreground">CEO & Founder, Software Engineer</p>
+                    <div className="flex justify-center gap-4 pt-2">
+                      <a 
+                        href="https://instagram.com/thecameratherapy" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                        aria-label="Instagram de Juan Roa"
+                      >
+                        <Instagram className="w-5 h-5" />
+                      </a>
+                      <a 
+                        href="https://linkedin.com/in/roadev" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                        aria-label="LinkedIn de Juan Roa"
+                      >
+                        <Linkedin className="w-5 h-5" />
+                      </a>
+                      <a 
+                        href="https://github.com/roadev" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                        aria-label="GitHub de Juan Roa"
+                      >
+                        <Github className="w-5 h-5" />
+                      </a>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
