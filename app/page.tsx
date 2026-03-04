@@ -67,7 +67,7 @@ export default function RodarLibreLanding() {
             {/* Horizontal layout with App Store and Google Play */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               {/* App Store Section */}
-              <div className="flex flex-col items-center justify-center space-y-6 p-8 bg-card border border-border rounded-2xl h-full">
+              <div className="flex flex-col items-center justify-center p-8 bg-card border border-border rounded-2xl h-full">
                 <a
                   href="https://ios.rodarlibre.co"
                   target="_blank"
@@ -76,17 +76,17 @@ export default function RodarLibreLanding() {
                   className="block w-full"
                 >
                   <Image
-                    src="/web-ios-banner.jpg"
+                    src="/web-ios-banner.png"
                     alt="Descargar en App Store"
                     width={200}
                     height={60}
-                    className="w-full max-w-xs mx-auto hover:opacity-90 transition-opacity cursor-pointer"
+                    className="w-full max-w-xs mx-auto hover:opacity-90 transition-opacity cursor-pointer object-contain"
                   />
                 </a>
               </div>
 
               {/* Google Play Section */}
-              <div className="flex flex-col items-center justify-center space-y-6 p-8 bg-card border border-border rounded-2xl">
+              <div className="flex flex-col items-center justify-center p-8 bg-card border border-border rounded-2xl h-full">
                 <a
                   href="https://play.google.com/store/apps/details?id=com.rodarlibre"
                   target="_blank"
@@ -99,15 +99,8 @@ export default function RodarLibreLanding() {
                     alt="Google Play Store"
                     width={200}
                     height={60}
-                    className="w-full max-w-xs mx-auto hover:opacity-90 transition-opacity cursor-pointer"
+                    className="w-full max-w-xs mx-auto hover:opacity-90 transition-opacity cursor-pointer object-contain"
                   />
-                </a>
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.rodarlibre"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Descargar Rodar Libre en Google Play (se abre en nueva ventana)"
-                >
                 </a>
               </div>
             </div>
