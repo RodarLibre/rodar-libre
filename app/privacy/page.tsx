@@ -3,7 +3,7 @@ import { Shield, Mail, Lock, Eye, UserCheck, FileText, Calendar, AlertCircle } f
 
 export const metadata: Metadata = {
   title: "Política de Privacidad - RodarLibre",
-  description: "Política de privacidad de RodaLibre - Protegemos tu información personal y respetamos tu privacidad.",
+  description: "Política de privacidad de RodarLibre - Protegemos tu información personal y respetamos tu privacidad.",
 }
 
 export default function PrivacyPolicyPage() {
@@ -62,15 +62,15 @@ export default function PrivacyPolicyPage() {
                   <h2 className="font-serif font-bold text-2xl text-foreground mb-4">1. Introducción</h2>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
-                      Bienvenid@ a RodaLibre (&quot;nosotros,&quot; &quot;nuestro,&quot; &quot;nos&quot;). Estamos comprometidos con proteger tu privacidad
+                      Bienvenid@ a RodarLibre (&quot;nosotros,&quot; &quot;nuestro,&quot; &quot;nos&quot;). Estamos comprometidos con proteger tu privacidad
                       y manejar tus datos de manera abierta y transparente. Esta Política de Privacidad explica cómo recopilamos,
-                      usamos, procesamos y protegemos tu información cuando usas nuestra aplicación móvil, RodaLibre (la &quot;App&quot;).
+                      usamos, procesamos y protegemos tu información cuando usas nuestra aplicación móvil, RodarLibre (la &quot;App&quot;).
                     </p>
                     <p>
                       Esta política está diseñada para cumplir tanto con la legislación colombiana de protección de datos personales (Ley 1581 de 2012 y sus decretos reglamentarios) como con los requisitos de Google Play Store y Apple App Store.
                     </p>
                     <div className="bg-card border border-border rounded-lg p-4 space-y-2">
-                      <p><strong className="text-foreground">Nombre de la App:</strong> RodaLibre</p>
+                      <p><strong className="text-foreground">Nombre de la App:</strong> RodarLibre</p>
                       <p><strong className="text-foreground">Desarrollador (Controlador de Datos):</strong> Juan Roa</p>
                       <p><strong className="text-foreground">Contacto para Consultas de Privacidad:</strong> rodarlibre.co@gmail.com</p>
                     </div>
@@ -111,7 +111,7 @@ export default function PrivacyPolicyPage() {
                       <ul className="space-y-2 text-muted-foreground">
                         <li><strong className="text-foreground">Marca, Modelo y Año:</strong> Para identificar las especificaciones de tu vehículo.</li>
                         <li><strong className="text-foreground">Placa:</strong> Para identificar únicamente tu vehículo dentro de la App.</li>
-                        <li><strong className="text-foreground">Lectura del Odómetro:</strong> Para rastrear el kilometraje del vehículo y horarios de mantenimiento preventivo.</li>
+                        <li><strong className="text-foreground">Lectura del Odómetro:</strong> Para rastrear el kilometraje del vehículo y establecer programas de mantenimiento preventivo.</li>
                         <li><strong className="text-foreground">Ubicación:</strong> Se utiliza exclusivamente cuando lo autorizas para sugerir talleres o comercios aliados cercanos a tu ciudad.</li>
                       </ul>
                     </div>
@@ -126,7 +126,7 @@ export default function PrivacyPolicyPage() {
                     <div className="bg-card border border-border rounded-lg p-4 border-l-4 border-l-blue-500">
                       <h4 className="font-sans font-semibold text-foreground mb-3">Consulta en el RUNT (SOAT y RTM):</h4>
                       <p className="text-muted-foreground text-sm leading-relaxed">
-                        Obtenemos información sobre la vigencia de tus documentos oficiales. <strong>Nota crítica de privacidad:</strong> La cédula de ciudadanía requerida para esta consulta se procesa de forma <strong>estrictamente efímera</strong> (en tránsito). Entra a nuestro sistema, se usa para la consulta ante el RUNT, y se destruye inmediatamente de la memoria del servidor. <strong>NUNCA almacenamos tu número de cédula en nuestras bases de datos</strong>. Así mismo, no extraemos ni almacenamos datos sensibles de identificación vehicular como el número de chasis, número de motor o código VIN.
+                        Obtenemos información sobre la vigencia de tus documentos oficiales. <strong>Nota crítica de privacidad:</strong> El número de documento de identidad requerido para esta consulta se procesa de forma <strong>estrictamente efímera</strong> (en tránsito). Entra a nuestro sistema, se usa para la consulta ante el RUNT, y se destruye inmediatamente de la memoria del servidor. <strong>NUNCA almacenamos tu número de documento en nuestras bases de datos</strong>. Así mismo, no extraemos ni almacenamos datos sensibles de identificación vehicular como el número de chasis, número de motor o código VIN.
                       </p>
                     </div>
 
@@ -217,14 +217,14 @@ export default function PrivacyPolicyPage() {
                   <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 mb-6">
                     <h3 className="font-serif font-bold text-lg text-foreground mb-2">🚫 Sin Anuncios ni Venta de Datos</h3>
                     <p className="text-muted-foreground">
-                      <strong>RodaLibre es una experiencia 100% libre de publicidad.</strong> No mostramos anuncios de terceros, 
+                      <strong>RodarLibre es una experiencia 100% libre de publicidad.</strong> No mostramos anuncios de terceros, 
                       no rastreamos tu comportamiento para fines publicitarios y <strong>nunca vendemos tus datos</strong>.
                     </p>
                   </div>
 
                   <p className="text-muted-foreground mb-4">
                     No vendemos, rentamos o compartimos tu información personal con terceros para marketing o cualquier otro propósito.
-                    Tus datos se usan exclusivamente para proporcionar el servicio RodaLibre y mejorar tu experiencia personal.
+                    Tus datos se usan exclusivamente para proporcionar el servicio RodarLibre y mejorar tu experiencia personal.
                   </p>
                   <p className="text-muted-foreground">
                     Solo podemos divulgar tu información si es requerido estrictamente por ley o en respuesta a solicitudes válidas de autoridades
