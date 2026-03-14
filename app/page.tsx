@@ -259,9 +259,9 @@ export default function RodarLibreLanding() {
 
         {/* Our Team Section */}
         <section className="px-4 py-12">
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <h2 className="font-serif font-bold text-2xl text-center mb-8 text-foreground">Nuestro Equipo</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <Card className="bg-card border-border overflow-hidden">
                 <CardContent className="p-0">
                   <div className="aspect-square relative">
@@ -274,31 +274,31 @@ export default function RodarLibreLanding() {
                     />
                   </div>
                   <div className="p-6 text-center space-y-2">
-                    <h3 className="font-sans font-semibold text-card-foreground text-lg">Juan Roa</h3>
-                    <p className="text-sm text-muted-foreground">CEO & Founder, Software Engineer</p>
+                    <h3 className="font-sans font-semibold text-card-foreground text-xl">Juan Roa</h3>
+                    <p className="text-muted-foreground">CEO & Founder, Software Engineer</p>
                     <div className="flex justify-center gap-4 pt-2">
-                      <a 
-                        href="https://instagram.com/thecameratherapy" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
+                      <a
+                        href="https://instagram.com/thecameratherapy"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-primary transition-colors"
                         aria-label="Instagram de Juan Roa"
                       >
                         <Instagram className="w-5 h-5" />
                       </a>
-                      <a 
-                        href="https://linkedin.com/in/roadev" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
+                      <a
+                        href="https://linkedin.com/in/roadev"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-primary transition-colors"
                         aria-label="LinkedIn de Juan Roa"
                       >
                         <Linkedin className="w-5 h-5" />
                       </a>
-                      <a 
-                        href="https://github.com/roadev" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
+                      <a
+                        href="https://github.com/roadev"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-primary transition-colors"
                         aria-label="GitHub de Juan Roa"
                       >
@@ -320,8 +320,25 @@ export default function RodarLibreLanding() {
                     />
                   </div>
                   <div className="p-6 text-center space-y-2">
-                    <h3 className="font-sans font-semibold text-card-foreground text-lg">Jessica Giraldo</h3>
-                    <p className="text-sm text-muted-foreground">Co-Founder, Diseñadora</p>
+                    <h3 className="font-sans font-semibold text-card-foreground text-xl">Jessica Giraldo</h3>
+                    <p className="text-muted-foreground">Co-Founder, Diseñadora</p>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card className="bg-card border-border overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="aspect-square relative">
+                    <Image
+                      src="/arelis.jpeg"
+                      alt="Arelis Sánchez"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                  <div className="p-6 text-center space-y-2">
+                    <h3 className="font-sans font-semibold text-card-foreground text-xl">Arelis Sánchez</h3>
+                    <p className="text-muted-foreground">Publicista, Relaciones Públicas</p>
                   </div>
                 </CardContent>
               </Card>
@@ -376,11 +393,11 @@ export default function RodarLibreLanding() {
                 Facebook
               </a>
               <a 
-                href="https://play.google.com/store/apps/details?id=com.rodarlibre" 
-                target="_blank" 
+                href="https://app.rodarlibre.co" 
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Descarga la app en Google Play"
+                aria-label="Descarga la app"
               >
                 Descarga la app
               </a>
