@@ -294,7 +294,7 @@ export default function RodarLibreLanding() {
         <section className="px-4 py-12">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-serif font-bold text-2xl text-center mb-8 text-foreground">Nuestro Equipo</h2>
-            <div className="flex justify-center gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <Card className="bg-card border-border overflow-hidden">
                 <CardContent className="p-0">
                   <div className="aspect-square relative">
@@ -341,7 +341,6 @@ export default function RodarLibreLanding() {
                   </div>
                 </CardContent>
               </Card>
-              {/* Jessica Giraldo - Commented out
               <Card className="bg-card border-border overflow-hidden">
                 <CardContent className="p-0">
                   <div className="aspect-square relative">
@@ -355,7 +354,7 @@ export default function RodarLibreLanding() {
                   </div>
                   <div className="p-6 text-center space-y-2">
                     <h3 className="font-sans font-semibold text-card-foreground text-xl">Jessica Giraldo</h3>
-                    <p className="text-muted-foreground">Co-Founder, Diseñadora</p>
+                    <p className="text-muted-foreground">Diseñadora</p>
                   </div>
                 </CardContent>
               </Card>
@@ -376,7 +375,6 @@ export default function RodarLibreLanding() {
                   </div>
                 </CardContent>
               </Card>
-              */}
             </div>
           </div>
         </section>
