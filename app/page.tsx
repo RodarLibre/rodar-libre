@@ -345,7 +345,7 @@ export default function RodarLibreLanding() {
                 <CardContent className="p-0">
                   <div className="aspect-square relative">
                     <Image
-                      src="/jess.jpg"
+                      src="/jess2.jpg"
                       alt="Jessica Giraldo"
                       fill
                       className="object-cover"
