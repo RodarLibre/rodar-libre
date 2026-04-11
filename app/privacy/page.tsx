@@ -72,7 +72,7 @@ export default function PrivacyPolicyPage() {
                     <div className="bg-card border border-border rounded-lg p-4 space-y-2">
                       <p><strong className="text-foreground">Nombre de la App:</strong> RodarLibre</p>
                       <p><strong className="text-foreground">Desarrollador (Controlador de Datos):</strong> Juan Roa</p>
-                      <p><strong className="text-foreground">Contacto para Consultas de Privacidad:</strong> rodarlibre.co@gmail.com</p>
+                      <p><strong className="text-foreground">Contacto para Consultas de Privacidad:</strong> hola@rodarlibre.co</p>
                     </div>
                   </div>
                 </div>
@@ -121,7 +121,7 @@ export default function PrivacyPolicyPage() {
                   <p className="text-muted-foreground mb-4">
                     Para facilitarte la gestión de tus documentos y notificaciones, incluimos herramientas que consultan portales públicos a tu nombre. Al utilizar la App y dar tu consentimiento explícito, nos otorgas un <strong>mandato tecnológico</strong> (una autorización expresa, previa e informada) para actuar en tu representación y realizar las consultas correspondientes a nombre tuyo:
                   </p>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-card border border-border rounded-lg p-4 border-l-4 border-l-blue-500">
                       <h4 className="font-sans font-semibold text-foreground mb-3">Consulta en el RUNT (SOAT y RTM):</h4>
@@ -213,11 +213,11 @@ export default function PrivacyPolicyPage() {
                 </div>
                 <div>
                   <h2 className="font-serif font-bold text-2xl text-foreground mb-4">5. Compartir Datos y Publicidad</h2>
-                  
+
                   <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 mb-6">
                     <h3 className="font-serif font-bold text-lg text-foreground mb-2">🚫 Sin Anuncios ni Venta de Datos</h3>
                     <p className="text-muted-foreground">
-                      <strong>RodarLibre es una experiencia 100% libre de publicidad.</strong> No mostramos anuncios de terceros, 
+                      <strong>RodarLibre es una experiencia 100% libre de publicidad.</strong> No mostramos anuncios de terceros,
                       no rastreamos tu comportamiento para fines publicitarios y <strong>nunca vendemos tus datos</strong>.
                     </p>
                   </div>
@@ -260,7 +260,7 @@ export default function PrivacyPolicyPage() {
                         Solicitar Eliminación de Cuenta
                       </a>
                       o enviando una solicitud a nuestro email de contacto de privacidad:
-                      <strong className="text-primary"> rodarlibre.co@gmail.com</strong>. Procesaremos tu solicitud de manera oportuna.
+                      <strong className="text-primary"> hola@rodarlibre.co</strong>. Procesaremos tu solicitud de manera oportuna.
                     </li>
                   </ul>
                 </div>
@@ -331,7 +331,7 @@ export default function PrivacyPolicyPage() {
                   <div className="bg-card border border-border rounded-lg p-4">
                     <p className="text-foreground font-semibold">rodarlibre.co</p>
                     <p className="text-muted-foreground">
-                      <strong className="text-foreground">Email:</strong> rodarlibre.co@gmail.com
+                      <strong className="text-foreground">Email:</strong> hola@rodarlibre.co
                     </p>
                   </div>
                 </div>

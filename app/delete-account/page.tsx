@@ -63,7 +63,7 @@ export default function DeleteAccountPage() {
                   <div className="bg-card border border-border rounded-lg p-4 space-y-2">
                     <p><strong className="text-foreground">Nombre de la App:</strong> RodaLibre</p>
                     <p><strong className="text-foreground">Desarrollador:</strong> Juan Roa</p>
-                    <p><strong className="text-foreground">Contacto:</strong> rodarlibre.co@gmail.com</p>
+                    <p><strong className="text-foreground">Contacto:</strong> hola@rodarlibre.co</p>
                     <p><strong className="text-foreground">Sitio Web:</strong> rodarlibre.co</p>
                   </div>
                 </div>
@@ -135,11 +135,11 @@ export default function DeleteAccountPage() {
                           </p>
                           <div className="bg-muted/50 border border-border rounded-lg p-4">
                             <p className="text-foreground font-semibold mb-2">Email:</p>
-                            <a 
-                              href="mailto:rodarlibre.co@gmail.com?subject=Solicitud de Eliminación de Cuenta&body=Hola,%0D%0A%0D%0ADeseo eliminar permanentemente mi cuenta de RodaLibre.%0D%0A%0D%0ADatos de la cuenta:%0D%0A- Email: [tu email]%0D%0A- Nombre: [tu nombre]%0D%0A%0D%0AConfirmo que deseo eliminar todos mis datos asociados.%0D%0A%0D%0AGracias."
+                            <a
+                              href="mailto:hola@rodarlibre.co?subject=Solicitud de Eliminación de Cuenta&body=Hola,%0D%0A%0D%0ADeseo eliminar permanentemente mi cuenta de RodaLibre.%0D%0A%0D%0ADatos de la cuenta:%0D%0A- Email: [tu email]%0D%0A- Nombre: [tu nombre]%0D%0A%0D%0AConfirmo que deseo eliminar todos mis datos asociados.%0D%0A%0D%0AGracias."
                               className="text-primary hover:text-primary/80 font-medium"
                             >
-                              rodarlibre.co@gmail.com
+                              hola@rodarlibre.co
                             </a>
                           </div>
                         </div>
@@ -154,7 +154,7 @@ export default function DeleteAccountPage() {
                         <div>
                           <h3 className="font-semibold text-foreground mb-2">Espera la confirmación</h3>
                           <p className="text-muted-foreground">
-                            Recibirás una respuesta por email confirmando que hemos recibido tu solicitud. 
+                            Recibirás una respuesta por email confirmando que hemos recibido tu solicitud.
                             Procesaremos tu solicitud dentro de 7 días hábiles.
                           </p>
                         </div>
@@ -169,7 +169,7 @@ export default function DeleteAccountPage() {
                         <div>
                           <h3 className="font-semibold text-foreground mb-2">Confirmación final</h3>
                           <p className="text-muted-foreground">
-                            Una vez procesada tu solicitud, recibirás un email de confirmación indicando que 
+                            Una vez procesada tu solicitud, recibirás un email de confirmación indicando que
                             tu cuenta y todos los datos asociados han sido eliminados permanentemente.
                           </p>
                         </div>
@@ -240,16 +240,16 @@ export default function DeleteAccountPage() {
                     <h3 className="font-semibold text-foreground mb-4">Eliminación Completa</h3>
                     <div className="space-y-4 text-muted-foreground">
                       <p>
-                        <strong className="text-foreground">Todos los datos personales se eliminan permanentemente</strong> 
-                        una vez procesada tu solicitud de eliminación de cuenta. No mantenemos copias de seguridad 
+                        <strong className="text-foreground">Todos los datos personales se eliminan permanentemente</strong>
+                        una vez procesada tu solicitud de eliminación de cuenta. No mantenemos copias de seguridad
                         de tus datos personales después de la eliminación.
                       </p>
                       <p>
-                        <strong className="text-foreground">Tiempo de procesamiento:</strong> Máximo 7 días hábiles 
+                        <strong className="text-foreground">Tiempo de procesamiento:</strong> Máximo 7 días hábiles
                         desde la recepción de tu solicitud.
                       </p>
                       <p>
-                        <strong className="text-foreground">Sin período de retención adicional:</strong> 
+                        <strong className="text-foreground">Sin período de retención adicional:</strong>
                         Una vez eliminados, tus datos no se pueden recuperar.
                       </p>
                     </div>
@@ -292,7 +292,7 @@ export default function DeleteAccountPage() {
                   <div className="bg-card border border-border rounded-lg p-4">
                     <p className="text-foreground font-semibold mb-2">Equipo de Soporte de RodaLibre</p>
                     <p className="text-muted-foreground">
-                      <strong className="text-foreground">Email:</strong> rodarlibre.co@gmail.com
+                      <strong className="text-foreground">Email:</strong> hola@rodarlibre.co
                     </p>
                     <p className="text-muted-foreground">
                       <strong className="text-foreground">Sitio Web:</strong> rodarlibre.co
