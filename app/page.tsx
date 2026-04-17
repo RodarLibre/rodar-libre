@@ -69,14 +69,14 @@ export default function RodarLibreLanding() {
               {/* App Store Section */}
               <div className="flex flex-col items-center justify-center p-8 bg-card border border-border rounded-2xl h-full">
                 <a
-                  href="https://ios.rodarlibre.co"
+                  href="https://apps.apple.com/us/app/rodarlibre/id6762035476 "
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Descargar Rodar Libre en App Store"
                   className="block w-full"
                 >
                   <Image
-                    src="/web-ios-banner.png"
+                    src="/ios_banner.svg"
                     alt="Descargar en App Store"
                     width={200}
                     height={60}
@@ -308,7 +308,7 @@ export default function RodarLibreLanding() {
                   </div>
                   <div className="p-6 text-center space-y-2">
                     <h3 className="font-sans font-semibold text-card-foreground text-xl">Juan Roa</h3>
-                    <p className="text-muted-foreground">CEO & Founder, Software Engineer</p>
+                    <p className="text-muted-foreground">CEO, CTO & Founder, Software Engineer</p>
                     <div className="flex justify-center gap-4 pt-2">
                       <a
                         href="https://instagram.com/thecameratherapy"
