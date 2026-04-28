@@ -341,7 +341,7 @@ export default function RodarLibreLanding() {
                   </div>
                 </CardContent>
               </Card>
-              <Card className="bg-card border-border overflow-hidden">
+              {/* <Card className="bg-card border-border overflow-hidden">
                 <CardContent className="p-0">
                   <div className="aspect-square relative">
                     <Image
@@ -357,8 +357,8 @@ export default function RodarLibreLanding() {
                     <p className="text-muted-foreground">Diseñadora</p>
                   </div>
                 </CardContent>
-              </Card>
-              <Card className="bg-card border-border overflow-hidden">
+              </Card> */}
+              {/* <Card className="bg-card border-border overflow-hidden">
                 <CardContent className="p-0">
                   <div className="aspect-square relative">
                     <Image
@@ -374,7 +374,7 @@ export default function RodarLibreLanding() {
                     <p className="text-muted-foreground">Publicista, Relaciones Públicas</p>
                   </div>
                 </CardContent>
-              </Card>
+              </Card> */}
             </div>
           </div>
         </section>
