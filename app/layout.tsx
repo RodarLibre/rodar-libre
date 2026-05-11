@@ -20,6 +20,7 @@ const openSans = Open_Sans({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://rodarlibre.co"),
   title: "Rodar Libre - La primera app para moter@s en Colombia",
   description: "Rueda libre, vive la ruta. Cuida tu moto. Síguenos en @rodarlibre.co",
   generator: "v0.app",
