@@ -23,19 +23,10 @@ export default function PrivacyPolicyPage() {
         <div className="absolute bottom-60 right-1/4 w-1 h-1 bg-foreground rounded-full opacity-80"></div>
       </div>
 
-      <div className="relative z-10">
+      <div className="relative z-10 pt-20">
         {/* Header Section */}
         <header className="px-4 py-8 border-b border-border bg-muted/20">
           <div className="max-w-4xl mx-auto">
-            <div className="flex items-center gap-4 mb-6">
-              <a
-                href="/"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Volver al inicio"
-              >
-                ← Volver al inicio
-              </a>
-            </div>
             <div className="flex items-center gap-4 mb-4">
               <div className="p-3 bg-primary/10 rounded-lg">
                 <Shield className="w-8 h-8 text-primary" />
@@ -352,6 +343,12 @@ export default function PrivacyPolicyPage() {
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Inicio
+                </a>
+                <a
+                  href="/aliados"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Aliados
                 </a>
                 <a
                   href="https://instagram.com/rodarlibre.co/"

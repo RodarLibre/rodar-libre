@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Montserrat } from "next/font/google"
 import { Open_Sans } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { Navbar } from "@/components/navbar"
 import "./globals.css"
 
 const montserrat = Montserrat({
@@ -70,6 +71,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${montserrat.variable} ${openSans.variable} antialiased`}>
       <body className="dark">
+        <Navbar />
         {children}
         <Analytics />
       </body>

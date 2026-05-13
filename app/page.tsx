@@ -30,7 +30,7 @@ export default function RodarLibreLanding() {
 
       <div className="relative z-10">
         {/* Hero Section */}
-        <section className="px-4 py-16 text-center">
+        <section id="hero" className="px-4 pt-32 pb-16 text-center scroll-mt-28">
           <div className="max-w-md mx-auto space-y-8">
             {/* Logo */}
             <div className="flex justify-center">
@@ -58,7 +58,7 @@ export default function RodarLibreLanding() {
         </section>
 
         {/* Download App Section */}
-        <section className="px-4 py-16 bg-muted/20">
+        <section id="download" className="px-4 py-16 bg-muted/20 scroll-mt-28">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-serif font-bold text-2xl text-center mb-12 text-foreground">
               Descarga la app
@@ -149,7 +149,7 @@ export default function RodarLibreLanding() {
         </section>
 
         {/* Features Section */}
-        <section className="px-4 py-12">
+        <section id="features" className="px-4 py-12 scroll-mt-28">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-serif font-bold text-2xl text-center mb-8 text-foreground">¿Qué puedes hacer?</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -291,7 +291,7 @@ export default function RodarLibreLanding() {
         </section>
 
         {/* Our Team Section */}
-        <section className="px-4 py-12">
+        <section id="team" className="px-4 py-12 scroll-mt-28">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-serif font-bold text-2xl text-center mb-8 text-foreground">Nuestro Equipo</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -341,7 +341,7 @@ export default function RodarLibreLanding() {
                   </div>
                 </CardContent>
               </Card>
-              {/* <Card className="bg-card border-border overflow-hidden">
+              <Card className="bg-card border-border overflow-hidden">
                 <CardContent className="p-0">
                   <div className="aspect-square relative">
                     <Image
@@ -354,33 +354,62 @@ export default function RodarLibreLanding() {
                   </div>
                   <div className="p-6 text-center space-y-2">
                     <h3 className="font-sans font-semibold text-card-foreground text-xl">Jessica Giraldo</h3>
-                    <p className="text-muted-foreground">Diseñadora</p>
+                    <p className="text-muted-foreground">Diseñadora & Founder</p>
                   </div>
                 </CardContent>
-              </Card> */}
-              {/* <Card className="bg-card border-border overflow-hidden">
+              </Card>
+              <Card className="bg-card border-border overflow-hidden">
                 <CardContent className="p-0">
                   <div className="aspect-square relative">
                     <Image
-                      src="/arelis.jpeg"
-                      alt="Arelis Sánchez"
+                      src="/juan_david_mazuera.jpeg"
+                      alt="Juan David Mazuera"
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
                   </div>
                   <div className="p-6 text-center space-y-2">
-                    <h3 className="font-sans font-semibold text-card-foreground text-xl">Arelis Sánchez</h3>
-                    <p className="text-muted-foreground">Publicista, Relaciones Públicas</p>
+                    <h3 className="font-sans font-semibold text-card-foreground text-xl">Juan David Mazuera</h3>
+                    <p className="text-muted-foreground">Desarrollador Senior Web / Mobile & Founder</p>
+                    <div className="flex justify-center gap-4 pt-2">
+                      <a
+                        href="https://www.instagram.com/libresen2ruedas/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                        aria-label="Instagram de Juan David Mazuera"
+                      >
+                        <Instagram className="w-5 h-5" />
+                      </a>
+                      <a
+                        href="https://www.linkedin.com/in/juan-mazuera/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                        aria-label="LinkedIn de Juan David Mazuera"
+                      >
+                        <Linkedin className="w-5 h-5" />
+                      </a>
+                      <a
+                        href="https://github.com/jdmazuera/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                        aria-label="GitHub de Juan David Mazuera"
+                      >
+                        <Github className="w-5 h-5" />
+                      </a>
+                    </div>
                   </div>
                 </CardContent>
-              </Card> */}
+              </Card>
             </div>
           </div>
         </section>
 
         {/* Coming Soon Section */}
-        <section className="px-4 py-12 bg-muted/20">
+        <section id="news" className="px-4 py-12 bg-muted/20 scroll-mt-28">
           <div className="max-w-md mx-auto text-center space-y-6">
             <h2 className="font-serif font-bold text-2xl text-foreground">Lo que vendrá después</h2>
             <div className="flex justify-center gap-8 text-primary">
@@ -406,6 +435,12 @@ export default function RodarLibreLanding() {
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 Privacidad
+              </a>
+              <a 
+                href="/aliados" 
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                Aliados
               </a>
               <a
                 href="https://instagram.com/rodarlibre.co/"
