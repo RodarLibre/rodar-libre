@@ -36,7 +36,7 @@ export default function RodarLibreLanding() {
             <div className="flex justify-center">
               <Image
                 src="/logo.jpg"
-                alt="Rodar Libre Logo"
+                alt="RodarLibre Logo"
                 width={384}
                 height={384}
                 className="w-60 h-60 md:w-96 md:h-96 object-contain"
@@ -72,7 +72,7 @@ export default function RodarLibreLanding() {
                   href="https://apps.apple.com/us/app/rodarlibre/id6762035476 "
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Descargar Rodar Libre en App Store"
+                  aria-label="Descargar RodarLibre en App Store"
                   className="block w-full"
                 >
                   <Image
@@ -91,7 +91,7 @@ export default function RodarLibreLanding() {
                   href="https://play.google.com/store/apps/details?id=com.rodarlibre"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Descargar Rodar Libre en Google Play"
+                  aria-label="Descargar RodarLibre en Google Play"
                   className="block w-full"
                 >
                   <Image
@@ -120,7 +120,7 @@ export default function RodarLibreLanding() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Seguir a Rodar Libre en Instagram"
+                aria-label="Seguir a RodarLibre en Instagram"
               >
                 <Instagram className="w-14 h-14" />
               </a>
@@ -129,7 +129,7 @@ export default function RodarLibreLanding() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Seguir a Rodar Libre en Facebook"
+                aria-label="Seguir a RodarLibre en Facebook"
               >
                 <Facebook className="w-14 h-14" />
               </a>
@@ -138,7 +138,7 @@ export default function RodarLibreLanding() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Seguir a Rodar Libre en TikTok"
+                aria-label="Seguir a RodarLibre en TikTok"
               >
                 <svg className="w-14 h-14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                   <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
@@ -428,7 +428,7 @@ export default function RodarLibreLanding() {
         {/* Footer */}
         <footer className="px-4 py-8 bg-background border-t border-border">
           <div className="max-w-md mx-auto text-center space-y-4">
-            <p className="text-sm text-muted-foreground">© 2026 Rodar Libre. Todos los derechos reservados.</p>
+            <p className="text-sm text-muted-foreground">© 2026 RodarLibre. Todos los derechos reservados.</p>
             <div className="flex justify-center gap-6">
               <a 
                 href="/privacy" 
@@ -447,7 +447,7 @@ export default function RodarLibreLanding() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Seguir a Rodar Libre en Instagram (se abre en nueva ventana)"
+                aria-label="Seguir a RodarLibre en Instagram (se abre en nueva ventana)"
               >
                 Instagram
               </a>
@@ -456,7 +456,7 @@ export default function RodarLibreLanding() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Seguir a Rodar Libre en Facebook (se abre en nueva ventana)"
+                aria-label="Seguir a RodarLibre en Facebook (se abre en nueva ventana)"
               >
                 Facebook
               </a>
@@ -467,7 +467,7 @@ export default function RodarLibreLanding() {
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="Descarga la app"
               >
-                Descarga la app
+                Descarga la App
               </a>
             </div>
           </div>

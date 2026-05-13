@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { Users, TrendingUp, Zap, MessageCircle } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Aliados - Rodar Libre",
+  title: "Aliados - RodarLibre",
   description: "Haz crecer tu negocio con Rodar Libre. Únete a nuestra red de aliados en Colombia.",
 }
 
@@ -13,8 +13,8 @@ const perks = [
 ]
 
 export default function AlliesPage() {
-  const whatsappNumber = "573000000000"
-  const whatsappMessage = encodeURIComponent("¡Hola! Me interesa ser aliado de Rodar Libre 🚀")
+  const whatsappNumber = "573195930092"
+  const whatsappMessage = encodeURIComponent("¡Hola! Me interesa ser aliado de RodarLibre 🚀")
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`
 
   return (
@@ -67,7 +67,7 @@ export default function AlliesPage() {
               <MessageCircle className="w-6 h-6 fill-white/30" />
               Escríbenos por WhatsApp
             </a>
-            <p className="text-xs text-muted-foreground">Sin compromisos · Respondemos rápido</p>
+            <p className="text-xs text-muted-foreground">¡Ponte en contacto con nosotros!</p>
           </div>
 
         </div>
