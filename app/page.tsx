@@ -427,18 +427,18 @@ export default function RodarLibreLanding() {
 
         {/* Footer */}
         <footer className="px-4 py-8 bg-background border-t border-border">
-          <div className="max-w-md mx-auto text-center space-y-4">
+          <div className="max-w-xl mx-auto text-center space-y-4">
             <p className="text-sm text-muted-foreground">© 2026 RodarLibre. Todos los derechos reservados.</p>
-            <div className="flex justify-center gap-6">
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
               <a 
                 href="/privacy" 
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
               >
                 Privacidad
               </a>
               <a 
                 href="/aliados" 
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
               >
                 Aliados
               </a>
@@ -446,7 +446,7 @@ export default function RodarLibreLanding() {
                 href="https://instagram.com/rodarlibre.co/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
                 aria-label="Seguir a RodarLibre en Instagram (se abre en nueva ventana)"
               >
                 Instagram
@@ -455,7 +455,7 @@ export default function RodarLibreLanding() {
                 href="https://www.facebook.com/rodarlibre.co"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
                 aria-label="Seguir a RodarLibre en Facebook (se abre en nueva ventana)"
               >
                 Facebook
@@ -464,7 +464,7 @@ export default function RodarLibreLanding() {
                 href="https://app.rodarlibre.co" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
                 aria-label="Descarga la app"
               >
                 Descarga la App
