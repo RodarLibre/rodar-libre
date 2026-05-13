@@ -11,8 +11,8 @@ import { cn } from "@/lib/utils"
 const navLinks = [
   { name: "Inicio", href: "/#hero", sectionId: "hero" },
   { name: "Funciones", href: "/#features", sectionId: "features" },
+  { name: "Aliados", href: "/#aliados", sectionId: "aliados" },
   { name: "Equipo", href: "/#team", sectionId: "team" },
-  { name: "Aliados", href: "/aliados", sectionId: null },
 ]
 
 function smoothScrollTo(id: string) {
@@ -36,10 +36,8 @@ export function Navbar() {
 
   function handleNavClick(
     e: React.MouseEvent<HTMLAnchorElement>,
-    link: { href: string; sectionId: string | null }
+    link: { href: string; sectionId: string }
   ) {
-    if (!link.sectionId) return // let Next.js handle page links normally
-
     e.preventDefault()
     setIsOpen(false)
 

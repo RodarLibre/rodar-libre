@@ -22,9 +22,8 @@ const openSans = Open_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://rodarlibre.co"),
-  title: "Rodar Libre - La primera app para moter@s en Colombia",
-  description: "Rueda libre, vive la ruta. Cuida tu moto. Síguenos en @rodarlibre.co",
-  generator: "v0.app",
+  title: "Rodar Libre - La primera app para conductores en Colombia",
+  description: "Rueda libre, vive la ruta, cuida tu vehículo. Síguenos en @rodarlibre.co",
   icons: {
     icon: [
       { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -40,16 +39,16 @@ export const metadata: Metadata = {
   },
   manifest: "/favicon/site.webmanifest",
   openGraph: {
-    title: "Rodar Libre - La primera app para moter@s en Colombia",
-    description: "Rueda libre, vive la ruta. Cuida tu moto. Síguenos en @rodarlibre.co",
+    title: "Rodar Libre - La primera app para conductores en Colombia",
+    description: "Rueda libre, vive la ruta, cuida tu vehículo. Síguenos en @rodarlibre.co",
     url: "https://rodarlibre.co/",
     siteName: "Rodar Libre",
     images: [
       {
         url: "/squared-logo.png",
-        width: 1024,
+        width: 683,
         height: 1024,
-        alt: "Rodar Libre - App para moteros en Colombia",
+        alt: "Rodar Libre - App para conductores en Colombia",
       },
     ],
     locale: "es_CO",
@@ -57,8 +56,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rodar Libre - La primera app para moteros en Colombia",
-    description: "Rueda libre, vive la ruta. Cuida tu moto. Síguenos en @rodarlibre.co",
+    title: "Rodar Libre - La primera app para conductores en Colombia",
+    description: "Rueda libre, vive la ruta, cuida tu vehículo. Síguenos en @rodarlibre.co",
     images: ["/logo-og.jpg"],
   },
 }

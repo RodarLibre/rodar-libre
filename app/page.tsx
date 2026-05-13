@@ -4,10 +4,20 @@ import { EngineOilIcon } from "@/components/ui/engine-oil-icon"
 import { HelmetIcon } from "@/components/ui/helmet-icon"
 import { MaintenanceIcon } from "@/components/ui/maintenance-icon"
 import { MotorcycleIcon } from "@/components/ui/motorcycle-icon"
-import { Fuel, Star, Mountain, Users, Route, ScrollText, TriangleAlert, Scale, Store, Instagram, Linkedin, Github, Facebook } from "lucide-react"
+import { Fuel, Star, Mountain, Users, Route, ScrollText, TriangleAlert, Scale, Store, Instagram, Linkedin, Github, Facebook, TrendingUp, Zap, MessageCircle } from "lucide-react"
 import Image from "next/image"
 
+const allyPerks = [
+  { icon: Users, label: "Miles de clientes potenciales" },
+  { icon: TrendingUp, label: "Mayor visibilidad digital" },
+  { icon: Zap, label: "Presencia en la app" },
+]
+
 export default function RodarLibreLanding() {
+  const whatsappNumber = "573195930092"
+  const whatsappMessage = encodeURIComponent("¡Hola! Me interesa ser aliado de RodarLibre 🚀")
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Starry background pattern */}
@@ -290,6 +300,49 @@ export default function RodarLibreLanding() {
           </div>
         </section>
 
+        {/* Allies Section */}
+        <section id="aliados" className="px-4 py-12 bg-muted/20 scroll-mt-28">
+          <div className="max-w-4xl mx-auto">
+            <div className="max-w-sm mx-auto">
+              <div className="rounded-3xl border border-border bg-card overflow-hidden shadow-2xl shadow-black/20">
+                <div className="bg-gradient-to-br from-primary/20 via-primary/5 to-transparent px-8 pt-10 pb-8 text-center space-y-3 border-b border-border">
+                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Aliados</p>
+                  <h2 className="font-serif font-black text-4xl text-foreground leading-tight">
+                    Llega a más
+                    <br />
+                    clientes
+                  </h2>
+                  <p className="text-muted-foreground text-sm">Únete a la lista de espera.</p>
+                </div>
+
+                <div className="px-8 py-6 space-y-4 border-b border-border">
+                  {allyPerks.map(({ icon: Icon, label }) => (
+                    <div key={label} className="flex items-center gap-4">
+                      <div className="p-2 bg-primary/10 rounded-xl flex-shrink-0">
+                        <Icon className="w-5 h-5 text-primary" />
+                      </div>
+                      <span className="text-sm font-medium text-foreground">{label}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="px-8 py-8 space-y-3 text-center">
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-3 w-full h-14 rounded-2xl bg-[#1FA855] hover:bg-[#188C47] active:scale-95 transition-all text-white font-bold text-lg shadow-lg shadow-[#1FA855]/25"
+                  >
+                    <MessageCircle className="w-6 h-6 fill-white/30" />
+                    Escríbenos por WhatsApp
+                  </a>
+                  <p className="text-xs text-muted-foreground">¡Ponte en contacto con nosotros!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Our Team Section */}
         <section id="team" className="px-4 py-12 scroll-mt-28">
           <div className="max-w-4xl mx-auto">
@@ -436,8 +489,8 @@ export default function RodarLibreLanding() {
               >
                 Privacidad
               </a>
-              <a 
-                href="/aliados" 
+              <a
+                href="/#aliados"
                 className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
               >
                 Aliados
