@@ -398,23 +398,6 @@ export default function RodarLibreLanding() {
                 <CardContent className="p-0">
                   <div className="aspect-square relative">
                     <Image
-                      src="/jess2.jpg"
-                      alt="Jessica Giraldo"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                  </div>
-                  <div className="p-6 text-center space-y-2">
-                    <h3 className="font-sans font-semibold text-card-foreground text-xl">Jessica Giraldo</h3>
-                    <p className="text-muted-foreground">Diseñadora & Founder</p>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card className="bg-card border-border overflow-hidden">
-                <CardContent className="p-0">
-                  <div className="aspect-square relative">
-                    <Image
                       src="/juan_david_mazuera.jpeg"
                       alt="Juan David Mazuera"
                       fill
@@ -454,6 +437,24 @@ export default function RodarLibreLanding() {
                         <Github className="w-5 h-5" />
                       </a>
                     </div>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card className="bg-card border-border overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="aspect-square relative">
+                    <Image
+                      src="/juan_diego_roa.jpeg"
+                      alt="Juan Diego Roa"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      loading="eager"
+                    />
+                  </div>
+                  <div className="p-6 text-center space-y-2">
+                    <h3 className="font-sans font-semibold text-card-foreground text-xl">Juan Diego Roa</h3>
+                    <p className="text-muted-foreground">Comercial y Soporte</p>
                   </div>
                 </CardContent>
               </Card>
