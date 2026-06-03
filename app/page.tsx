@@ -4,7 +4,7 @@ import { EngineOilIcon } from "@/components/ui/engine-oil-icon"
 import { HelmetIcon } from "@/components/ui/helmet-icon"
 import { MaintenanceIcon } from "@/components/ui/maintenance-icon"
 import { MotorcycleIcon } from "@/components/ui/motorcycle-icon"
-import { Fuel, Star, Mountain, Users, Route, ScrollText, TriangleAlert, Scale, Store, Instagram, Linkedin, Github, Facebook, TrendingUp, Zap, MessageCircle } from "lucide-react"
+import { Fuel, Mountain, Users, ScrollText, TriangleAlert, Scale, Store, Instagram, Linkedin, Github, Facebook, TrendingUp, Zap, MessageCircle } from "lucide-react"
 import Image from "next/image"
 
 const allyPerks = [
@@ -462,20 +462,28 @@ export default function RodarLibreLanding() {
           </div>
         </section>
 
-        {/* Coming Soon Section */}
-        <section id="news" className="px-4 py-12 bg-muted/20 scroll-mt-28">
-          <div className="max-w-md mx-auto text-center space-y-6">
-            <h2 className="font-serif font-bold text-2xl text-foreground">Lo que vendrá después</h2>
-            <div className="flex justify-center gap-8 text-primary">
-              <Route className="w-8 h-8" />
-              <Users className="w-8 h-8" />
-              <Star className="w-8 h-8" />
+        {/* Supporters Section */}
+        <section id="apoyan" className="px-4 py-12 bg-muted/20 scroll-mt-28">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-serif font-bold text-2xl text-center mb-8 text-foreground">Apoyan</h2>
+            <div className="flex justify-center">
+              <a
+                href="https://www.youtube.com/@Libresen2Ruedas/videos"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visitar el canal de YouTube de Libres en 2 Ruedas"
+                className="block transition-opacity hover:opacity-80"
+              >
+                <Image
+                  src="/libres_en_2_ruedas.jpeg"
+                  alt="Libres en 2 Ruedas"
+                  width={768}
+                  height={768}
+                  className="w-full max-w-[358px] mx-auto object-contain rounded-2xl"
+                  sizes="(max-width: 768px) 100vw, 358px"
+                />
+              </a>
             </div>
-            <p className="font-sans text-lg text-muted-foreground">
-              <span className="text-primary font-semibold">Muy pronto:</span>
-              <br />
-              rutas, comunidad y mucho más
-            </p>
           </div>
         </section>
 
