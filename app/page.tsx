@@ -151,7 +151,7 @@ export default function RodarLibreLanding() {
                 aria-label="Seguir a RodarLibre en TikTok"
               >
                 <svg className="w-14 h-14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
                 </svg>
               </a>
             </div>
@@ -312,7 +312,7 @@ export default function RodarLibreLanding() {
                     <br />
                     clientes
                   </h2>
-                  <p className="text-muted-foreground text-sm">Únete a la lista de espera.</p>
+                  <p className="text-muted-foreground text-sm">Haz que tu negocio crezca siendo parte de nuestros aliados</p>
                 </div>
 
                 <div className="px-8 py-6 space-y-4 border-b border-border">
@@ -492,8 +492,8 @@ export default function RodarLibreLanding() {
           <div className="max-w-xl mx-auto text-center space-y-4">
             <p className="text-sm text-muted-foreground">© 2026 RodarLibre. Todos los derechos reservados.</p>
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
-              <a 
-                href="/privacy" 
+              <a
+                href="/privacy"
                 className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
               >
                 Privacidad
@@ -522,8 +522,8 @@ export default function RodarLibreLanding() {
               >
                 Facebook
               </a>
-              <a 
-                href="https://app.rodarlibre.co" 
+              <a
+                href="https://app.rodarlibre.co"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
