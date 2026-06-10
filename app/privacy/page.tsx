@@ -221,6 +221,13 @@ export default function PrivacyPolicyPage() {
                     Solo podemos divulgar tu información si es requerido estrictamente por ley o en respuesta a solicitudes válidas de autoridades
                     públicas (ej., un tribunal o una agencia gubernamental).
                   </p>
+                  <p className="text-muted-foreground mt-4">
+                    Si interactúas con aliados comerciales a través de la App, te recomendamos revisar nuestras{" "}
+                    <a href="/allies-conditions" className="text-primary hover:text-primary/80 font-medium">
+                      Condiciones Generales de Aliados
+                    </a>{" "}
+                    para conocer los detalles sobre la responsabilidad y el tratamiento de tus datos por parte de dichos aliados.
+                  </p>
                 </div>
               </div>
             </section>
@@ -349,6 +356,12 @@ export default function PrivacyPolicyPage() {
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Aliados
+                </a>
+                <a
+                  href="/allies-conditions"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Condiciones de Aliados
                 </a>
                 <a
                   href="https://instagram.com/rodarlibre.co/"

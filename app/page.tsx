@@ -499,6 +499,12 @@ export default function RodarLibreLanding() {
                 Privacidad
               </a>
               <a
+                href="/allies-conditions"
+                className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
+              >
+                Condiciones de Aliados
+              </a>
+              <a
                 href="/#aliados"
                 className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
               >

@@ -324,6 +324,12 @@ export default function DeleteAccountPage() {
                   Política de Privacidad
                 </a>
                 <a
+                  href="/allies-conditions"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Condiciones de Aliados
+                </a>
+                <a
                   href="https://instagram.com/rodarlibre.co/"
                   target="_blank"
                   rel="noopener noreferrer"
