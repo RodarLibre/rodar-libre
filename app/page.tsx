@@ -95,7 +95,7 @@ export default function RodarLibreLanding() {
             {/* Logo */}
             <div className="flex justify-center">
               <Image
-                src="/logo.jpg"
+                src="/logo.webp"
                 alt="RodarLibre Logo"
                 width={384}
                 height={384}
