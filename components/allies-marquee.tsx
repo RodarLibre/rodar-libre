@@ -10,9 +10,9 @@ const MARQUEE_DURATION_SECONDS = 35
 const allies = [
   { name: "Capital Motos", logo: "/allies/capital_motos_logo.jpg" },
   { name: "Nómadas Urbanos", logo: "/allies/nomadas_urbanos.jpg" },
-  { name: "KB Motos Racing", logo: "/allies/kb_motos_racing.jpg" },
+  // { name: "KB Motos Racing", logo: "/allies/kb_motos_racing.jpg" },
   { name: "MotoExplorer", logo: "/allies/motoexplorer_logo.png" },
-  { name: "RS Rueda Seguro Biker", logo: "/allies/rs-rueda-seguro-biker.jpeg" },
+  // { name: "RS Rueda Seguro Biker", logo: "/allies/rs-rueda-seguro-biker.jpeg" },
   { name: "Duro Herrajes", logo: "/allies/duroherrajes_logo.jpg" },
   { name: "Damotos", logo: "/allies/damotos_logo.png" },
 ]
