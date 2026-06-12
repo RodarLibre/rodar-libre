@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils"
 const navLinks = [
   { name: "Inicio", href: "/#hero", sectionId: "hero" },
   { name: "Funciones", href: "/#features", sectionId: "features" },
+  { name: "Nuestra App", href: "/#app", sectionId: "app" },
   { name: "Aliados", href: "/#aliados", sectionId: "aliados" },
   { name: "Equipo", href: "/#team", sectionId: "team" },
 ]

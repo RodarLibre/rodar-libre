@@ -1,9 +1,13 @@
+import fs from "node:fs"
+import path from "node:path"
 
 import { Card, CardContent } from "@/components/ui/card"
 import { EngineOilIcon } from "@/components/ui/engine-oil-icon"
 import { HelmetIcon } from "@/components/ui/helmet-icon"
 import { MaintenanceIcon } from "@/components/ui/maintenance-icon"
 import { MotorcycleIcon } from "@/components/ui/motorcycle-icon"
+import { AlliesMarquee } from "@/components/allies-marquee"
+import { AppShowcase, type AppScreen } from "@/components/app-showcase"
 import { Fuel, Mountain, Users, ScrollText, TriangleAlert, Scale, Store, Instagram, Linkedin, Github, Facebook, TrendingUp, Zap, MessageCircle } from "lucide-react"
 import Image from "next/image"
 
@@ -13,13 +17,59 @@ const allyPerks = [
   { icon: Zap, label: "Presencia en la app" },
 ]
 
+// Texto alternativo por archivo. Las capturas sin entrada usan un alt genérico.
+const appScreenAlts: Record<string, string> = {
+  "01-aliados-y-beneficios.png":
+    "Pantalla de Aliados y Beneficios de la app RodarLibre mostrando eventos para moteros",
+  "02-perfil-aliado-taller.png":
+    "Perfil de un taller aliado en la app RodarLibre con información de contacto y reseñas",
+  "03-perfil-aliado-comunidad.png":
+    "Perfil de una comunidad aliada en la app RodarLibre con beneficios y próximos eventos",
+  "04-detalle-evento.png":
+    "Detalle de un evento en la app RodarLibre con fecha, ubicación y precio de entrada",
+}
+
+// Las capturas se descubren en build: para agregar más basta subir la imagen a /public/app
+function getAppScreens(): AppScreen[] {
+  const dir = path.join(process.cwd(), "public", "app")
+  return fs
+    .readdirSync(dir)
+    .filter((file) => /\.(png|jpe?g|webp|avif)$/i.test(file))
+    .sort()
+    .map((file) => ({
+      src: `/app/${file}`,
+      alt: appScreenAlts[file] ?? "Captura de pantalla de la app RodarLibre",
+    }))
+}
+
+const appJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  name: "RodarLibre",
+  operatingSystem: "iOS, Android",
+  applicationCategory: "LifestyleApplication",
+  description:
+    "La primera app para conductores en Colombia. Registra tanqueadas, controla mantenimientos, guarda tus documentos y accede a beneficios con aliados.",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "COP" },
+  url: "https://rodarlibre.co",
+  downloadUrl: [
+    "https://apps.apple.com/us/app/rodarlibre/id6762035476",
+    "https://play.google.com/store/apps/details?id=com.rodarlibre",
+  ],
+}
+
 export default function RodarLibreLanding() {
   const whatsappNumber = "573195930092"
   const whatsappMessage = encodeURIComponent("¡Hola! Me interesa ser aliado de RodarLibre 🚀")
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`
+  const appScreens = getAppScreens()
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(appJsonLd) }}
+      />
       {/* Starry background pattern */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-muted/20"></div>
@@ -300,9 +350,22 @@ export default function RodarLibreLanding() {
           </div>
         </section>
 
+        {/* Our App Section */}
+        <section id="app" className="px-4 py-12 bg-muted/20 scroll-mt-28">
+          <div className="max-w-4xl mx-auto space-y-8">
+            <div className="text-center space-y-3">
+              <h2 className="font-serif font-bold text-2xl text-foreground">Nuestra App</h2>
+              <p className="text-muted-foreground text-sm max-w-md mx-auto">
+                Aliados, beneficios, eventos y todo lo que necesitas para rodar, en la palma de tu mano.
+              </p>
+            </div>
+            <AppShowcase screens={appScreens} />
+          </div>
+        </section>
+
         {/* Allies Section */}
-        <section id="aliados" className="px-4 py-12 bg-muted/20 scroll-mt-28">
-          <div className="max-w-4xl mx-auto">
+        <section id="aliados" className="px-4 py-12 scroll-mt-28">
+          <div className="max-w-4xl mx-auto space-y-12">
             <div className="max-w-sm mx-auto">
               <div className="rounded-3xl border border-border bg-card overflow-hidden shadow-2xl shadow-black/20">
                 <div className="bg-gradient-to-br from-primary/20 via-primary/5 to-transparent px-8 pt-10 pb-8 text-center space-y-3 border-b border-border">
@@ -340,11 +403,19 @@ export default function RodarLibreLanding() {
                 </div>
               </div>
             </div>
+
+            {/* Current allies strip */}
+            <div className="space-y-6">
+              <h3 className="font-serif font-bold text-xl text-center text-foreground">
+                Ya confían en nosotros
+              </h3>
+              <AlliesMarquee />
+            </div>
           </div>
         </section>
 
         {/* Our Team Section */}
-        <section id="team" className="px-4 py-12 scroll-mt-28">
+        <section id="team" className="px-4 py-12 bg-muted/20 scroll-mt-28">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-serif font-bold text-2xl text-center mb-8 text-foreground">Nuestro Equipo</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -463,7 +534,7 @@ export default function RodarLibreLanding() {
         </section>
 
         {/* Supporters Section */}
-        <section id="apoyan" className="px-4 py-12 bg-muted/20 scroll-mt-28">
+        <section id="apoyan" className="px-4 py-12 scroll-mt-28">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-serif font-bold text-2xl text-center mb-8 text-foreground">Apoyan</h2>
             <div className="flex justify-center">
