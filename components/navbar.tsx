@@ -75,19 +75,19 @@ export function Navbar() {
     >
       <div className="max-w-4xl mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="relative w-10 h-10 overflow-hidden rounded-lg border border-border group-hover:border-primary transition-colors">
-            <Image
-              src="/logo.jpg"
-              alt="RodarLibre Logo"
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
-          <span className="font-serif font-bold text-xl tracking-tight text-foreground group-hover:text-primary transition-colors">
-            RodarLibre
-          </span>
+        <Link href="/" className="flex items-center group" aria-label="Ir al inicio de RodarLibre">
+          <Image
+            src="/logo-lettering.png"
+            alt="RodarLibre"
+            width={420}
+            height={231}
+            className={cn(
+              "w-auto object-contain transition-all duration-300 group-hover:opacity-85",
+              scrolled ? "h-9" : "h-11"
+            )}
+            priority
+            sizes="96px"
+          />
         </Link>
 
         {/* Desktop Navigation */}
