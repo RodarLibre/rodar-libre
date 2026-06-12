@@ -79,14 +79,14 @@ export function Navbar() {
           <div className="relative w-10 h-10 overflow-hidden rounded-lg border border-border group-hover:border-primary transition-colors">
             <Image
               src="/logo.jpg"
-              alt="Rodar Libre Logo"
+              alt="RodarLibre Logo"
               fill
               className="object-contain"
               priority
             />
           </div>
           <span className="font-serif font-bold text-xl tracking-tight text-foreground group-hover:text-primary transition-colors">
-            Rodar Libre
+            RodarLibre
           </span>
         </Link>
 
