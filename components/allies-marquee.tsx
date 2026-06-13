@@ -9,6 +9,7 @@ const MARQUEE_DURATION_SECONDS = 35
 /** Para agregar un aliado: sube el logo a /public/allies y añade una entrada aquí. */
 const allies = [
   // { name: "Royal Enfield Cali Panamericana", logo: "/allies/re_cali_panamericana.png" },
+  { name: "RS Rueda Seguro", logo: "/allies/rs-rueda-seguro-biker.webp" },
   { name: "Capital Motos", logo: "/allies/capital_motos_logo.jpg" },
   { name: "Nómadas Urbanos", logo: "/allies/nomadas_urbanos.jpg" },
   // { name: "KB Motos Racing", logo: "/allies/kb_motos_racing.jpg" },
