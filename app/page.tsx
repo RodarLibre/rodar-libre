@@ -120,10 +120,6 @@ export default function RodarLibreLanding() {
         {/* Download App Section */}
         <section id="download" className="px-4 py-16 bg-muted/20 scroll-mt-28">
           <div className="max-w-4xl mx-auto">
-            <h2 className="font-serif font-bold text-2xl text-center mb-12 text-foreground">
-              Descarga la app
-            </h2>
-
             {/* Horizontal layout with App Store and Google Play */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               {/* App Store Section */}
@@ -166,11 +162,9 @@ export default function RodarLibreLanding() {
             </div>
 
             <div className="text-center">
-              <p className="font-sans text-lg text-muted-foreground leading-relaxed">
-                Mantente al día con las últimas noticias,
-                <br />
-                <span className="text-primary font-semibold">tips, actualizaciones de la app y más</span>
-              </p>
+              <h2 className="font-sans text-2xl text-primary font-bold leading-relaxed">
+                Síguenos en redes sociales
+              </h2>
             </div>
 
             {/* Social Networks */}
