@@ -104,7 +104,7 @@ export function Navbar() {
           ))}
           <Button asChild size="sm" className="font-semibold">
             <a href="/#download" onClick={handleDownloadClick}>
-              Descargar App
+              Descarga la App
             </a>
           </Button>
         </nav>
@@ -139,7 +139,7 @@ export function Navbar() {
           ))}
           <Button asChild className="w-full font-semibold mt-2">
             <a href="/#download" onClick={handleDownloadClick}>
-              Descargar App
+              Descarga la App
             </a>
           </Button>
         </nav>

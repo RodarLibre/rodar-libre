@@ -478,7 +478,7 @@ export default function RodarLibreLanding() {
                   </div>
                   <div className="p-6 text-center space-y-2">
                     <h3 className="font-sans font-semibold text-card-foreground text-xl">Juan David Mazuera</h3>
-                    <p className="text-muted-foreground">Desarrollador Senior Web / Mobile & Founder</p>
+                    <p className="text-muted-foreground">Desarrollador de Software Senior</p>
                     <div className="flex justify-center gap-4 pt-2">
                       <a
                         href="https://www.instagram.com/libresen2ruedas/"
@@ -550,7 +550,7 @@ export default function RodarLibreLanding() {
                   alt="Libres en 2 Ruedas"
                   width={768}
                   height={768}
-                  className="w-full max-w-[358px] mx-auto object-contain rounded-2xl"
+                  className="w-full max-w-[240px] mx-auto object-contain rounded-2xl"
                   sizes="(max-width: 768px) 100vw, 358px"
                 />
               </a>
