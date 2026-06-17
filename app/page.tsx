@@ -412,15 +412,12 @@ export default function RodarLibreLanding() {
         <section id="team" className="px-4 py-12 bg-muted/20 scroll-mt-28">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-serif font-bold text-2xl text-center mb-8 text-foreground">Nuestro Equipo</h2>
-            {/* Previous setup for 2 or more items: <div className="grid grid-cols-1 md:grid-cols-3 gap-8"> */}
-            <div className="flex justify-center">
-              {/* Previous setup for 2 or more items: <Card className="bg-card border-border overflow-hidden"> */}
-              <Card className="bg-card border-border overflow-hidden max-w-sm w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-xl mx-auto">
+              <Card className="bg-card border-border overflow-hidden max-w-xs w-full mx-auto">
                 <CardContent className="p-0">
                   <div className="aspect-square relative">
-                    {/* Previous setup for 2 or more items: sizes="(max-width: 768px) 100vw, 33vw" */}
                     <Image
-                      src="/juanroa.jpg"
+                      src="/team/juanroa.jpg"
                       alt="Juan Roa"
                       fill
                       className="object-cover"
@@ -429,7 +426,7 @@ export default function RodarLibreLanding() {
                   </div>
                   <div className="p-6 text-center space-y-2">
                     <h3 className="font-sans font-semibold text-card-foreground text-xl">Juan Roa</h3>
-                    <p className="text-muted-foreground">CEO, CTO & Founder, Software Engineer</p>
+                    <p className="text-muted-foreground text-sm">CEO, CTO & Founder, Software Engineer</p>
                     <div className="flex justify-center gap-4 pt-2">
                       <a
                         href="https://instagram.com/thecameratherapy"
@@ -462,53 +459,25 @@ export default function RodarLibreLanding() {
                   </div>
                 </CardContent>
               </Card>
-              {/*
-              <Card className="bg-card border-border overflow-hidden">
+
+              <Card className="bg-card border-border overflow-hidden max-w-xs w-full mx-auto">
                 <CardContent className="p-0">
                   <div className="aspect-square relative">
                     <Image
-                      src="/juan_david_mazuera.jpeg"
-                      alt="Juan David Mazuera"
+                      src="/team/david_calle.jpeg"
+                      alt="David Calle"
                       fill
                       className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 33vw"
+                      sizes="(max-width: 768px) 100vw, 384px"
                     />
                   </div>
                   <div className="p-6 text-center space-y-2">
-                    <h3 className="font-sans font-semibold text-card-foreground text-xl">Juan David Mazuera</h3>
-                    <p className="text-muted-foreground">Desarrollador de Software Senior</p>
-                    <div className="flex justify-center gap-4 pt-2">
-                      <a
-                        href="https://www.instagram.com/libresen2ruedas/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                        aria-label="Instagram de Juan David Mazuera"
-                      >
-                        <Instagram className="w-5 h-5" />
-                      </a>
-                      <a
-                        href="https://www.linkedin.com/in/juan-mazuera/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                        aria-label="LinkedIn de Juan David Mazuera"
-                      >
-                        <Linkedin className="w-5 h-5" />
-                      </a>
-                      <a
-                        href="https://github.com/jdmazuera/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                        aria-label="GitHub de Juan David Mazuera"
-                      >
-                        <Github className="w-5 h-5" />
-                      </a>
-                    </div>
+                    <h3 className="font-sans font-semibold text-card-foreground text-xl">David Calle</h3>
+                    <p className="text-muted-foreground text-sm">Senior QA</p>
                   </div>
                 </CardContent>
               </Card>
+              {/*
               <Card className="bg-card border-border overflow-hidden">
                 <CardContent className="p-0">
                   <div className="aspect-square relative">
