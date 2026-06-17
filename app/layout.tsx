@@ -39,16 +39,16 @@ export const metadata: Metadata = {
   },
   manifest: "/favicon/site.webmanifest",
   openGraph: {
-    title: "RodarLibre - La primera app para conductores en Colombia",
+    title: "RodarLibre - La APP para conductores en Colombia",
     description: "Rueda libre, vive la ruta, cuida tu vehículo. Síguenos en @rodarlibre.co",
     url: "https://rodarlibre.co/",
     siteName: "RodarLibre",
     images: [
       {
-        url: "/squared-logo.png",
-        width: 683,
-        height: 1024,
-        alt: "RodarLibre - App para conductores en Colombia",
+        url: "/logo.webp",
+        width: 1254,
+        height: 1254,
+        alt: "RodarLibre - La APP para conductores en Colombia",
       },
     ],
     locale: "es_CO",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "RodarLibre - La primera app para conductores en Colombia",
+    title: "RodarLibre - La APP para conductores en Colombia",
     description: "Rueda libre, vive la ruta, cuida tu vehículo. Síguenos en @rodarlibre.co",
     images: ["/logo-og.webp"],
   },
