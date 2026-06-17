@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "RodarLibre - La primera app para conductores en Colombia",
     description: "Rueda libre, vive la ruta, cuida tu vehículo. Síguenos en @rodarlibre.co",
-    images: ["/logo-og.wepb"],
+    images: ["/logo-og.webp"],
   },
 }
 
