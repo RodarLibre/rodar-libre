@@ -4,11 +4,11 @@ import path from "node:path"
 import { Card, CardContent } from "@/components/ui/card"
 import { EngineOilIcon } from "@/components/ui/engine-oil-icon"
 import { HelmetIcon } from "@/components/ui/helmet-icon"
-import { MaintenanceIcon } from "@/components/ui/maintenance-icon"
-import { MotorcycleIcon } from "@/components/ui/motorcycle-icon"
+// import { MaintenanceIcon } from "@/components/ui/maintenance-icon"
+// import { MotorcycleIcon } from "@/components/ui/motorcycle-icon"
 import { AlliesMarquee } from "@/components/allies-marquee"
 import { AppShowcase, type AppScreen } from "@/components/app-showcase"
-import { Fuel, Mountain, Users, ScrollText, TriangleAlert, Scale, Store, Instagram, Linkedin, Github, Facebook, TrendingUp, Zap, MessageCircle } from "lucide-react"
+import { Fuel, Mountain, Users, TriangleAlert, Scale, Instagram, Linkedin, Github, Facebook, TrendingUp, Zap, MessageCircle, RefreshCw } from "lucide-react"
 import Image from "next/image"
 
 const allyPerks = [
@@ -239,30 +239,12 @@ export default function RodarLibreLanding() {
                 <CardContent className="p-6 text-center space-y-4">
                   <div className="flex justify-center">
                     <div className="p-3 bg-primary/10 rounded-lg">
-                      <MaintenanceIcon className="w-6 h-6 text-primary" />
+                      <RefreshCw className="w-6 h-6 text-primary" />
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-sans font-semibold text-card-foreground">Recordatorios inteligentes</h3>
-                    <p className="text-sm text-muted-foreground">Nunca olvides los mantenimientos</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-
-          <div className="max-w-4xl mx-auto mt-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-card border-border">
-                <CardContent className="p-6 text-center space-y-4">
-                  <div className="flex justify-center">
-                    <div className="p-3 bg-primary/10 rounded-lg">
-                      <ScrollText className="w-6 h-6 text-primary" />
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="font-sans font-semibold text-card-foreground">Guarda tus documentos</h3>
-                    <p className="text-sm text-muted-foreground">Mantén ordenados en un solo lugar tu SOAT y RTM</p>
+                    <h3 className="font-sans font-semibold text-card-foreground">Sincroniza tus datos con el RUNT</h3>
+                    <p className="text-sm text-muted-foreground">No necesitas agregar tu vehículo manualmente</p>
                   </div>
                 </CardContent>
               </Card>
@@ -289,16 +271,12 @@ export default function RodarLibreLanding() {
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-sans font-semibold text-card-foreground">Consulta constantemente infracciones</h3>
+                    <h3 className="font-sans font-semibold text-card-foreground">Consulta tus multas de tránsito</h3>
                     <p className="text-sm text-muted-foreground">Revisa si tienes multas en el SIMIT</p>
                   </div>
                 </CardContent>
               </Card>
-            </div>
-          </div>
 
-          <div className="max-w-4xl mx-auto mt-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Card className="bg-card border-border">
                 <CardContent className="p-6 text-center space-y-4">
                   <div className="flex justify-center">
@@ -308,7 +286,22 @@ export default function RodarLibreLanding() {
                   </div>
                   <div>
                     <h3 className="font-sans font-semibold text-card-foreground">Descuentos exclusivos</h3>
-                    <p className="text-sm text-muted-foreground">Tendremos alianzas con talleres y tiendas.</p>
+                    <p className="text-sm text-muted-foreground">Tenemos alianzas con talleres, tiendas y aseguradoras</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/*
+              <Card className="bg-card border-border">
+                <CardContent className="p-6 text-center space-y-4">
+                  <div className="flex justify-center">
+                    <div className="p-3 bg-primary/10 rounded-lg">
+                      <MaintenanceIcon className="w-6 h-6 text-primary" />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="font-sans font-semibold text-card-foreground">Recordatorios inteligentes</h3>
+                    <p className="text-sm text-muted-foreground">Nunca olvides los mantenimientos</p>
                   </div>
                 </CardContent>
               </Card>
@@ -340,6 +333,7 @@ export default function RodarLibreLanding() {
                   </div>
                 </CardContent>
               </Card>
+              */}
             </div>
           </div>
         </section>
@@ -417,7 +411,7 @@ export default function RodarLibreLanding() {
                 <CardContent className="p-0">
                   <div className="aspect-square relative">
                     <Image
-                      src="/team/juanroa.jpg"
+                      src="/team/juan_roa.webp"
                       alt="Juan Roa"
                       fill
                       className="object-cover"
@@ -464,7 +458,7 @@ export default function RodarLibreLanding() {
                 <CardContent className="p-0">
                   <div className="aspect-square relative">
                     <Image
-                      src="/team/david_calle.jpeg"
+                      src="/team/david_calle.webp"
                       alt="David Calle"
                       fill
                       className="object-cover"
@@ -474,6 +468,17 @@ export default function RodarLibreLanding() {
                   <div className="p-6 text-center space-y-2">
                     <h3 className="font-sans font-semibold text-card-foreground text-xl">David Calle</h3>
                     <p className="text-muted-foreground text-sm">Senior QA</p>
+                    <div className="flex justify-center gap-4 pt-2">
+                      <a
+                        href="https://www.linkedin.com/in/jes%C3%BAs-david-calle-daza-936442218/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                        aria-label="LinkedIn de David Calle"
+                      >
+                        <Linkedin className="w-5 h-5" />
+                      </a>
+                    </div>
                   </div>
                 </CardContent>
               </Card>

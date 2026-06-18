@@ -16,6 +16,7 @@ const allies = [
   { name: "MotoExplorer", logo: "/allies/motoexplorer_logo.png" },
   // { name: "RS Rueda Seguro Biker", logo: "/allies/rs-rueda-seguro-biker.jpeg" },
   { name: "Duro Herrajes", logo: "/allies/duroherrajes_logo.jpg" },
+  { name: "Motores En Familia", logo: "/allies/motores_en_familia.webp" },
   // { name: "Damotos", logo: "/allies/damotos_logo.png" },
 ]
 
