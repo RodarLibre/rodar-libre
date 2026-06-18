@@ -70,7 +70,8 @@ export function AppShowcase({ screens }: { screens: AppScreen[] }) {
                   src={screen.src}
                   alt={screen.alt}
                   fill
-                  loading="lazy"
+                  priority={index === 0}
+                  loading={index === 0 ? undefined : "lazy"}
                   sizes="(max-width: 640px) 62vw, (max-width: 768px) 40vw, 280px"
                   className="object-cover"
                 />
