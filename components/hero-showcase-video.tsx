@@ -1,28 +1,56 @@
 "use client"
 
-import Image from "next/image"
 import * as React from "react"
 
 export function HeroShowcaseVideo() {
+  const containerRef = React.useRef<HTMLDivElement>(null)
   const videoRef = React.useRef<HTMLVideoElement>(null)
+  const hasLoadedRef = React.useRef(false)
 
   React.useEffect(() => {
+    const container = containerRef.current
     const video = videoRef.current
-    if (!video) {return}
+    if (!container || !video) {return}
 
-    video.muted = true
-    video.defaultMuted = true
-
+    // --- helpers ---
     const play = () => void video.play().catch(() => undefined)
+
     const resumeWhenVisible = () => {
-      if (document.visibilityState === "visible") {play()}
+      if (document.visibilityState === "visible" && hasLoadedRef.current) {play()}
     }
 
-    play()
+    // --- lazy-load: only fetch the video when the container is in view ---
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting || hasLoadedRef.current) {return}
+        hasLoadedRef.current = true
+
+        // Set sources dynamically so the browser doesn't fetch anything until now
+        const webm = document.createElement("source")
+        webm.src = "/hero/rodarlibre-hero.webm?v=5"
+        webm.type = "video/webm"
+
+        const mp4 = document.createElement("source")
+        mp4.src = "/hero/rodarlibre-hero.mp4?v=5"
+        mp4.type = "video/mp4"
+
+        video.appendChild(webm)
+        video.appendChild(mp4)
+        video.load()
+        play()
+
+        observer.disconnect()
+      },
+      { rootMargin: "200px" }, // start loading slightly before it scrolls into view
+    )
+
+    observer.observe(container)
+
     window.addEventListener("pageshow", play)
     document.addEventListener("visibilitychange", resumeWhenVisible)
 
     return () => {
+      observer.disconnect()
       window.removeEventListener("pageshow", play)
       document.removeEventListener("visibilitychange", resumeWhenVisible)
     }
@@ -30,33 +58,23 @@ export function HeroShowcaseVideo() {
 
   return (
     <div
+      ref={containerRef}
       className="relative isolate aspect-video w-full overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#08090b] shadow-2xl shadow-black/50 md:rounded-[2rem]"
       aria-hidden="true"
     >
-      <Image
-        src="/hero/rodarlibre-hero-poster.jpg"
-        alt=""
-        fill
-        priority
-        sizes="(max-width: 767px) 100vw, 58vw"
-        className="object-cover"
-      />
-
+      {/* Single poster image — no duplicate <Image> download */}
       <video
         ref={videoRef}
         className="absolute inset-0 size-full object-cover"
-        poster="/hero/rodarlibre-hero-poster.jpg?v=5"
-        autoPlay
+        poster="/hero/rodarlibre-hero-poster.webp"
         loop
         muted
         playsInline
-        preload="auto"
+        preload="none"
         tabIndex={-1}
         disablePictureInPicture
-        onLoadedData={(event) => void event.currentTarget.play().catch(() => undefined)}
       >
-        <source src="/hero/rodarlibre-hero.mp4?v=5" type="video/mp4" />
-        <source src="/hero/rodarlibre-hero.webm?v=5" type="video/webm" />
+        {/* Sources are injected by the IntersectionObserver above */}
       </video>
 
       <div className="pointer-events-none absolute inset-0 rounded-[inherit] ring-1 ring-inset ring-white/10" />
