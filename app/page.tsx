@@ -8,6 +8,7 @@ import { HelmetIcon } from "@/components/ui/helmet-icon"
 // import { MotorcycleIcon } from "@/components/ui/motorcycle-icon"
 import { AlliesMarquee } from "@/components/allies-marquee"
 import { AppShowcase, type AppScreen } from "@/components/app-showcase"
+import { HeroShowcaseVideo } from "@/components/hero-showcase-video"
 import { Fuel, Mountain, Users, TriangleAlert, Scale, Instagram, Linkedin, Github, Facebook, TrendingUp, Zap, MessageCircle, RefreshCw } from "lucide-react"
 import Image from "next/image"
 
@@ -91,28 +92,18 @@ export default function RodarLibreLanding() {
       <div className="relative z-10">
         {/* Hero Section */}
         <section id="hero" className="px-4 pt-32 pb-16 text-center scroll-mt-28">
-          <div className="max-w-md mx-auto space-y-8">
-            {/* Logo */}
-            <div className="flex justify-center">
-              <Image
-                src="/logo.webp"
-                alt="RodarLibre Logo"
-                width={384}
-                height={384}
-                className="w-60 h-60 md:w-96 md:h-96 object-contain"
-                priority
-                sizes="(max-width: 768px) 240px, 384px"
-              />
+          <div className="max-w-5xl mx-auto space-y-8">
+            <div className="relative">
+              <div className="absolute -inset-8 -z-10 rounded-full bg-emerald-500/10 blur-3xl" aria-hidden="true" />
+              <HeroShowcaseVideo />
             </div>
 
-            {/* Title and Subtitle */}
             <div className="space-y-4">
-              {/* <h1 className="font-serif font-black text-4xl md:text-5xl text-foreground">Rodar Libre</h1> */}
-              <p className="font-sans text-lg text-muted-foreground leading-relaxed">
+              <h1 className="font-sans text-lg font-normal text-muted-foreground leading-relaxed">
                 La primera app para conductores en Colombia.
                 <br />
                 <span className="text-primary font-medium">Rueda libre, vive la ruta, cuida tu vehículo.</span>
-              </p>
+              </h1>
             </div>
           </div>
         </section>

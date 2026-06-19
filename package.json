@@ -7,7 +7,11 @@
     "dev": "next dev",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
     "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
-    "start": "next start"
+    "start": "next start",
+    "video:studio": "remotion studio remotion/index.ts",
+    "video:poster": "remotion still remotion/index.ts RodarLibreHero public/hero/rodarlibre-hero-poster.jpg --frame 42 --image-format jpeg --jpeg-quality 85",
+    "video:render:mp4": "remotion render remotion/index.ts RodarLibreHero public/hero/rodarlibre-hero.mp4 --codec h264 --crf 25 --muted",
+    "video:render:webm": "remotion render remotion/index.ts RodarLibreHero public/hero/rodarlibre-hero.webm --codec vp9 --crf 34 --muted"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -60,10 +64,11 @@
     "tailwind-merge": "^2.6.1",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^1.1.2",
-    "zod": "3.25.67"
+    "zod": "4.3.6"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
+    "@remotion/cli": "4.0.479",
     "@tailwindcss/postcss": "^4.3.1",
     "@types/node": "^22.19.21",
     "@types/react": "^19.2.17",
@@ -74,6 +79,7 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1",
     "postcss": "^8.5.15",
+    "remotion": "4.0.479",
     "tailwindcss": "^4.3.1",
     "tw-animate-css": "1.4.0",
     "typescript": "^5.9.3",
