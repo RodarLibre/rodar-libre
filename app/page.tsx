@@ -418,6 +418,7 @@ export default function RodarLibreLanding() {
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, 384px"
+                      priority
                     />
                   </div>
                   <div className="p-6 text-center space-y-2">
