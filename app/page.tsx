@@ -12,6 +12,17 @@ import { HeroShowcaseVideo } from "@/components/hero-showcase-video"
 import { Fuel, Mountain, Users, TriangleAlert, Scale, Instagram, Linkedin, Github, Facebook, TrendingUp, Zap, MessageCircle, RefreshCw } from "lucide-react"
 import Image from "next/image"
 
+const TikTok = ({ className }: { className?: string }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+  </svg>
+)
+
 const allyPerks = [
   { icon: Users, label: "Miles de clientes potenciales" },
   { icon: TrendingUp, label: "Mayor visibilidad digital" },
@@ -397,7 +408,7 @@ export default function RodarLibreLanding() {
         <section id="team" className="px-4 py-12 bg-muted/20 scroll-mt-28">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-serif font-bold text-2xl text-center mb-8 text-foreground">Nuestro Equipo</h2>
-            <div className="flex justify-center max-w-xl mx-auto">
+            <div className="flex flex-col sm:flex-row justify-center gap-6 max-w-2xl mx-auto">
               <Card className="bg-card border-border overflow-hidden max-w-xs w-full mx-auto">
                 <CardContent className="p-0">
                   <div className="aspect-square relative">
@@ -445,56 +456,44 @@ export default function RodarLibreLanding() {
                 </CardContent>
               </Card>
 
-              {/*
+
               <Card className="bg-card border-border overflow-hidden max-w-xs w-full mx-auto">
                 <CardContent className="p-0">
                   <div className="aspect-square relative">
                     <Image
-                      src="/team/david_calle.webp"
-                      alt="David Calle"
+                      src="/team/sebastian.webp"
+                      alt="Sebastián Escobar"
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, 384px"
                     />
                   </div>
                   <div className="p-6 text-center space-y-2">
-                    <h3 className="font-sans font-semibold text-card-foreground text-xl">David Calle</h3>
-                    <p className="text-muted-foreground text-sm">Senior QA</p>
+                    <h3 className="font-sans font-semibold text-card-foreground text-xl">Sebastián Escobar</h3>
+                    <p className="text-muted-foreground text-sm">CMO, Marketing & Product</p>
                     <div className="flex justify-center gap-4 pt-2">
                       <a
-                        href="https://www.linkedin.com/in/jes%C3%BAs-david-calle-daza-936442218/"
+                        href="https://instagram.com/moto.euforia"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-primary transition-colors"
-                        aria-label="LinkedIn de David Calle"
+                        aria-label="Instagram de Sebastián Escobar"
                       >
-                        <Linkedin className="w-5 h-5" />
+                        <Instagram className="w-5 h-5" />
+                      </a>
+                      <a
+                        href="https://www.tiktok.com/@moto.euforia"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                        aria-label="TikTok de Sebastián Escobar"
+                      >
+                        <TikTok className="w-5 h-5" />
                       </a>
                     </div>
                   </div>
                 </CardContent>
               </Card>
-              */}
-              {/*
-              <Card className="bg-card border-border overflow-hidden">
-                <CardContent className="p-0">
-                  <div className="aspect-square relative">
-                    <Image
-                      src="/juan_diego_roa.jpeg"
-                      alt="Juan Diego Roa"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      loading="eager"
-                    />
-                  </div>
-                  <div className="p-6 text-center space-y-2">
-                    <h3 className="font-sans font-semibold text-card-foreground text-xl">Juan Diego Roa</h3>
-                    <p className="text-muted-foreground">Comercial y Soporte</p>
-                  </div>
-                </CardContent>
-              </Card>
-              */}
             </div>
           </div>
         </section>
