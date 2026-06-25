@@ -491,6 +491,15 @@ export default function RodarLibreLanding() {
                       >
                         <TikTok className="w-5 h-5" />
                       </a>
+                      <a
+                        href="https://www.linkedin.com/in/sebescobar/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                        aria-label="LinkedIn de Sebastián Escobar"
+                      >
+                        <Linkedin className="w-5 h-5" />
+                      </a>
                     </div>
                   </div>
                 </CardContent>
