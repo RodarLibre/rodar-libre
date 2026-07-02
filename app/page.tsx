@@ -408,7 +408,7 @@ export default function RodarLibreLanding() {
         <section id="team" className="px-4 py-12 bg-muted/20 scroll-mt-28">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-serif font-bold text-2xl text-center mb-8 text-foreground">Nuestro Equipo</h2>
-            <div className="flex flex-col sm:flex-row justify-center gap-6 max-w-2xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto justify-items-center">
               <Card className="bg-card border-border overflow-hidden max-w-xs w-full mx-auto">
                 <CardContent className="p-0">
                   <div className="aspect-square relative">
@@ -451,6 +451,36 @@ export default function RodarLibreLanding() {
                         aria-label="GitHub de Juan Roa"
                       >
                         <Github className="w-5 h-5" />
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+
+              <Card className="bg-card border-border overflow-hidden max-w-xs w-full mx-auto">
+                <CardContent className="p-0">
+                  <div className="aspect-square relative">
+                    <Image
+                      src="/team/david_calle.webp"
+                      alt="David Calle"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 384px"
+                    />
+                  </div>
+                  <div className="p-6 text-center space-y-2">
+                    <h3 className="font-sans font-semibold text-card-foreground text-xl">David Calle</h3>
+                    <p className="text-muted-foreground text-sm">Senior QA</p>
+                    <div className="flex justify-center gap-4 pt-2">
+                      <a
+                        href="https://www.linkedin.com/in/jes%C3%BAs-david-calle-daza-936442218/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                        aria-label="LinkedIn de David Calle"
+                      >
+                        <Linkedin className="w-5 h-5" />
                       </a>
                     </div>
                   </div>
