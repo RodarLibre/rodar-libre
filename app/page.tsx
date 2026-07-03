@@ -501,7 +501,7 @@ export default function RodarLibreLanding() {
                   </div>
                   <div className="p-6 text-center space-y-2">
                     <h3 className="font-sans font-semibold text-card-foreground text-xl">Sebastián Escobar</h3>
-                    <p className="text-muted-foreground text-sm">CMO, Marketing & Product</p>
+                    <p className="text-muted-foreground text-sm">Marketing</p>
                     <div className="flex justify-center gap-4 pt-2">
                       <a
                         href="https://instagram.com/moto.euforia"
