@@ -21,6 +21,7 @@ const allies = [
   { name: "Motores En Familia", logo: "/allies/motores_en_familia.webp" },
   { name: "Mostacho Café", logo: "/allies/mostacho.webp" },
   // { name: "Damotos", logo: "/allies/damotos_logo.png" },
+  { name: "Granautos", logo: "/allies/granautos.webp" },
 ]
 
 function AllyList({ ariaHidden = false }: { ariaHidden?: boolean }) {
