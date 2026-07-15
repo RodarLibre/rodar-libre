@@ -19,6 +19,7 @@ const allies = [
   // { name: "RS Rueda Seguro Biker", logo: "/allies/rs-rueda-seguro-biker.jpeg" },
   { name: "Duro Herrajes", logo: "/allies/duroherrajes_logo.jpg" },
   { name: "Motores En Familia", logo: "/allies/motores_en_familia.webp" },
+  { name: "Mostacho Café", logo: "/allies/mostacho.webp" },
   // { name: "Damotos", logo: "/allies/damotos_logo.png" },
 ]
 
