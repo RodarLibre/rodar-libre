@@ -15,13 +15,15 @@ const allies = [
   // { name: "MotoEuforia", logo: "/allies/moto_euforia.webp" },
   // { name: "Legión TT Colombia", logo: "/allies/legion_tt_colombia.jpg" },
   // { name: "KB Motos Racing", logo: "/allies/kb_motos_racing.jpg" },
-  { name: "MotoExplorer", logo: "/allies/motoexplorer_logo.png" },
+  // { name: "MotoExplorer", logo: "/allies/motoexplorer_logo.png" },
   // { name: "RS Rueda Seguro Biker", logo: "/allies/rs-rueda-seguro-biker.jpeg" },
   { name: "Damotos Cali", logo: "/allies/damotos_logo.webp" },
-  { name: "Motores En Familia", logo: "/allies/motores_en_familia.webp" },
+  // { name: "Motores En Familia", logo: "/allies/motores_en_familia.webp" },
   { name: "Mostacho Café", logo: "/allies/mostacho.webp" },
   // { name: "Damotos", logo: "/allies/damotos_logo.png" },
   { name: "Granautos", logo: "/allies/granautos.webp" },
+  { name: "Café Racer DC", logo: "/allies/cafe_racer_logo.webp" },
+  { name: "Be Twin Café Jaus", logo: "/allies/bewincafe.jpg" },
 ]
 
 function AllyList({ ariaHidden = false }: { ariaHidden?: boolean }) {
