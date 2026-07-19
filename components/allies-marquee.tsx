@@ -22,8 +22,8 @@ const allies = [
   { name: "Mostacho Café", logo: "/allies/mostacho.webp" },
   // { name: "Damotos", logo: "/allies/damotos_logo.png" },
   { name: "Granautos", logo: "/allies/granautos.webp" },
-  { name: "Café Racer DC", logo: "/allies/cafe_racer_logo.webp" },
-  { name: "Be Twin Café Jaus", logo: "/allies/bewincafe.jpg" },
+  { name: "Café Racer DC", logo: "/allies/caferacer.webp" },
+  { name: "Be Twin Café Jaus", logo: "/allies/betwincoffeejaus.webp" },
 ]
 
 function AllyList({ ariaHidden = false }: { ariaHidden?: boolean }) {
