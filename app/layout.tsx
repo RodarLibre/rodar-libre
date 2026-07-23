@@ -45,9 +45,9 @@ export const metadata: Metadata = {
     siteName: "RodarLibre",
     images: [
       {
-        url: "/logo.webp",
-        width: 1254,
-        height: 1254,
+        url: "/og-image.webp",
+        width: 1200,
+        height: 630,
         alt: "RodarLibre - La APP para conductores en Colombia",
       },
     ],
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "RodarLibre - La APP para conductores en Colombia",
     description: "Rueda libre, vive la ruta, cuida tu vehículo. Síguenos en @rodarlibre.co",
-    images: ["/logo-og.webp"],
+    images: ["/og-image.webp"],
   },
 }
 
