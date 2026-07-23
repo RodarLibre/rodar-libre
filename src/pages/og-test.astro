@@ -1,0 +1,65 @@
+---
+const version = Astro.url.searchParams.get("v") || "1";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>OG Test {version}</title>
+    <meta name="robots" content="noindex,nofollow" />
+  </head>
+  <body class="min-h-screen bg-zinc-900 flex items-center justify-center p-8">
+    {version === "1" && (
+      <div
+        id="og-card"
+        style="width: 1200px; height: 630px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; background-color: #000000;"
+      >
+        <div style="position: relative; width: 700px; height: 385px;">
+          <img
+            src="/logo-lettering.png"
+            alt="RodarLibre"
+            style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain;"
+          />
+        </div>
+      </div>
+    )}
+
+    {version === "2" && (
+      <div
+        id="og-card"
+        style="width: 1200px; height: 630px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; background: radial-gradient(circle at center, #111115 0%, #000000 100%);"
+      >
+        <div style="position: relative; width: 700px; height: 385px;">
+          <img
+            src="/logo-lettering.png"
+            alt="RodarLibre"
+            style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain;"
+          />
+        </div>
+      </div>
+    )}
+
+    {version === "3" && (
+      <div
+        id="og-card"
+        style="width: 1200px; height: 630px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; background: radial-gradient(circle at center, #051510 0%, #000000 100%);"
+      >
+        <div
+          style="position: absolute; width: 600px; height: 350px; background: rgba(16, 185, 129, 0.05); border-radius: 9999px; filter: blur(140px); pointer-events: none;"
+        ></div>
+        <div style="position: relative; width: 700px; height: 385px; z-index: 10;">
+          <img
+            src="/logo-lettering.png"
+            alt="RodarLibre"
+            style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain;"
+          />
+        </div>
+      </div>
+    )}
+
+    {version !== "1" && version !== "2" && version !== "3" && (
+      <div>Invalid version</div>
+    )}
+  </body>
+</html>

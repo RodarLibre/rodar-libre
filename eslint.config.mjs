@@ -2,10 +2,22 @@ import js from "@eslint/js"
 import tseslint from "typescript-eslint"
 import react from "eslint-plugin-react"
 import reactHooks from "eslint-plugin-react-hooks"
+import globals from "globals"
 
 export default [
+  {
+    ignores: [".astro/**", "node_modules/**", ".next/**", "dist/**", "build/**"],
+  },
   js.configs.recommended,
   ...tseslint.configs.recommended,
+  {
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
+  },
   {
     plugins: {
       react,
@@ -23,7 +35,7 @@ export default [
     },
   },
   {
-    files: ["**/*.{ts,tsx,js,jsx}"],
+    files: ["**/*.{ts,tsx,js,jsx,mjs}"],
     rules: {
       // TypeScript specific - focus on catching bugs
       "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
@@ -37,7 +49,5 @@ export default [
       curly: ["error", "all"],
     },
   },
-  {
-    ignores: ["node_modules/", ".next/", "dist/", "build/"],
-  },
 ]
+
