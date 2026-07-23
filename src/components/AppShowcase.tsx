@@ -1,40 +1,44 @@
-"use client"
+import * as React from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { cn } from "../lib/utils";
+import type { AppScreen } from "../lib/app-screens";
 
-import * as React from "react"
-import Image from "next/image"
-import useEmblaCarousel from "embla-carousel-react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import { cn } from "@/lib/utils"
+const AUTOPLAY_INTERVAL_MS = 4000;
 
-/** Milisegundos entre cada avance automático del carousel. */
-const AUTOPLAY_INTERVAL_MS = 4000
-
-export interface AppScreen {
-  src: string
-  alt: string
+export interface AppShowcaseProps {
+  screens: AppScreen[];
 }
 
-export function AppShowcase({ screens }: { screens: AppScreen[] }) {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center" })
-  const [selectedIndex, setSelectedIndex] = React.useState(0)
-  const [isPaused, setIsPaused] = React.useState(false)
+export function AppShowcase({ screens }: AppShowcaseProps) {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center" });
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
+  const [isPaused, setIsPaused] = React.useState(false);
 
   React.useEffect(() => {
-    if (!emblaApi) {return}
-    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap())
-    emblaApi.on("select", onSelect)
-    return () => {
-      emblaApi.off("select", onSelect)
+    if (!emblaApi) {
+      return;
     }
-  }, [emblaApi])
+    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
+    emblaApi.on("select", onSelect);
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi]);
 
-  // Autoplay: se pausa con hover, foco (teclado), arrastre o preferencia de movimiento reducido
   React.useEffect(() => {
-    if (!emblaApi || isPaused) {return}
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {return}
-    const id = setInterval(() => emblaApi.scrollNext(), AUTOPLAY_INTERVAL_MS)
-    return () => clearInterval(id)
-  }, [emblaApi, isPaused])
+    if (!emblaApi || isPaused) {
+      return;
+    }
+    if (typeof window === "undefined") {
+      return;
+    }
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+    const id = setInterval(() => emblaApi.scrollNext(), AUTOPLAY_INTERVAL_MS);
+    return () => clearInterval(id);
+  }, [emblaApi, isPaused]);
 
   return (
     <div
@@ -63,17 +67,16 @@ export function AppShowcase({ screens }: { screens: AppScreen[] }) {
               <div
                 className={cn(
                   "relative aspect-[1206/2622] rounded-[2rem] overflow-hidden border border-border bg-card shadow-2xl shadow-black/40 transition-all duration-500",
-                  index === selectedIndex ? "opacity-100 scale-100" : "opacity-40 scale-90"
+                  index === selectedIndex ? "opacity-100 scale-100" : "opacity-40 scale-90",
                 )}
               >
-                <Image
+                <img
                   src={screen.src}
                   alt={screen.alt}
-                  fill
-                  priority={index === 0}
-                  loading={index === 0 ? undefined : "lazy"}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  decoding="async"
                   sizes="(max-width: 640px) 62vw, (max-width: 768px) 40vw, 280px"
-                  className="object-cover"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
               </div>
             </div>
@@ -81,7 +84,6 @@ export function AppShowcase({ screens }: { screens: AppScreen[] }) {
         </div>
       </div>
 
-      {/* Controles */}
       <div className="flex items-center justify-center gap-6 mt-6">
         <button
           type="button"
@@ -103,7 +105,9 @@ export function AppShowcase({ screens }: { screens: AppScreen[] }) {
               onClick={() => emblaApi?.scrollTo(index)}
               className={cn(
                 "h-2 rounded-full transition-all duration-300",
-                index === selectedIndex ? "w-6 bg-primary" : "w-2 bg-muted-foreground/40 hover:bg-muted-foreground"
+                index === selectedIndex
+                  ? "w-6 bg-primary"
+                  : "w-2 bg-muted-foreground/40 hover:bg-muted-foreground",
               )}
             />
           ))}
@@ -119,5 +123,7 @@ export function AppShowcase({ screens }: { screens: AppScreen[] }) {
         </button>
       </div>
     </div>
-  )
+  );
 }
+
+export default AppShowcase;

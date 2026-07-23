@@ -1,0 +1,19 @@
+---
+// Vercel Web Analytics — only injected in production to avoid local dev 404s to /_vercel/insights/view
+const isProd = import.meta.env.PROD;
+---
+
+{
+  isProd && (
+    <>
+      <script is:inline>
+        window.va =
+          window.va ||
+          function () {
+            (window.vaq = window.vaq || []).push(arguments);
+          };
+      </script>
+      <script is:inline defer src="https://va.vercel-scripts.com/v1/script.js"></script>
+    </>
+  )
+}
