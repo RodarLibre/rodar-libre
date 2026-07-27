@@ -490,6 +490,35 @@ export default function RodarLibreLanding() {
                 <CardContent className="p-0">
                   <div className="aspect-square relative">
                     <Image
+                      src="/team/miguel.webp"
+                      alt="Miguel Ángel Bolaños"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 384px"
+                    />
+                  </div>
+                  <div className="p-6 text-center space-y-2">
+                    <h3 className="font-sans font-semibold text-card-foreground text-xl">Miguel Ángel Bolaños</h3>
+                    <p className="text-muted-foreground text-sm">Senior Product & Visual Designer</p>
+                    <div className="flex justify-center gap-4 pt-2">
+                      <a
+                        href="https://www.linkedin.com/in/mab015/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                        aria-label="LinkedIn de Miguel Ángel Bolaños"
+                      >
+                        <Linkedin className="w-5 h-5" />
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-card border-border overflow-hidden max-w-xs w-full mx-auto">
+                <CardContent className="p-0">
+                  <div className="aspect-square relative">
+                    <Image
                       src="/team/david_calle.webp"
                       alt="David Calle"
                       fill
@@ -516,34 +545,7 @@ export default function RodarLibreLanding() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-card border-border overflow-hidden max-w-xs w-full mx-auto">
-                <CardContent className="p-0">
-                  <div className="aspect-square relative">
-                    <Image
-                      src="/team/miguel.webp"
-                      alt="Miguel Ángel Bolaños"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 384px"
-                    />
-                  </div>
-                  <div className="p-6 text-center space-y-2">
-                    <h3 className="font-sans font-semibold text-card-foreground text-xl">Miguel Ángel Bolaños</h3>
-                    <p className="text-muted-foreground text-sm">Senior Product & Visual Designer</p>
-                    <div className="flex justify-center gap-4 pt-2">
-                      <a
-                        href="https://www.linkedin.com/in/mab015/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                        aria-label="LinkedIn de Miguel Ángel Bolaños"
-                      >
-                        <Linkedin className="w-5 h-5" />
-                      </a>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+
 
               {/* <Card className="bg-card border-border overflow-hidden max-w-xs w-full mx-auto">
                 <CardContent className="p-0">

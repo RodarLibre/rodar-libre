@@ -25,6 +25,7 @@ const allies = [
   { name: "Granautos", logo: "/allies/granautos.webp" },
   { name: "Café Racer DC", logo: "/allies/caferacer.webp" },
   { name: "Be Twin Café Jaus", logo: "/allies/betwincoffeejaus.webp" },
+  { name: "Smak accesorios", logo: "/allies/smak_logo.webp" },
 ]
 
 function AllyList({ ariaHidden = false }: { ariaHidden?: boolean }) {
