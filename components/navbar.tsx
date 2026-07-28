@@ -14,6 +14,7 @@ const navLinks = [
   { name: "Nuestra App", href: "/#app", sectionId: "app" },
   { name: "Aliados", href: "/#aliados", sectionId: "aliados" },
   { name: "Equipo", href: "/#team", sectionId: "team" },
+  { name: "Tienda", href: "https://tienda.rodarlibre.co", sectionId: "", isExternal: true },
 ]
 
 function smoothScrollTo(id: string) {
@@ -96,7 +97,9 @@ export function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              onClick={(e) => handleNavClick(e, link)}
+              onClick={link.isExternal ? undefined : (e) => handleNavClick(e, link)}
+              target={link.isExternal ? "_blank" : undefined}
+              rel={link.isExternal ? "noopener noreferrer" : undefined}
               className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors cursor-pointer"
             >
               {link.name}
@@ -131,7 +134,9 @@ export function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              onClick={(e) => handleNavClick(e, link)}
+              onClick={link.isExternal ? undefined : (e) => handleNavClick(e, link)}
+              target={link.isExternal ? "_blank" : undefined}
+              rel={link.isExternal ? "noopener noreferrer" : undefined}
               className="text-lg font-medium text-muted-foreground hover:text-primary transition-colors px-2 py-1 cursor-pointer"
             >
               {link.name}
