@@ -13,7 +13,7 @@ const allies = [
   { name: "Hero Cali Panamericana", logo: "/allies/hero_panamericana.webp" },
   // { name: "Capital Motos", logo: "/allies/capital_motos_logo.jpg" },
   { name: "Nómadas Urbanos", logo: "/allies/nomadas_urbanos.jpg" },
-  // { name: "MotoEuforia", logo: "/allies/moto_euforia.webp" },
+  { name: "MotoEuforia", logo: "/allies/moto_euforia.webp" },
   // { name: "Legión TT Colombia", logo: "/allies/legion_tt_colombia.jpg" },
   // { name: "KB Motos Racing", logo: "/allies/kb_motos_racing.jpg" },
   // { name: "MotoExplorer", logo: "/allies/motoexplorer_logo.png" },
