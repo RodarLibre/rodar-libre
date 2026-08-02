@@ -408,7 +408,7 @@ export default function RodarLibreLanding() {
         <section id="team" className="px-4 py-12 bg-muted/20 scroll-mt-28">
           <div className="max-w-6xl mx-auto">
             <h2 className="font-serif font-bold text-2xl text-center mb-8 text-foreground">Nuestro Equipo</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-6xl mx-auto justify-items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-6xl mx-auto justify-items-center">
               <Card className="bg-card border-border overflow-hidden max-w-xs w-full mx-auto">
                 <CardContent className="p-0">
                   <div className="aspect-square relative">
@@ -547,7 +547,7 @@ export default function RodarLibreLanding() {
 
 
 
-              {/* <Card className="bg-card border-border overflow-hidden max-w-xs w-full mx-auto">
+              <Card className="bg-card border-border overflow-hidden max-w-xs w-full mx-auto">
                 <CardContent className="p-0">
                   <div className="aspect-square relative">
                     <Image
@@ -592,7 +592,7 @@ export default function RodarLibreLanding() {
                     </div>
                   </div>
                 </CardContent>
-              </Card> */}
+              </Card>
             </div>
           </div>
         </section>
