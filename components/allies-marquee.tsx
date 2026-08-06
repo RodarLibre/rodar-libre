@@ -14,7 +14,7 @@ const allies = [
   // { name: "Capital Motos", logo: "/allies/capital_motos_logo.jpg" },
   { name: "Nómadas Urbanos", logo: "/allies/nomadas_urbanos.jpg" },
   { name: "MotoEuforia", logo: "/allies/moto_euforia.webp" },
-  // { name: "Legión TT Colombia", logo: "/allies/legion_tt_colombia.jpg" },
+  { name: "Legión TT Colombia", logo: "/allies/legion_tt_colombia.jpg" },
   // { name: "KB Motos Racing", logo: "/allies/kb_motos_racing.jpg" },
   // { name: "MotoExplorer", logo: "/allies/motoexplorer_logo.png" },
   // { name: "RS Rueda Seguro Biker", logo: "/allies/rs-rueda-seguro-biker.jpeg" },
