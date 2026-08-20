@@ -646,15 +646,6 @@ export default function RodarLibreLanding() {
                 Aliados
               </a>
               <a
-                href="https://tienda.rodarlibre.co"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
-                aria-label="Visitar la tienda de RodarLibre (se abre en nueva ventana)"
-              >
-                Tienda
-              </a>
-              <a
                 href="https://instagram.com/rodarlibre.co/"
                 target="_blank"
                 rel="noopener noreferrer"

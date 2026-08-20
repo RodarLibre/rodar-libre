@@ -14,7 +14,6 @@ const navLinks = [
   { name: "Nuestra App", href: "/#app", sectionId: "app" },
   { name: "Aliados", href: "/#aliados", sectionId: "aliados" },
   { name: "Equipo", href: "/#team", sectionId: "team" },
-  { name: "Tienda", href: "https://tienda.rodarlibre.co", sectionId: "", isExternal: true },
 ]
 
 function smoothScrollTo(id: string) {
