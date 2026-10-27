@@ -1,3 +1,4 @@
 {
+  "framework": "astro",
   "redirects": [{ "source": "/aliados", "destination": "/#aliados", "permanent": false }]
 }
