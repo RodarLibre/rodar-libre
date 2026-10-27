@@ -1,4 +1,4 @@
-import Image from "next/image"
+import type React from "react"
 
 /**
  * Velocidad del carousel: segundos que tarda en completar un ciclo.
@@ -38,13 +38,13 @@ function AllyList({ ariaHidden = false }: { ariaHidden?: boolean }) {
         <li key={ally.name} className="flex-none">
           <figure className="flex flex-col items-center gap-3">
             <div className="w-24 h-24 md:w-28 md:h-28 rounded-2xl overflow-hidden border border-border bg-card shadow-md">
-              <Image
+              <img
                 src={ally.logo}
                 alt={ariaHidden ? "" : `Logo de ${ally.name}`}
                 width={112}
                 height={112}
                 loading="lazy"
-                sizes="(max-width: 768px) 96px, 112px"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             </div>

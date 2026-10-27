@@ -1,12 +1,6 @@
-"use client"
-
-import { useSearchParams } from "next/navigation"
-import Image from "next/image"
-import { Suspense } from "react"
 
 function OgTestContent() {
-  const searchParams = useSearchParams()
-  const version = searchParams.get("v") || "1"
+  const version = new URLSearchParams(window.location.search).get("v") || "1"
 
   // 1200x630 layout container
   const containerStyle = {
@@ -25,13 +19,7 @@ function OgTestContent() {
     return (
       <div style={{ ...containerStyle, backgroundColor: "#000000" }} id="og-card">
         <div className="relative w-[700px] h-[385px]">
-          <Image
-            src="/logo-lettering.png"
-            alt="RodarLibre"
-            fill
-            className="object-contain"
-            priority
-          />
+          <img src="/logo-lettering.png" alt="RodarLibre" className="absolute inset-0 size-full object-contain" />
         </div>
       </div>
     )
@@ -48,13 +36,7 @@ function OgTestContent() {
         id="og-card"
       >
         <div className="relative w-[700px] h-[385px]">
-          <Image
-            src="/logo-lettering.png"
-            alt="RodarLibre"
-            fill
-            className="object-contain"
-            priority
-          />
+          <img src="/logo-lettering.png" alt="RodarLibre" className="absolute inset-0 size-full object-contain" />
         </div>
       </div>
     )
@@ -74,13 +56,7 @@ function OgTestContent() {
         <div className="absolute w-[600px] h-[350px] bg-emerald-500/5 rounded-full blur-[140px] pointer-events-none" />
         
         <div className="relative w-[700px] h-[385px] z-10">
-          <Image
-            src="/logo-lettering.png"
-            alt="RodarLibre"
-            fill
-            className="object-contain"
-            priority
-          />
+          <img src="/logo-lettering.png" alt="RodarLibre" className="absolute inset-0 size-full object-contain" />
         </div>
       </div>
     )
@@ -92,9 +68,7 @@ function OgTestContent() {
 export default function OgTestPage() {
   return (
     <div className="min-h-screen bg-zinc-900 flex items-center justify-center p-8">
-      <Suspense fallback={<div>Cargando...</div>}>
-        <OgTestContent />
-      </Suspense>
+      <OgTestContent />
     </div>
   )
 }
