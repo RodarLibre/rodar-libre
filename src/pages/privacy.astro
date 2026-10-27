@@ -1,6 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro"
-import { Shield, Mail, Lock, Eye, UserCheck, FileText, Calendar, AlertCircle } from "lucide-react"
+import { Shield, Mail, Lock, Eye, UserCheck, FileText, Calendar, AlertCircle, Bot } from "lucide-react"
 
 const title = "Política de Privacidad - RodarLibre"
 const description =
@@ -33,7 +33,7 @@ const description =
             </div>
             <div>
               <h1 class="font-serif font-bold text-3xl md:text-4xl text-foreground">Política de Privacidad</h1>
-              <p class="text-muted-foreground">Última actualización: 04 de marzo, 2026</p>
+              <p class="text-muted-foreground">Última actualización: 25 de octubre, 2026</p>
             </div>
           </div>
         </div>
@@ -162,6 +162,10 @@ const description =
                     <strong class="text-foreground">Para Mejorar Nuestros Servicios:</strong> Podemos analizar datos agregados y no identificables
                     para entender patrones de uso y mejorar las características de la App y la experiencia del usuario.
                   </li>
+                  <li>
+                    <strong class="text-foreground">Para el Asistente de Tránsito (beta):</strong> Si lo usas, tratamos tus
+                    conversaciones como se explica en la sección 6.
+                  </li>
                 </ul>
               </div>
             </div>
@@ -216,6 +220,8 @@ const description =
                 <p class="text-muted-foreground mb-4">
                   No vendemos, rentamos o compartimos tu información personal con terceros para marketing o cualquier otro propósito.
                   Tus datos se usan exclusivamente para proporcionar el servicio RodarLibre y mejorar tu experiencia personal.
+                  Si usas el Asistente de Tránsito (beta), tus preguntas se envían a un proveedor de inteligencia artificial
+                  para generar las respuestas, como se explica en la sección 6.
                 </p>
                 <p class="text-muted-foreground">
                   Solo podemos divulgar tu información si es requerido estrictamente por ley o en respuesta a solicitudes válidas de autoridades
@@ -232,6 +238,187 @@ const description =
             </div>
           </section>
 
+          {/* Traffic Assistant (beta) */}
+          <section id="asistente-de-transito" class="mb-12 scroll-mt-24">
+            <div class="flex items-start gap-4 mb-6">
+              <div class="p-2 bg-primary/10 rounded-lg mt-1">
+                <Bot className="w-5 h-5 text-primary" />
+              </div>
+              <div class="w-full">
+                <h2 class="font-serif font-bold text-2xl text-foreground mb-4">6. Asistente de Tránsito (beta)</h2>
+                <div class="space-y-4 text-muted-foreground mb-8">
+                  <p>
+                    El Asistente de Tránsito (beta) es una función de la App que responde con inteligencia artificial preguntas
+                    sobre las normas de tránsito de Colombia. Esta sección explica qué datos usa, dónde se procesan y cuánto
+                    tiempo los guardamos.
+                  </p>
+                  <p>
+                    Antes de tu primera pregunta, la App te muestra un aviso con este resumen y te pide aceptarlo. Al tocar
+                    «Acepto» autorizas el tratamiento descrito en esta sección. La App no envía ninguna pregunta antes de que aceptes.
+                  </p>
+                </div>
+
+                <h3 class="font-serif font-bold text-xl text-foreground mb-4">6.1. Quién puede usarlo</h3>
+                <p class="text-muted-foreground mb-8">
+                  Es una beta cerrada: solo lo usan las personas a quienes el equipo de Rodar Libre les da acceso. Si tienes al
+                  menos un vehículo activo sincronizado con el RUNT, puedes pedir acceso desde la App, y el equipo decide cuándo
+                  activarlo. Como es una beta, el asistente puede cambiar, fallar o suspenderse.
+                </p>
+
+                <h3 class="font-serif font-bold text-xl text-foreground mb-4">6.2. Qué se envía al proveedor de inteligencia artificial</h3>
+                <p class="text-muted-foreground mb-4">
+                  Para generar cada respuesta, enviamos al proveedor de inteligencia artificial:
+                </p>
+                <div class="bg-card border border-border rounded-lg p-4 mb-4">
+                  <ul class="space-y-2 text-muted-foreground">
+                    <li><strong class="text-foreground">Tu pregunta.</strong></li>
+                    <li>
+                      <strong class="text-foreground">Hasta los 10 mensajes anteriores de la conversación</strong> (tus preguntas
+                      y las respuestas), para entender las preguntas de seguimiento.
+                    </li>
+                    <li><strong class="text-foreground">Instrucciones del sistema</strong>, que le indican al modelo cómo responder.</li>
+                    <li><strong class="text-foreground">Fragmentos de las normas de tránsito de Colombia</strong> relacionados con tu pregunta.</li>
+                  </ul>
+                </div>
+                <div class="space-y-4 text-muted-foreground mb-8">
+                  <p>
+                    No le enviamos tu nombre, tu correo ni el identificador de tu cuenta, salvo que los escribas en tu pregunta.
+                  </p>
+                  <p>
+                    Hoy las respuestas las genera <strong class="text-foreground">Claude Haiku 5.5, un modelo de Anthropic</strong>,
+                    empresa de Estados Unidos. Anthropic procesa estos datos fuera de Colombia: al aceptar el aviso del asistente
+                    autorizas de forma expresa este envío internacional de tus datos, conforme a la Ley 1581 de 2012.
+                  </p>
+                  <p>
+                    Según sus{" "}
+                    <a
+                      href="https://www.anthropic.com/legal/commercial-terms"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-primary hover:text-primary/80 font-medium"
+                    >
+                      Términos Comerciales
+                    </a>
+                    , Anthropic no puede entrenar sus modelos con el contenido que le enviamos. Según su{" "}
+                    <a
+                      href="https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-primary hover:text-primary/80 font-medium"
+                    >
+                      centro de privacidad
+                    </a>
+                    , borra las entradas y las respuestas de su API dentro de los 30 días siguientes, salvo las excepciones que allí
+                    se indican (por ejemplo, cuando la ley le exige conservarlas o para hacer cumplir su política de uso).
+                  </p>
+                </div>
+
+                <h3 class="font-serif font-bold text-xl text-foreground mb-4">6.3. Qué guardamos y por cuánto tiempo</h3>
+                <p class="text-muted-foreground mb-4">
+                  Guardamos dos copias de tus conversaciones. Cada una se conserva hasta 360 días: un proceso diario borra lo que ya
+                  cumplió ese plazo.
+                </p>
+                <div class="space-y-6 mb-4">
+                  <div class="bg-card border border-border rounded-lg p-4">
+                    <h4 class="font-sans font-semibold text-foreground mb-3">En tu cuenta de Rodar Libre:</h4>
+                    <ul class="space-y-2 text-muted-foreground">
+                      <li>
+                        <strong class="text-foreground">Qué:</strong> Tus preguntas, las respuestas, las fuentes que acompañan cada
+                        respuesta, tus calificaciones y, si reportaste una respuesta, el reporte y tu comentario. El texto de las
+                        preguntas, las respuestas y tus comentarios se guarda cifrado.
+                      </li>
+                      <li>
+                        <strong class="text-foreground">Para qué:</strong> Que puedas volver a tus consultas desde la App y, durante
+                        la beta, que el equipo las revise para mejorar el asistente.
+                      </li>
+                      <li>
+                        <strong class="text-foreground">Cuánto tiempo:</strong> 360 días contados desde el último mensaje de la
+                        conversación. Al cumplirse, se borra la conversación completa.
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="bg-card border border-border rounded-lg p-4">
+                    <h4 class="font-sans font-semibold text-foreground mb-3">En el registro técnico del asistente:</h4>
+                    <ul class="space-y-2 text-muted-foreground">
+                      <li>
+                        <strong class="text-foreground">Qué:</strong> Tu pregunta, la respuesta, un registro técnico de cómo se generó
+                        (qué modelo respondió, qué fragmentos de la norma usó y un resumen de su razonamiento), tus calificaciones y
+                        tus comentarios. Queda asociado al identificador de tu cuenta.
+                      </li>
+                      <li>
+                        <strong class="text-foreground">Para qué:</strong> Revisar la calidad de las respuestas, encontrar errores y
+                        mejorar el asistente.
+                      </li>
+                      <li>
+                        <strong class="text-foreground">Cuánto tiempo:</strong> 360 días contados desde cada respuesta.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <p class="text-muted-foreground mb-8">
+                  También guardamos en tu cuenta la fecha y la versión del aviso que aceptaste.
+                </p>
+
+                <h3 class="font-serif font-bold text-xl text-foreground mb-4">6.4. Quién lee tus conversaciones</h3>
+                <p class="text-muted-foreground mb-8">
+                  Durante la beta, el equipo de Rodar Libre lee las conversaciones para encontrar errores y mejorar el asistente.
+                  Solo las ven las personas del equipo autorizadas para hacerlo, y en modo de solo lectura: no pueden modificarlas.
+                  No usamos tus conversaciones para publicidad y nunca las vendemos.
+                </p>
+
+                <h3 class="font-serif font-bold text-xl text-foreground mb-4">6.5. Cómo borrar tus conversaciones</h3>
+                <p class="text-muted-foreground mb-4">
+                  Durante la beta no puedes borrar tus conversaciones desde la App. Puedes hacerlo de dos formas:
+                </p>
+                <ul class="space-y-4 text-muted-foreground mb-4">
+                  <li>
+                    <strong class="text-foreground">Pidiéndonos que las borremos:</strong> Escribe a
+                    <strong class="text-primary"> hola@rodarlibre.co</strong> desde el correo de tu cuenta. Tramitamos la
+                    solicitud conforme a la Ley 1581 de 2012, para las dos copias.
+                  </li>
+                  <li>
+                    <strong class="text-foreground">Eliminando tu cuenta:</strong> Se borra la copia guardada en tu cuenta de
+                    Rodar Libre.
+                  </li>
+                </ul>
+                <p class="text-muted-foreground mb-8">
+                  El registro técnico del asistente no se borra al eliminar tu cuenta: se borra solo cuando cada respuesta cumple
+                  360 días. Si quieres que lo borremos antes, pídelo por correo.
+                </p>
+
+                <h3 class="font-serif font-bold text-xl text-foreground mb-4">6.6. Datos que no debes incluir</h3>
+                <div class="bg-primary/5 border border-primary/20 rounded-lg p-4 mb-8 space-y-4 text-muted-foreground">
+                  <p>
+                    <strong class="text-foreground">No incluyas en tus preguntas tu cédula, tu dirección, tu teléfono ni datos
+                    de otras personas.</strong> Si los necesitas para explicar el caso, cámbialos por datos inventados.
+                  </p>
+                  <p>
+                    Algunas preguntas pueden revelar datos sensibles, como lesiones en un accidente o el consumo de alcohol. No
+                    estás obligado a compartirlos. Si lo haces, los tratamos como el resto de la conversación, con las medidas de
+                    esta sección.
+                  </p>
+                </div>
+
+                <h3 class="font-serif font-bold text-xl text-foreground mb-4">6.7. Las respuestas no son asesoría legal</h3>
+                <p class="text-muted-foreground mb-8">
+                  Las respuestas son orientación informativa basada principalmente en la Ley 769 de 2002 (Código Nacional de
+                  Tránsito Terrestre). Las genera un sistema en beta y pueden tener errores, omisiones o información
+                  desactualizada: no reemplazan la asesoría de un abogado ni la decisión de una autoridad. Puedes calificar las
+                  respuestas y reportar las que sean ofensivas, peligrosas o estén equivocadas; el equipo revisa los reportes.
+                </p>
+
+                <h3 class="font-serif font-bold text-xl text-foreground mb-4">6.8. Tus derechos sobre estos datos</h3>
+                <p class="text-muted-foreground">
+                  Además de lo indicado en la sección 7, la Ley 1581 de 2012 (hábeas data) te permite conocer, actualizar,
+                  rectificar y pedir la supresión de tus datos, y revocar la autorización que diste al aceptar el aviso del
+                  asistente. Puedes ver las conversaciones guardadas en tu cuenta desde la App. Para todo lo demás, escribe a
+                  <strong class="text-primary"> hola@rodarlibre.co</strong> desde el correo de tu cuenta.
+                </p>
+              </div>
+            </div>
+          </section>
+
           {/* User Rights */}
           <section class="mb-12">
             <div class="flex items-start gap-4 mb-6">
@@ -239,7 +426,7 @@ const description =
                 <UserCheck className="w-5 h-5 text-primary" />
               </div>
               <div class="w-full">
-                <h2 class="font-serif font-bold text-2xl text-foreground mb-4">6. Derechos del Usuario y Control de Datos</h2>
+                <h2 class="font-serif font-bold text-2xl text-foreground mb-4">7. Derechos del Usuario y Control de Datos</h2>
                 <p class="text-muted-foreground mb-6">
                   Tienes control sobre tu información personal. Como usuario, tienes derecho a:
                 </p>
@@ -259,6 +446,7 @@ const description =
                     </a>
                     o enviando una solicitud a nuestro email de contacto de privacidad:
                     <strong class="text-primary"> hola@rodarlibre.co</strong>. Procesaremos tu solicitud de manera oportuna.
+                    Para las conversaciones del Asistente de Tránsito (beta), consulta la sección 6.5.
                   </li>
                 </ul>
               </div>
@@ -272,7 +460,7 @@ const description =
                 <Calendar className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <h2 class="font-serif font-bold text-2xl text-foreground mb-4">7. Características Futuras</h2>
+                <h2 class="font-serif font-bold text-2xl text-foreground mb-4">8. Características Futuras</h2>
                 <p class="text-muted-foreground">
                   Como se anunció en nuestra página de inicio (rodarlibre.co), planeamos introducir nuevas características en el futuro.
                   Esta Política de Privacidad se actualizará para reflejar cualquier cambio en nuestras prácticas de recopilación o uso de datos.
@@ -289,7 +477,7 @@ const description =
                 <Shield className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <h2 class="font-serif font-bold text-2xl text-foreground mb-4">8. Privacidad de Menores</h2>
+                <h2 class="font-serif font-bold text-2xl text-foreground mb-4">9. Privacidad de Menores</h2>
                 <p class="text-muted-foreground">
                   Nuestra App no está destinada para uso de menores de 13 años. No recopilamos conscientemente información personal
                   de menores de 13 años. Si nos damos cuenta de que hemos recopilado dicha información, tomaremos medidas para eliminarla.
@@ -305,7 +493,7 @@ const description =
                 <FileText className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <h2 class="font-serif font-bold text-2xl text-foreground mb-4">9. Cambios a esta Política de Privacidad</h2>
+                <h2 class="font-serif font-bold text-2xl text-foreground mb-4">10. Cambios a esta Política de Privacidad</h2>
                 <p class="text-muted-foreground">
                   Podemos actualizar esta Política de Privacidad de vez en cuando. Te notificaremos de cualquier cambio publicando
                   la nueva política en esta página y actualizando la fecha de &quot;Última actualización&quot;. Se te recomienda revisar
@@ -322,7 +510,7 @@ const description =
                 <Mail className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <h2 class="font-serif font-bold text-2xl text-foreground mb-4">10. Contáctanos</h2>
+                <h2 class="font-serif font-bold text-2xl text-foreground mb-4">11. Contáctanos</h2>
                 <p class="text-muted-foreground mb-4">
                   Si tienes alguna pregunta, inquietud o solicitud sobre esta Política de Privacidad o tus datos, por favor contáctanos en:
                 </p>
