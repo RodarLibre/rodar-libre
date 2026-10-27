@@ -38,6 +38,10 @@ export default [
     },
   },
   {
-    ignores: ["node_modules/", ".next/", "dist/", "build/"],
+    files: ["**/*.mjs"],
+    languageOptions: { globals: { process: "readonly" } },
+  },
+  {
+    ignores: ["node_modules/", ".astro/", "dist/", "build/"],
   },
 ]

@@ -1,7 +1,4 @@
-"use client"
-
 import * as React from "react"
-import Image from "next/image"
 import useEmblaCarousel from "embla-carousel-react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
@@ -66,14 +63,13 @@ export function AppShowcase({ screens }: { screens: AppScreen[] }) {
                   index === selectedIndex ? "opacity-100 scale-100" : "opacity-40 scale-90"
                 )}
               >
-                <Image
+                <img
                   src={screen.src}
                   alt={screen.alt}
-                  fill
-                  priority={index === 0}
-                  loading={index === 0 ? undefined : "lazy"}
-                  sizes="(max-width: 640px) 62vw, (max-width: 768px) 40vw, 280px"
-                  className="object-cover"
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : undefined}
+                  decoding="async"
+                  className="absolute inset-0 size-full object-cover"
                 />
               </div>
             </div>

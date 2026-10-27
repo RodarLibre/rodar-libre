@@ -1,9 +1,4 @@
-"use client"
-
 import * as React from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { usePathname, useRouter } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -23,11 +18,18 @@ function smoothScrollTo(id: string) {
   }
 }
 
+/** Ya en el home hace scroll suave; desde otra página navega al home con el ancla de la sección. */
+function goToSection(sectionId: string) {
+  if (window.location.pathname === "/") {
+    smoothScrollTo(sectionId)
+  } else {
+    window.location.href = `/#${sectionId}`
+  }
+}
+
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false)
   const [scrolled, setScrolled] = React.useState(false)
-  const pathname = usePathname()
-  const router = useRouter()
 
   React.useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -41,27 +43,13 @@ export function Navbar() {
   ) {
     e.preventDefault()
     setIsOpen(false)
-
-    if (pathname === "/") {
-      // Already on home — just smooth scroll
-      smoothScrollTo(link.sectionId)
-    } else {
-      // Navigate to home, then scroll after page loads
-      router.push("/")
-      // Give Next.js time to render before scrolling
-      setTimeout(() => smoothScrollTo(link.sectionId!), 400)
-    }
+    goToSection(link.sectionId)
   }
 
   function handleDownloadClick(e: React.MouseEvent<HTMLAnchorElement>) {
     e.preventDefault()
     setIsOpen(false)
-    if (pathname === "/") {
-      smoothScrollTo("download")
-    } else {
-      router.push("/")
-      setTimeout(() => smoothScrollTo("download"), 400)
-    }
+    goToSection("download")
   }
 
   return (
@@ -75,8 +63,8 @@ export function Navbar() {
     >
       <div className="max-w-4xl mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center group" aria-label="Ir al inicio de RodarLibre">
-          <Image
+        <a href="/" className="flex items-center group" aria-label="Ir al inicio de RodarLibre">
+          <img
             src="/logo-lettering.png"
             alt="RodarLibre"
             width={420}
@@ -85,10 +73,10 @@ export function Navbar() {
               "w-auto object-contain transition-all duration-300 group-hover:opacity-85",
               scrolled ? "h-9" : "h-11"
             )}
-            priority
-            sizes="96px"
+            fetchPriority="high"
+            decoding="async"
           />
-        </Link>
+        </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
@@ -96,9 +84,7 @@ export function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              onClick={link.isExternal ? undefined : (e) => handleNavClick(e, link)}
-              target={link.isExternal ? "_blank" : undefined}
-              rel={link.isExternal ? "noopener noreferrer" : undefined}
+              onClick={(e) => handleNavClick(e, link)}
               className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors cursor-pointer"
             >
               {link.name}
@@ -133,9 +119,7 @@ export function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              onClick={link.isExternal ? undefined : (e) => handleNavClick(e, link)}
-              target={link.isExternal ? "_blank" : undefined}
-              rel={link.isExternal ? "noopener noreferrer" : undefined}
+              onClick={(e) => handleNavClick(e, link)}
               className="text-lg font-medium text-muted-foreground hover:text-primary transition-colors px-2 py-1 cursor-pointer"
             >
               {link.name}
