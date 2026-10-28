@@ -19,7 +19,7 @@ function OgTestContent() {
     return (
       <div style={{ ...containerStyle, backgroundColor: "#000000" }} id="og-card">
         <div className="relative w-[700px] h-[385px]">
-          <img src="/logo-lettering.png" alt="RodarLibre" className="absolute inset-0 size-full object-contain" />
+          <img src="/logo-lettering.png" alt="Rodar Libre" className="absolute inset-0 size-full object-contain" />
         </div>
       </div>
     )
@@ -36,7 +36,7 @@ function OgTestContent() {
         id="og-card"
       >
         <div className="relative w-[700px] h-[385px]">
-          <img src="/logo-lettering.png" alt="RodarLibre" className="absolute inset-0 size-full object-contain" />
+          <img src="/logo-lettering.png" alt="Rodar Libre" className="absolute inset-0 size-full object-contain" />
         </div>
       </div>
     )
@@ -56,7 +56,7 @@ function OgTestContent() {
         <div className="absolute w-[600px] h-[350px] bg-emerald-500/5 rounded-full blur-[140px] pointer-events-none" />
         
         <div className="relative w-[700px] h-[385px] z-10">
-          <img src="/logo-lettering.png" alt="RodarLibre" className="absolute inset-0 size-full object-contain" />
+          <img src="/logo-lettering.png" alt="Rodar Libre" className="absolute inset-0 size-full object-contain" />
         </div>
       </div>
     )

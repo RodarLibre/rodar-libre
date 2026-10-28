@@ -37,7 +37,7 @@ export function AppShowcase({ screens }: { screens: AppScreen[] }) {
     <div
       role="region"
       aria-roledescription="carrusel"
-      aria-label="Capturas de pantalla de la app RodarLibre"
+      aria-label="Capturas de pantalla de la app Rodar Libre"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onFocus={() => setIsPaused(true)}

@@ -63,10 +63,10 @@ export function Navbar() {
     >
       <div className="max-w-4xl mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="/" className="flex items-center group" aria-label="Ir al inicio de RodarLibre">
+        <a href="/" className="flex items-center group" aria-label="Ir al inicio de Rodar Libre">
           <img
             src="/logo-lettering.png"
-            alt="RodarLibre"
+            alt="Rodar Libre"
             width={420}
             height={231}
             className={cn(

@@ -9,12 +9,12 @@ interface Props {
   description?: string
 }
 
-const DEFAULT_TITLE = "RodarLibre - La primera app para conductores en Colombia"
+const DEFAULT_TITLE = "Rodar Libre - La primera app para conductores en Colombia"
 const DEFAULT_DESCRIPTION = "Rueda libre, vive la ruta, cuida tu vehículo. Síguenos en @rodarlibre.co"
 
 const { title = DEFAULT_TITLE, description = DEFAULT_DESCRIPTION } = Astro.props
 
-const OG_TITLE = "RodarLibre - La APP para conductores en Colombia"
+const OG_TITLE = "Rodar Libre - La APP para conductores en Colombia"
 const OG_DESCRIPTION = "Rueda libre, vive la ruta, cuida tu vehículo. Síguenos en @rodarlibre.co"
 const ogImage = new URL("/og-image.webp", Astro.site).href
 ---
@@ -31,7 +31,7 @@ const ogImage = new URL("/og-image.webp", Astro.site).href
     <meta property="og:title" content={OG_TITLE} />
     <meta property="og:description" content={OG_DESCRIPTION} />
     <meta property="og:url" content="https://rodarlibre.co" />
-    <meta property="og:site_name" content="RodarLibre" />
+    <meta property="og:site_name" content="Rodar Libre" />
     <meta property="og:locale" content="es_CO" />
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
