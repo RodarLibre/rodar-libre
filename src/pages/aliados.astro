@@ -7,14 +7,15 @@ const title = "Aliados - Rodar Libre"
 const description =
   "Pon tu negocio frente a los moteros que usan Rodar Libre para llevar su moto al día. Planes desde gratis."
 
-// Cifras agregadas de producción al 2026-10-28 (api/docs/estrategia/reportes/2026-10-28.md).
-// Actualízalas junto con la fecha cuando se vuelva a medir.
-const statsDate = "28 de octubre de 2026"
+// Cifras agregadas de producción al 2026-10-30 (skill consulta-produccion, diagnostico.rb), redondeadas hacia
+// abajo: 3.742 usuarios, 1.771 de 3.089 motos son 2024+, 1.106 con actividad en 30 días, COP 449,8 M en
+// tanqueos y mantenimientos. Actualízalas junto con la fecha cuando se vuelva a medir.
+const statsDate = "30 de octubre de 2026"
 const stats = [
-  { value: "3.705", label: "conductores registrados, casi todos moteros" },
-  { value: "3.064", label: "motos activas, el 93% verificadas con el RUNT" },
-  { value: "1.088", label: "usuarios activos en los últimos 30 días" },
-  { value: "683", label: "motos con el SOAT por vencer en los próximos 90 días" },
+  { value: "3.700+", label: "moteros y conductores registrados" },
+  { value: "57%", label: "de sus motos son modelo 2024 o más nuevas" },
+  { value: "1.100+", label: "usuarios activos al mes" },
+  { value: "$449 M", label: "pesos en gasolina y mantenimiento registrados en la app" },
 ]
 
 const reasons = [
@@ -96,11 +97,11 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`
         <div class="max-w-4xl mx-auto text-center space-y-6">
           <p class="text-xs font-bold uppercase tracking-[0.2em] text-emerald-400">Aliados</p>
           <h1 class="font-serif font-black text-4xl md:text-5xl leading-tight text-foreground text-balance">
-            Tu negocio, en la app que los moteros usan para su moto
+            Tu negocio, en la app más completa para moteros
           </h1>
           <p class="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto text-pretty">
-            Multas, SOAT, tecnomecánica, tanqueos y mantenimiento en un solo lugar. Cuando a un motero le toca algo,
-            Rodar Libre se lo recuerda. Ahí puedes estar tú.
+            Los moteros revisan aquí sus multas, el SOAT, la tecnomecánica y el pico y placa, registran tanqueos y
+            mantenimientos, y cumplen metas por cuidar su moto. Rodar Libre los acompaña en todo. Este es tu lugar.
           </p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
             <a
