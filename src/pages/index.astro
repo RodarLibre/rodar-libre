@@ -11,7 +11,44 @@ import { HelmetIcon } from "@/components/ui/helmet-icon"
 import { AlliesMarquee } from "@/components/allies-marquee"
 import { AppShowcase, type AppScreen } from "@/components/app-showcase"
 import { HeroShowcaseVideo } from "@/components/hero-showcase-video"
-import { Fuel, Mountain, Users, TriangleAlert, Scale, Instagram, Linkedin, Github, Facebook, TrendingUp, Zap, MessageCircle, RefreshCw } from "lucide-react"
+import { Fuel, Mountain, Users, Scale, Instagram, Linkedin, Github, Facebook, TrendingUp, Zap, MessageCircle, RefreshCw, CalendarX, IdCard, Wallet, Gauge } from "lucide-react"
+
+// Textos tomados de la ficha de Google Play 1.24.0 (expo/store-assets/1.24.0/listing)
+const features = [
+  { icon: Scale, title: "Multas del SIMIT", body: "Consulta tus multas y comparendos, vehículo por vehículo" },
+  {
+    icon: RefreshCw,
+    title: "SOAT y tecnomecánica",
+    body: "Trae los datos de tu vehículo desde el RUNT y recibe recordatorios antes de que venzan",
+  },
+  {
+    icon: CalendarX,
+    title: "Pico y placa",
+    body: "Revisa qué día tienes restricción en tu ciudad o en otras ciudades si estás de viaje",
+  },
+  {
+    icon: IdCard,
+    title: "Licencia y seguro todo riesgo",
+    body: "Guarda la vigencia de tu pase por categoría y de tu seguro todo riesgo, y mira cuántos días les quedan",
+  },
+  { icon: Fuel, title: "Consumo de gasolina", body: "Registra cada tanqueada y mira cuántos km por galón te rinde" },
+  {
+    icon: EngineOilIcon,
+    title: "Mantenimiento",
+    body: "Lleva el control del cambio de aceite y otros mantenimientos, con avisos para el próximo",
+  },
+  {
+    icon: Wallet,
+    title: "¿Cuánto me cuesta mi moto?",
+    body: "Lo que llevas gastado este mes en gasolina y mantenimiento",
+  },
+  {
+    icon: Gauge,
+    title: "Tablero",
+    body: "La salud de tu moto o carro en un solo medidor, con tu siguiente paso, tu racha y tus logros",
+  },
+  { icon: HelmetIcon, title: "Aliados", body: "Talleres, tiendas, comunidades y eventos con descuentos" },
+]
 
 const allyPerks = [
   { icon: Users, label: "Miles de clientes potenciales" },
@@ -21,14 +58,20 @@ const allyPerks = [
 
 // Texto alternativo por archivo. Las capturas sin entrada usan un alt genérico.
 const appScreenAlts: Record<string, string> = {
-  "01-aliados-y-beneficios.webp":
-    "Pantalla de Aliados y Beneficios de la app Rodar Libre mostrando eventos para moteros",
-  "02-perfil-aliado-taller.webp":
-    "Perfil de un taller aliado en la app Rodar Libre con información de contacto y reseñas",
-  "03-perfil-aliado-comunidad.webp":
-    "Perfil de una comunidad aliada en la app Rodar Libre con beneficios y próximos eventos",
-  "04-detalle-evento.webp":
-    "Detalle de un evento en la app Rodar Libre con fecha, ubicación y precio de entrada",
+  "01-tablero.webp":
+    "Tablero de Rodar Libre con la salud de la moto, el kilometraje, el rendimiento y la racha semanal",
+  "02-multas-simit.webp":
+    "Consulta de multas del SIMIT en Rodar Libre sin multas pendientes y con alertas de multas nuevas",
+  "03-pico-y-placa.webp":
+    "Notificaciones de Rodar Libre con alertas de pico y placa, multas nuevas, SOAT, revisión técnico-mecánica y mantenimiento",
+  "04-tu-go.webp":
+    "Resumen de Tu Go con los avisos de pico y placa y las revisiones de multas de los últimos 30 días",
+  "05-tu-progreso.webp":
+    "Pantalla Tu progreso de Rodar Libre con la racha semanal y las tareas de la semana",
+  "06-logros.webp":
+    "Logros de Rodar Libre desbloqueados al cuidar la moto",
+  "07-rendimiento.webp":
+    "Logro de primer rendimiento en Rodar Libre con los kilómetros por galón de la moto",
 }
 
 // Las capturas se descubren en build: para agregar más basta subir la imagen a /public/app
@@ -51,7 +94,7 @@ const appJsonLd = {
   operatingSystem: "iOS, Android",
   applicationCategory: "LifestyleApplication",
   description:
-    "La primera app para conductores en Colombia. Registra tanqueadas, controla mantenimientos, guarda tus documentos y accede a beneficios con aliados.",
+    "La app para conductores y moteros en Colombia: multas del SIMIT, SOAT, tecnomecánica, licencia de conducción y pico y placa de tu moto o tu carro, en un solo lugar.",
   offers: { "@type": "Offer", price: "0", priceCurrency: "COP" },
   url: "https://rodarlibre.co",
   downloadUrl: [
@@ -98,9 +141,9 @@ const appScreens = getAppScreens()
 
           <div class="space-y-4">
             <h1 class="font-sans text-lg font-normal text-muted-foreground leading-relaxed">
-              La primera app para conductores en Colombia.
+              La app para conductores y moteros en Colombia.
               <br />
-              <span class="text-primary font-medium">Rueda libre, vive la ruta, cuida tu vehículo.</span>
+              <span class="text-primary font-medium">Tu vehículo, al día.</span>
             </h1>
           </div>
         </div>
@@ -114,7 +157,7 @@ const appScreens = getAppScreens()
             {/* App Store Section */}
             <div class="flex flex-col items-center justify-center p-8 bg-card border border-border rounded-2xl h-full">
               <a
-                href="https://apps.apple.com/us/app/rodarlibre/id6762035476 "
+                href="https://apps.apple.com/us/app/rodarlibre/id6762035476"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Descargar Rodar Libre en App Store"
@@ -200,89 +243,21 @@ const appScreens = getAppScreens()
         <div class="max-w-4xl mx-auto">
           <h2 class="font-serif font-bold text-2xl text-center mb-8 text-foreground">¿Qué puedes hacer?</h2>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card className="bg-card border-border">
-              <CardContent className="p-6 text-center space-y-4">
-                <div class="flex justify-center">
-                  <div class="p-3 bg-primary/10 rounded-lg">
-                    <Fuel className="w-6 h-6 text-primary" />
+            {features.map(({ icon: Icon, title, body }) => (
+              <Card className="bg-card border-border">
+                <CardContent className="p-6 text-center space-y-4">
+                  <div class="flex justify-center">
+                    <div class="p-3 bg-primary/10 rounded-lg">
+                      <Icon className="w-6 h-6 text-primary" />
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <h3 class="font-sans font-semibold text-card-foreground">Registro de tanqueadas</h3>
-                  <p class="text-sm text-muted-foreground">Ahorra dinero</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-card border-border">
-              <CardContent className="p-6 text-center space-y-4">
-                <div class="flex justify-center">
-                  <div class="p-3 bg-primary/10 rounded-lg">
-                    <EngineOilIcon className="w-6 h-6 text-primary" />
+                  <div>
+                    <h3 class="font-sans font-semibold text-card-foreground">{title}</h3>
+                    <p class="text-sm text-muted-foreground">{body}</p>
                   </div>
-                </div>
-                <div>
-                  <h3 class="font-sans font-semibold text-card-foreground">Control de cambios de aceite</h3>
-                  <p class="text-sm text-muted-foreground">Mantén tu moto en perfecto estado</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-card border-border">
-              <CardContent className="p-6 text-center space-y-4">
-                <div class="flex justify-center">
-                  <div class="p-3 bg-primary/10 rounded-lg">
-                    <RefreshCw className="w-6 h-6 text-primary" />
-                  </div>
-                </div>
-                <div>
-                  <h3 class="font-sans font-semibold text-card-foreground">Sincroniza tus datos con el RUNT</h3>
-                  <p class="text-sm text-muted-foreground">No necesitas agregar tu vehículo manualmente</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-card border-border">
-              <CardContent className="p-6 text-center space-y-4">
-                <div class="flex justify-center">
-                  <div class="p-3 bg-primary/10 rounded-lg">
-                    <TriangleAlert className="w-6 h-6 text-primary" />
-                  </div>
-                </div>
-                <div>
-                  <h3 class="font-sans font-semibold text-card-foreground">Notificaciones de vencimiento</h3>
-                  <p class="text-sm text-muted-foreground">Recibe a tiempo notificaciones sobre vencimiento de tus papeles</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-card border-border">
-              <CardContent className="p-6 text-center space-y-4">
-                <div class="flex justify-center">
-                  <div class="p-3 bg-primary/10 rounded-lg">
-                    <Scale className="w-6 h-6 text-primary" />
-                  </div>
-                </div>
-                <div>
-                  <h3 class="font-sans font-semibold text-card-foreground">Consulta tus multas de tránsito</h3>
-                  <p class="text-sm text-muted-foreground">Revisa si tienes multas en el SIMIT</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-card border-border">
-              <CardContent className="p-6 text-center space-y-4">
-                <div class="flex justify-center">
-                  <div class="p-3 bg-primary/10 rounded-lg">
-                    <HelmetIcon className="w-6 h-6 text-primary" />
-                  </div>
-                </div>
-                <div>
-                  <h3 class="font-sans font-semibold text-card-foreground">Descuentos exclusivos</h3>
-                  <p class="text-sm text-muted-foreground">Tenemos alianzas con talleres, tiendas y aseguradoras</p>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            ))}
 
             {/*
             <Card className="bg-card border-border">
@@ -337,7 +312,7 @@ const appScreens = getAppScreens()
           <div class="text-center space-y-3">
             <h2 class="font-serif font-bold text-2xl text-foreground">Nuestra App</h2>
             <p class="text-muted-foreground text-sm max-w-md mx-auto">
-              Aliados, beneficios, eventos y todo lo que necesitas para rodar, en la palma de tu mano.
+              Multas, SOAT, revisión técnico-mecánica, pico y placa y kilometraje en un solo lugar.
             </p>
           </div>
           <AppShowcase client:load screens={appScreens} />
@@ -398,9 +373,9 @@ const appScreens = getAppScreens()
       {/* Our Team Section */}
       <section id="team" class="px-4 py-12 bg-muted/20 scroll-mt-28">
         <div class="max-w-6xl mx-auto">
-          <h2 class="font-serif font-bold text-2xl text-center mb-8 text-foreground">Creado por</h2>
-          <div class="flex justify-center max-w-xl mx-auto">
-            <Card className="bg-card border-border overflow-hidden max-w-xs w-full mx-auto">
+          <h2 class="font-serif font-bold text-2xl text-center mb-8 text-foreground">Nuestro Equipo</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-xl mx-auto">
+            <Card className="bg-card border-border overflow-hidden max-w-[272px] w-full mx-auto">
               <CardContent className="p-0">
                 <div class="aspect-square relative">
                   <img
@@ -448,6 +423,35 @@ const appScreens = getAppScreens()
               </CardContent>
             </Card>
 
+            <Card className="bg-card border-border overflow-hidden max-w-[272px] w-full mx-auto">
+              <CardContent className="p-0">
+                <div class="aspect-square relative">
+                  <img
+                    src="/team/miguel.webp"
+                    alt="Miguel Ángel Bolaños"
+                    loading="lazy"
+                    decoding="async"
+                    class="absolute inset-0 size-full object-cover"
+                  />
+                </div>
+                <div class="p-6 text-center space-y-2">
+                  <h3 class="font-sans font-semibold text-card-foreground text-xl">Miguel Ángel Bolaños</h3>
+                  <p class="text-muted-foreground text-sm">Senior Product & Visual Designer</p>
+                  <div class="flex justify-center gap-4 pt-2">
+                    <a
+                      href="https://www.linkedin.com/in/mab015/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-muted-foreground hover:text-primary transition-colors"
+                      aria-label="LinkedIn de Miguel Ángel Bolaños"
+                    >
+                      <Linkedin className="w-5 h-5" />
+                    </a>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
             {/*
             <Card className="bg-card border-border overflow-hidden max-w-xs w-full mx-auto">
               <CardContent className="p-0">
@@ -470,35 +474,6 @@ const appScreens = getAppScreens()
                       rel="noopener noreferrer"
                       class="text-muted-foreground hover:text-primary transition-colors"
                       aria-label="LinkedIn de Tatiana Quiñonez"
-                    >
-                      <Linkedin className="w-5 h-5" />
-                    </a>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-card border-border overflow-hidden max-w-xs w-full mx-auto">
-              <CardContent className="p-0">
-                <div class="aspect-square relative">
-                  <img
-                    src="/team/miguel.webp"
-                    alt="Miguel Ángel Bolaños"
-                    loading="lazy"
-                    decoding="async"
-                    class="absolute inset-0 size-full object-cover"
-                  />
-                </div>
-                <div class="p-6 text-center space-y-2">
-                  <h3 class="font-sans font-semibold text-card-foreground text-xl">Miguel Ángel Bolaños</h3>
-                  <p class="text-muted-foreground text-sm">Senior Product & Visual Designer</p>
-                  <div class="flex justify-center gap-4 pt-2">
-                    <a
-                      href="https://www.linkedin.com/in/mab015/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-muted-foreground hover:text-primary transition-colors"
-                      aria-label="LinkedIn de Miguel Ángel Bolaños"
                     >
                       <Linkedin className="w-5 h-5" />
                     </a>

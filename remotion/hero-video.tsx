@@ -9,18 +9,19 @@ import {
   useVideoConfig,
 } from "remotion"
 
+// Capturas sin texto de la 1.23.0 (expo/store-assets/1.23.0/raw/iphone), con placa ficticia
 const SCREENSHOTS = [
-  "app/runt_sync.webp",
-  "app/no_fines.webp",
-  "app/01-aliados-y-beneficios.webp",
-  "app/04-detalle-evento.webp",
+  "hero/screens/tablero-top.webp",
+  "hero/screens/multas-simit.webp",
+  "hero/screens/notificaciones.webp",
+  "hero/screens/tu-progreso.webp",
 ] as const
 
 const FEATURES = [
-  {eyebrow: "SINCRONIZA", title: "Tu vehículo", accent: "#22c55e"},
-  {eyebrow: "CONDUCE", title: "Sin pendientes", accent: "#38bdf8"},
-  {eyebrow: "DESCUBRE", title: "Nuevas rutas", accent: "#8b5cf6"},
-  {eyebrow: "COMPARTE", title: "La aventura", accent: "#f97316"},
+  {eyebrow: "TABLERO", title: "Tu vehículo,\nal día", accent: "#22c55e"},
+  {eyebrow: "MULTAS SIMIT", title: "Consulta tus\nmultas", accent: "#38bdf8"},
+  {eyebrow: "SOAT Y RTM", title: "Avisos antes\nde que venzan", accent: "#8b5cf6"},
+  {eyebrow: "TU PROGRESO", title: "Racha y logros", accent: "#f97316"},
 ] as const
 
 const clamp = {
@@ -196,7 +197,7 @@ export const HeroVideo = () => {
             >
               {feature.eyebrow}
             </div>
-            <div style={{fontSize: 42, fontWeight: 800, letterSpacing: -1.7, lineHeight: 1.02}}>
+            <div style={{fontSize: 42, fontWeight: 800, letterSpacing: -1.7, lineHeight: 1.02, whiteSpace: "pre-line"}}>
               {feature.title}
             </div>
             <div
@@ -224,7 +225,7 @@ export const HeroVideo = () => {
         }}
       >
         <Img
-          src={staticFile("app/01-aliados-y-beneficios.webp")}
+          src={staticFile("hero/screens/logros.webp")}
           style={{width: "100%", height: "100%", objectFit: "cover"}}
         />
       </PhoneFrame>
@@ -275,7 +276,7 @@ export const HeroVideo = () => {
         }}
       >
         <Img
-          src={staticFile("app/04-detalle-evento.webp")}
+          src={staticFile("hero/screens/tu-go.webp")}
           style={{width: "100%", height: "100%", objectFit: "cover"}}
         />
       </PhoneFrame>
@@ -291,7 +292,7 @@ export const HeroVideo = () => {
           letterSpacing: 1.4,
         }}
       >
-        Tu Vehículo, Tu Mundo, Tu App
+        Saber es no tener miedo.
       </div>
     </AbsoluteFill>
   )

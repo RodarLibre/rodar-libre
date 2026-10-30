@@ -9,13 +9,14 @@ interface Props {
   description?: string
 }
 
-const DEFAULT_TITLE = "Rodar Libre - La primera app para conductores en Colombia"
-const DEFAULT_DESCRIPTION = "Rueda libre, vive la ruta, cuida tu vehículo. Síguenos en @rodarlibre.co"
+const DEFAULT_TITLE = "Rodar Libre - La app para conductores y moteros en Colombia"
+const DEFAULT_DESCRIPTION =
+  "Multas SIMIT, SOAT, tecnomecánica, licencia y pico y placa de tu moto o carro. Síguenos en @rodarlibre.co"
 
 const { title = DEFAULT_TITLE, description = DEFAULT_DESCRIPTION } = Astro.props
 
-const OG_TITLE = "Rodar Libre - La APP para conductores en Colombia"
-const OG_DESCRIPTION = "Rueda libre, vive la ruta, cuida tu vehículo. Síguenos en @rodarlibre.co"
+const OG_TITLE = "Rodar Libre - La app para conductores y moteros en Colombia"
+const OG_DESCRIPTION = DEFAULT_DESCRIPTION
 const ogImage = new URL("/og-image.webp", Astro.site).href
 ---
 

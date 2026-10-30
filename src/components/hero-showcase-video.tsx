@@ -25,11 +25,11 @@ export function HeroShowcaseVideo() {
 
         // Set sources dynamically so the browser doesn't fetch anything until now
         const webm = document.createElement("source")
-        webm.src = "/hero/rodarlibre-hero.webm?v=5"
+        webm.src = "/hero/rodarlibre-hero.webm?v=6"
         webm.type = "video/webm"
 
         const mp4 = document.createElement("source")
-        mp4.src = "/hero/rodarlibre-hero.mp4?v=5"
+        mp4.src = "/hero/rodarlibre-hero.mp4?v=6"
         mp4.type = "video/mp4"
 
         video.appendChild(webm)
@@ -64,7 +64,7 @@ export function HeroShowcaseVideo() {
       <video
         ref={videoRef}
         className="absolute inset-0 size-full object-cover"
-        poster="/hero/rodarlibre-hero-poster.webp"
+        poster="/hero/rodarlibre-hero-poster.webp?v=6"
         loop
         muted
         playsInline
