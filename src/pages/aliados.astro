@@ -1,7 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 import { AlliesMarquee } from "@/components/allies-marquee"
-import { MessageCircle, Check, Bell, ShieldCheck, Users, BarChart3, Store, CalendarDays } from "lucide-react"
+import { MessageCircle, Check, Bell, ShieldCheck, Smartphone, BarChart3, Store, CalendarDays } from "lucide-react"
 
 const title = "Aliados - Rodar Libre"
 const description =
@@ -21,18 +21,18 @@ const stats = [
 const reasons = [
   {
     icon: Bell,
-    title: "Te ven cuando deciden",
-    body: "La app les avisa cuando se vence el SOAT, la tecnomecánica o les toca el mantenimiento. Ahí es cuando buscan un taller o una tienda.",
+    title: "Siempre a la vista",
+    body: "La app le avisa al motero cuando se vence el SOAT, la Tecno o le toca el mantenimiento. Ahí es cuando busca un taller o una tienda.",
   },
   {
     icon: ShieldCheck,
-    title: "Datos reales, no seguidores",
-    body: "Cada moto viene del RUNT. Sabemos qué marcas, modelos y cilindrajes tienen nuestros usuarios, siempre en cifras agregadas.",
+    title: "Cifras especializadas",
+    body: "Sabemos qué marcas, modelos y cilindrajes tienen nuestros usuarios, siempre en cifras agregadas. Nunca compartimos sus datos personales.",
   },
   {
-    icon: Users,
-    title: "Comunidad de verdad",
-    body: "Trabajamos con clubes de moteros y publicamos sus rodadas y eventos dentro de la app.",
+    icon: Smartphone,
+    title: "La App más completa",
+    body: "Multas, SOAT, Tecno, pico y placa, tanqueos, mantenimientos y las rodadas de los clubes, en un solo lugar. Tu negocio aparece ahí mismo.",
   },
 ]
 
@@ -97,10 +97,10 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`
         <div class="max-w-4xl mx-auto text-center space-y-6">
           <p class="text-xs font-bold uppercase tracking-[0.2em] text-emerald-400">Aliados</p>
           <h1 class="font-serif font-black text-4xl md:text-5xl leading-tight text-foreground text-balance">
-            Tu negocio, en la app más completa para moteros
+            Tu negocio, en la App más completa para moteros
           </h1>
           <p class="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto text-pretty">
-            Los moteros revisan aquí sus multas, el SOAT, la tecnomecánica y el pico y placa, registran tanqueos y
+            Los moteros revisan aquí sus multas, el SOAT, la Tecno y el pico y placa, registran tanqueos y
             mantenimientos, y cumplen metas por cuidar su moto. Rodar Libre los acompaña en todo. Este es tu lugar.
           </p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
@@ -123,6 +123,14 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`
         </div>
       </section>
 
+      {/* Current allies */}
+      <section class="px-4 pb-14">
+        <div class="max-w-4xl mx-auto space-y-6">
+          <h2 class="font-serif font-bold text-xl text-center text-foreground">Ya confían en nosotros</h2>
+          <AlliesMarquee />
+        </div>
+      </section>
+
       {/* Numbers */}
       <section class="px-4 pb-14">
         <div class="max-w-4xl mx-auto">
@@ -141,7 +149,7 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`
       {/* Why */}
       <section class="px-4 py-14 bg-muted/20">
         <div class="max-w-4xl mx-auto">
-          <h2 class="font-serif font-bold text-2xl text-center mb-8 text-foreground">Por qué Rodar Libre</h2>
+          <h2 class="font-serif font-bold text-2xl text-center mb-8 text-foreground">¿Por qué Rodar Libre?</h2>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             {reasons.map(({ icon: Icon, title, body }) => (
               <div class="rounded-2xl border border-border bg-card p-6 space-y-3">
@@ -231,16 +239,8 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`
         </div>
       </section>
 
-      {/* Current allies */}
-      <section class="px-4 py-14">
-        <div class="max-w-4xl mx-auto space-y-6">
-          <h2 class="font-serif font-bold text-xl text-center text-foreground">Ya confían en nosotros</h2>
-          <AlliesMarquee />
-        </div>
-      </section>
-
       {/* Final CTA */}
-      <section class="px-4 pb-16">
+      <section class="px-4 py-16">
         <div class="max-w-xl mx-auto text-center rounded-3xl border border-border bg-card p-8 space-y-4">
           <h2 class="font-serif font-black text-3xl text-foreground leading-tight">¿Hablamos?</h2>
           <p class="text-muted-foreground text-sm">Te respondemos por WhatsApp y armamos tu perfil en pocos días.</p>
