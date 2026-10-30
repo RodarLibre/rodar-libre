@@ -5,9 +5,6 @@ import tailwindcss from "@tailwindcss/vite"
 export default defineConfig({
   site: process.env.SITE_URL || "https://rodarlibre.co",
   integrations: [react()],
-  redirects: {
-    "/aliados": "/#aliados",
-  },
   vite: {
     plugins: [tailwindcss()],
   },
