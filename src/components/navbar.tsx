@@ -3,11 +3,12 @@ import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
-const navLinks = [
+// Sin sectionId, el enlace navega a otra página en vez de hacer scroll en el home.
+const navLinks: { name: string; href: string; sectionId?: string }[] = [
   { name: "Inicio", href: "/#hero", sectionId: "hero" },
   { name: "Funciones", href: "/#features", sectionId: "features" },
   { name: "Nuestra App", href: "/#app", sectionId: "app" },
-  { name: "Aliados", href: "/#aliados", sectionId: "aliados" },
+  { name: "Aliados", href: "/aliados" },
   { name: "Equipo", href: "/#team", sectionId: "team" },
 ]
 
@@ -39,10 +40,13 @@ export function Navbar() {
 
   function handleNavClick(
     e: React.MouseEvent<HTMLAnchorElement>,
-    link: { href: string; sectionId: string }
+    link: { href: string; sectionId?: string }
   ) {
-    e.preventDefault()
     setIsOpen(false)
+    if (!link.sectionId) {
+      return
+    }
+    e.preventDefault()
     goToSection(link.sectionId)
   }
 
