@@ -25,7 +25,7 @@ const allies = [
   { name: "Café Racer DC", logo: "/allies/caferacer.webp" },
   { name: "Be Twin Café Jaus", logo: "/allies/betwincoffeejaus.webp" },
   { name: "Smak accesorios", logo: "/allies/smak_logo.webp" },
-  { name: "Ruta y Aventura - Outdoor Experience", logo: "/allies/ruta_y_aventura.webp" },
+  { name: "Ruta y Aventura", logo: "/allies/ruta_y_aventura.webp" },
 ]
 
 function AllyList({ ariaHidden = false }: { ariaHidden?: boolean }) {
