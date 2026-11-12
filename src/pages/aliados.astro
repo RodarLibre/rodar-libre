@@ -3,7 +3,7 @@ import Layout from "@/layouts/Layout.astro"
 import { AlliesMarquee } from "@/components/allies-marquee"
 import { MessageCircle, Check, Bell, ShieldCheck, Smartphone, BarChart3, Store, CalendarDays } from "lucide-react"
 
-const title = "Aliados - Rodar Libre"
+const title = "Aliados: talleres, tiendas y clubes de moteros - Rodar Libre"
 const description =
   "Pon tu negocio frente a los moteros que usan Rodar Libre para llevar su moto al día. Planes desde gratis."
 
@@ -92,6 +92,7 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`
 <Layout title={title} description={description}>
   <div class="min-h-screen bg-background text-foreground">
     <div class="relative z-10">
+      <main id="contenido">
       {/* Hero */}
       <section class="px-4 pt-32 pb-14">
         <div class="max-w-4xl mx-auto text-center space-y-6">
@@ -108,7 +109,7 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              class="flex items-center justify-center gap-3 w-full sm:w-auto h-12 px-6 rounded-2xl bg-[#1FA855] hover:bg-[#188C47] active:scale-95 transition-all text-white font-bold shadow-lg shadow-[#1FA855]/25"
+              class="flex items-center justify-center gap-3 w-full sm:w-auto h-12 px-6 rounded-2xl bg-[#17863F] hover:bg-[#136F34] active:scale-95 transition-all text-white font-bold shadow-lg shadow-[#1FA855]/25"
             >
               <MessageCircle className="w-5 h-5 fill-white/30" />
               Escríbenos por WhatsApp
@@ -248,7 +249,7 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="flex items-center justify-center gap-3 w-full h-14 rounded-2xl bg-[#1FA855] hover:bg-[#188C47] active:scale-95 transition-all text-white font-bold text-lg shadow-lg shadow-[#1FA855]/25"
+            class="flex items-center justify-center gap-3 w-full h-14 rounded-2xl bg-[#17863F] hover:bg-[#136F34] active:scale-95 transition-all text-white font-bold text-lg shadow-lg shadow-[#1FA855]/25"
           >
             <MessageCircle className="w-6 h-6 fill-white/30" />
             Escríbenos por WhatsApp
@@ -259,6 +260,8 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`
           </p>
         </div>
       </section>
+
+      </main>
 
       <footer class="px-4 py-8 bg-background border-t border-border">
         <div class="max-w-xl mx-auto text-center space-y-3">

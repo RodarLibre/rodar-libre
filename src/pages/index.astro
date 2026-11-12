@@ -87,20 +87,36 @@ function getAppScreens(): AppScreen[] {
     }))
 }
 
+const APP_STORE_URL = "https://apps.apple.com/co/app/rodar-libre-soat-y-multas/id6762035476"
+const GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.rodarlibre"
+
+const siteUrl = new URL("/", Astro.site).href
+const appDescription =
+  "La app para conductores y moteros en Colombia: multas del SIMIT, SOAT, tecnomecánica, licencia de conducción y pico y placa de tu moto o tu carro, en un solo lugar."
+
+// Una entrada por tienda: cada una con su sistema operativo y su enlace de instalación.
 const appJsonLd = {
   "@context": "https://schema.org",
-  "@type": "MobileApplication",
-  name: "Rodar Libre",
-  operatingSystem: "iOS, Android",
-  applicationCategory: "LifestyleApplication",
-  description:
-    "La app para conductores y moteros en Colombia: multas del SIMIT, SOAT, tecnomecánica, licencia de conducción y pico y placa de tu moto o tu carro, en un solo lugar.",
-  offers: { "@type": "Offer", price: "0", priceCurrency: "COP" },
-  url: "https://rodarlibre.co",
-  downloadUrl: [
-    "https://apps.apple.com/us/app/rodarlibre/id6762035476",
-    "https://play.google.com/store/apps/details?id=com.rodarlibre",
-  ],
+  "@graph": [
+    { os: "iOS", store: APP_STORE_URL },
+    { os: "Android", store: GOOGLE_PLAY_URL },
+  ].map(({ os, store }) => ({
+    "@type": "MobileApplication",
+    "@id": `${siteUrl}#app-${os.toLowerCase()}`,
+    name: "Rodar Libre",
+    operatingSystem: os,
+    applicationCategory: "LifestyleApplication",
+    description: appDescription,
+    inLanguage: "es-CO",
+    url: siteUrl,
+    image: new URL("/favicon/android-chrome-512x512.png", Astro.site).href,
+    screenshot: new URL("/app/01-tablero.webp", Astro.site).href,
+    installUrl: store,
+    downloadUrl: store,
+    sameAs: store,
+    offers: { "@type": "Offer", price: "0", priceCurrency: "COP" },
+    publisher: { "@id": `${siteUrl}#organization` },
+  })),
 }
 
 const whatsappNumber = "573195930092"
@@ -110,8 +126,12 @@ const appScreens = getAppScreens()
 ---
 
 <Layout>
-  <div class="min-h-screen bg-background text-foreground">
+  <Fragment slot="head">
     <script type="application/ld+json" is:inline set:html={JSON.stringify(appJsonLd)} />
+    {/* El póster del video es lo más grande de la primera pantalla: se pide de primero. */}
+    <link rel="preload" as="image" href="/hero/rodarlibre-hero-poster.webp?v=6" type="image/webp" fetchpriority="high" />
+  </Fragment>
+  <div class="min-h-screen bg-background text-foreground">
     {/* Starry background pattern */}
     <div class="fixed inset-0 overflow-hidden pointer-events-none">
       <div class="absolute inset-0 bg-gradient-to-b from-background via-background to-muted/20"></div>
@@ -131,6 +151,7 @@ const appScreens = getAppScreens()
     </div>
 
     <div class="relative z-10">
+      <main id="contenido">
       {/* Hero Section */}
       <section id="hero" class="px-4 pt-32 pb-16 text-center scroll-mt-28">
         <div class="max-w-5xl mx-auto space-y-8">
@@ -157,7 +178,7 @@ const appScreens = getAppScreens()
             {/* App Store Section */}
             <div class="flex flex-col items-center justify-center p-8 bg-card border border-border rounded-2xl h-full">
               <a
-                href="https://apps.apple.com/us/app/rodarlibre/id6762035476"
+                href={APP_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Descargar Rodar Libre en App Store"
@@ -178,7 +199,7 @@ const appScreens = getAppScreens()
             {/* Google Play Section */}
             <div class="flex flex-col items-center justify-center p-8 bg-card border border-border rounded-2xl h-full">
               <a
-                href="https://play.google.com/store/apps/details?id=com.rodarlibre"
+                href={GOOGLE_PLAY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Descargar Rodar Libre en Google Play"
@@ -186,7 +207,7 @@ const appScreens = getAppScreens()
               >
                 <img
                   src="/google-play-es.svg"
-                  alt="Google Play Store"
+                  alt="Disponible en Google Play"
                   width="200"
                   height="60"
                   loading="lazy"
@@ -230,7 +251,7 @@ const appScreens = getAppScreens()
               class="text-muted-foreground hover:text-primary transition-colors"
               aria-label="Seguir a Rodar Libre en TikTok"
             >
-              <svg class="w-14 h-14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <svg class="w-14 h-14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
               </svg>
             </a>
@@ -315,7 +336,7 @@ const appScreens = getAppScreens()
               Multas, SOAT, revisión técnico-mecánica, pico y placa y kilometraje en un solo lugar.
             </p>
           </div>
-          <AppShowcase client:load screens={appScreens} />
+          <AppShowcase client:visible screens={appScreens} />
         </div>
       </section>
 
@@ -350,7 +371,7 @@ const appScreens = getAppScreens()
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex items-center justify-center gap-3 w-full h-14 rounded-2xl bg-[#1FA855] hover:bg-[#188C47] active:scale-95 transition-all text-white font-bold text-lg shadow-lg shadow-[#1FA855]/25"
+                  class="flex items-center justify-center gap-3 w-full h-14 rounded-2xl bg-[#17863F] hover:bg-[#136F34] active:scale-95 transition-all text-white font-bold text-lg shadow-lg shadow-[#1FA855]/25"
                 >
                   <MessageCircle className="w-6 h-6 fill-white/30" />
                   Escríbenos por WhatsApp
@@ -386,8 +407,9 @@ const appScreens = getAppScreens()
                   <img
                     src="/team/juan_roa.webp"
                     alt="Juan Roa"
-                    loading="eager"
-                    fetchpriority="high"
+                    width="512"
+                    height="512"
+                    loading="lazy"
                     decoding="async"
                     class="absolute inset-0 size-full object-cover"
                   />
@@ -434,6 +456,8 @@ const appScreens = getAppScreens()
                   <img
                     src="/team/miguel.webp"
                     alt="Miguel Ángel Bolaños"
+                    width="504"
+                    height="504"
                     loading="lazy"
                     decoding="async"
                     class="absolute inset-0 size-full object-cover"
@@ -582,10 +606,10 @@ const appScreens = getAppScreens()
               class="block transition-opacity hover:opacity-80"
             >
               <img
-                src="/libres_en_2_ruedas.jpeg"
-                alt="Libres en 2 Ruedas"
-                width="768"
-                height="768"
+                src="/libres_en_2_ruedas.webp"
+                alt="Logo de Libres en 2 Ruedas"
+                width="480"
+                height="404"
                 loading="lazy"
                 decoding="async"
                 class="w-full max-w-[240px] mx-auto object-contain rounded-2xl"
@@ -594,6 +618,8 @@ const appScreens = getAppScreens()
           </div>
         </div>
       </section>
+
+      </main>
 
       {/* Footer */}
       <footer class="px-4 py-8 bg-background border-t border-border">
@@ -637,11 +663,8 @@ const appScreens = getAppScreens()
               Facebook
             </a>
             <a
-              href="https://app.rodarlibre.co"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/#download"
               class="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
-              aria-label="Descarga la app"
             >
               Descarga la App
             </a>

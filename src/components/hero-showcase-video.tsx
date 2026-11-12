@@ -10,6 +10,9 @@ export function HeroShowcaseVideo() {
     const video = videoRef.current
     if (!container || !video) {return}
 
+    // Con movimiento reducido se queda el póster: no se descarga ni se reproduce el video.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {return}
+
     // --- helpers ---
     const play = () => void video.play().catch(() => undefined)
 
