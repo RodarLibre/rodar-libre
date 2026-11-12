@@ -66,8 +66,9 @@ export function AppShowcase({ screens }: { screens: AppScreen[] }) {
                 <img
                   src={screen.src}
                   alt={screen.alt}
-                  loading={index === 0 ? "eager" : "lazy"}
-                  fetchPriority={index === 0 ? "high" : undefined}
+                  width={720}
+                  height={1564}
+                  loading="lazy"
                   decoding="async"
                   className="absolute inset-0 size-full object-cover"
                 />
@@ -88,7 +89,7 @@ export function AppShowcase({ screens }: { screens: AppScreen[] }) {
           <ChevronLeft className="w-5 h-5" aria-hidden="true" />
         </button>
 
-        <div className="flex gap-2" role="tablist" aria-label="Seleccionar pantalla">
+        <div className="flex" role="tablist" aria-label="Seleccionar pantalla">
           {screens.map((screen, index) => (
             <button
               key={screen.src}
@@ -97,11 +98,17 @@ export function AppShowcase({ screens }: { screens: AppScreen[] }) {
               aria-selected={index === selectedIndex}
               aria-label={`Ir a la pantalla ${index + 1}`}
               onClick={() => emblaApi?.scrollTo(index)}
-              className={cn(
-                "h-2 rounded-full transition-all duration-300",
-                index === selectedIndex ? "w-6 bg-primary" : "w-2 bg-muted-foreground/40 hover:bg-muted-foreground"
-              )}
-            />
+              className="group flex h-6 min-w-6 items-center justify-center px-1"
+            >
+              {/* El punto mide 8 px; el botón que lo envuelve da un área de toque de 24 px */}
+              <span
+                aria-hidden="true"
+                className={cn(
+                  "h-2 rounded-full transition-all duration-300",
+                  index === selectedIndex ? "w-6 bg-primary" : "w-2 bg-muted-foreground/40 group-hover:bg-muted-foreground"
+                )}
+              />
+            </button>
           ))}
         </div>
 

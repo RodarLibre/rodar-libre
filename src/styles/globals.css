@@ -140,6 +140,16 @@
     scroll-behavior: smooth;
     overflow-x: hidden;
   }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  /* Foco de teclado visible sobre el fondo oscuro (el anillo por defecto casi no se ve) */
+  :focus-visible {
+    outline: 2px solid var(--foreground);
+    outline-offset: 2px;
+  }
   body {
     @apply bg-background text-foreground;
     overflow-x: hidden;

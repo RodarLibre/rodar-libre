@@ -34,7 +34,7 @@ export function Navbar() {
 
   React.useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -69,7 +69,7 @@ export function Navbar() {
         {/* Logo */}
         <a href="/" className="flex items-center group" aria-label="Ir al inicio de Rodar Libre">
           <img
-            src="/logo-lettering.png"
+            src="/logo-lettering.webp"
             alt="Rodar Libre"
             width={420}
             height={231}
@@ -83,7 +83,7 @@ export function Navbar() {
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav aria-label="Principal" className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -105,20 +105,24 @@ export function Navbar() {
         <button
           className="md:hidden p-2 text-foreground hover:bg-accent rounded-md transition-colors"
           onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
+          aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={isOpen}
+          aria-controls="menu-movil"
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation: cerrado queda fuera del orden de foco y de los lectores de pantalla */}
       <div
+        id="menu-movil"
+        inert={!isOpen}
         className={cn(
           "md:hidden absolute top-full left-0 right-0 bg-background border-b border-border transition-all duration-300 ease-in-out overflow-hidden",
           isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         )}
       >
-        <nav className="flex flex-col p-4 gap-4">
+        <nav aria-label="Principal" className="flex flex-col p-4 gap-4">
           {navLinks.map((link) => (
             <a
               key={link.name}
