@@ -17,3 +17,6 @@ yarn-debug.log*
 .vercel
 
 *.DS_Store
+
+# claude code (local preview config and worktrees)
+.claude/
