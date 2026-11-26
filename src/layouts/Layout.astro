@@ -9,13 +9,15 @@ interface Props {
   description?: string
   /** Páginas internas o de prueba: no se indexan ni entran al sitemap. */
   noindex?: boolean
+  /** Imagen de la tarjeta al compartir el enlace (URL absoluta). Sin ella se usa la imagen del sitio. */
+  image?: { url: string; alt: string }
 }
 
 const DEFAULT_TITLE = "Rodar Libre - La app para conductores y moteros en Colombia"
 const DEFAULT_DESCRIPTION =
   "Rodar Libre es la app para moteros y conductores en Colombia: multas del SIMIT, SOAT, tecnomecánica, licencia y pico y placa de tu moto o carro, en un solo lugar."
 
-const { title = DEFAULT_TITLE, description = DEFAULT_DESCRIPTION, noindex = false } = Astro.props
+const { title = DEFAULT_TITLE, description = DEFAULT_DESCRIPTION, noindex = false, image } = Astro.props
 
 // URL canónica sin barra final (salvo el home), igual a como enlazamos las páginas.
 const canonicalPath = Astro.url.pathname.replace(/\/+$/, "") || "/"
@@ -23,8 +25,10 @@ const canonicalUrl = new URL(canonicalPath, Astro.site).href
 const siteUrl = new URL("/", Astro.site).href
 
 // JPG y no WebP: varios lectores de enlaces (previsualizaciones en chats y redes) no muestran WebP.
-const ogImage = new URL("/og-image.jpg", Astro.site).href
-const OG_IMAGE_ALT = "Logo de Rodar Libre en letras blancas sobre fondo negro"
+const ogImage = image?.url ?? new URL("/og-image.jpg", Astro.site).href
+const OG_IMAGE_ALT = image?.alt ?? "Logo de Rodar Libre en letras blancas sobre fondo negro"
+// Tipo y medidas son las de la imagen del sitio; de una imagen ajena (el flyer de una rodada) no se conocen.
+const isDefaultImage = !image
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
@@ -74,9 +78,9 @@ const organizationJsonLd = {
     <meta property="og:site_name" content="Rodar Libre" />
     <meta property="og:locale" content="es_CO" />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    {isDefaultImage && <meta property="og:image:type" content="image/jpeg" />}
+    {isDefaultImage && <meta property="og:image:width" content="1200" />}
+    {isDefaultImage && <meta property="og:image:height" content="630" />}
     <meta property="og:image:alt" content={OG_IMAGE_ALT} />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />

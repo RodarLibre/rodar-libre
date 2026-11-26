@@ -1,0 +1,30 @@
+---
+// Los dos botones de tienda del sitio (mismas imágenes y textos que la sección de descarga del home).
+interface Props {
+  appStoreUrl: string
+  googlePlayUrl: string
+}
+
+const { appStoreUrl, googlePlayUrl } = Astro.props
+---
+
+<div class="flex flex-wrap items-center justify-center gap-3">
+  <a
+    href={appStoreUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Descargar Rodar Libre en App Store"
+    class="block rounded-lg hover:opacity-90 transition-opacity"
+  >
+    <img src="/ios_banner.svg" alt="Descargar en App Store" width="132" height="44" loading="lazy" decoding="async" class="h-11 w-auto" />
+  </a>
+  <a
+    href={googlePlayUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Descargar Rodar Libre en Google Play"
+    class="block rounded-lg hover:opacity-90 transition-opacity"
+  >
+    <img src="/google-play-es.svg" alt="Disponible en Google Play" width="149" height="44" loading="lazy" decoding="async" class="h-11 w-auto" />
+  </a>
+</div>
