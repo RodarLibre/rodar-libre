@@ -1,0 +1,317 @@
+---
+// La rodada pública: https://rodarlibre.co/e/<slug>. Un club pega este enlace en su grupo de WhatsApp en vez del flyer.
+// Se renderiza en cada petición (el rastreador de WhatsApp no ejecuta JavaScript, así que la etiqueta de la tarjeta
+// tiene que venir ya en el HTML) y el CDN guarda la respuesta unos minutos. Contrato: §6.1 de docs/ride_check_plan.md
+// del repositorio de la API.
+export const prerender = false
+
+import { CalendarDays, CalendarCheck, Clock, MapPin, Route, Wallet, Users, ExternalLink, Instagram } from "lucide-react"
+import Layout from "@/layouts/Layout.astro"
+import SiteFooter from "@/components/site-footer.astro"
+import StoreButtons from "@/components/store-buttons.astro"
+import { APP_STORE_URL, GOOGLE_PLAY_URL, appStoreUrlForRide, googlePlayUrlForRide } from "@/lib/store-links"
+import {
+  appLink,
+  cardDescription,
+  capitalize,
+  fetchPublicEvent,
+  flyerFitsCard,
+  formatDay,
+  formatDistance,
+  formatFee,
+  formatHour,
+} from "@/lib/public-events"
+
+// El CDN de Vercel guarda la respuesta según s-maxage; el navegador siempre revalida (max-age=0).
+const CACHE_OK = "public, max-age=0, s-maxage=300, stale-while-revalidate=300"
+const CACHE_NOT_FOUND = "public, max-age=0, s-maxage=60"
+const CACHE_ERROR = "no-store"
+
+const result = await fetchPublicEvent(Astro.params.slug ?? "")
+const headers = Astro.response.headers
+
+let title = ""
+let description = ""
+let noindex = true
+let cardImage: { url: string; alt: string } | undefined
+
+if (result.status === "ok") {
+  const { event } = result
+  headers.set("Cache-Control", CACHE_OK)
+  title = `${event.title} - Rodar Libre`
+  description = cardDescription(event)
+  noindex = false
+  // La imagen de la tarjeta es el flyer; si falta o es demasiado pesado para WhatsApp, queda la imagen del sitio.
+  if (event.imageUrl && (await flyerFitsCard(event.imageUrl))) {
+    cardImage = { url: event.imageUrl, alt: `Flyer de la rodada ${event.title}` }
+  }
+} else if (result.status === "not_found") {
+  Astro.response.status = 404
+  headers.set("Cache-Control", CACHE_NOT_FOUND)
+  headers.set("X-Robots-Tag", "noindex")
+  title = "Rodada no encontrada - Rodar Libre"
+  description = "La rodada que buscas no existe o ya no está publicada."
+} else {
+  Astro.response.status = 503
+  headers.set("Cache-Control", CACHE_ERROR)
+  headers.set("Retry-After", "60")
+  headers.set("X-Robots-Tag", "noindex")
+  title = "No pudimos cargar la rodada - Rodar Libre"
+  description = "Algo falló de nuestro lado. Intenta de nuevo en unos minutos."
+}
+
+const event = result.status === "ok" ? result.event : null
+const hour = event ? formatHour(event.startsAt) : null
+const distance = event ? formatDistance(event.distanceKm) : null
+const fee = event ? formatFee(event.entryFee) : null
+const openInApp = event && !event.past ? appLink(event.appPath) : null
+const appStoreUrl = event ? appStoreUrlForRide(event.slug) : APP_STORE_URL
+const googlePlayUrl = event ? googlePlayUrlForRide(event.slug) : GOOGLE_PLAY_URL
+// Texto plano con sus saltos de línea: se escapa al imprimirlo, nunca se interpreta como HTML.
+const body = event?.description ? event.description.replace(/\r\n?/g, "\n").replace(/\n{3,}/g, "\n\n").trim() : null
+
+const primaryButton =
+  "flex items-center justify-center gap-3 w-full h-14 rounded-2xl bg-primary text-primary-foreground text-lg font-bold shadow-lg hover:bg-primary/90 active:scale-95 transition-all"
+const secondaryButton =
+  "flex items-center justify-center gap-2 w-full h-12 px-6 rounded-2xl border border-border text-foreground font-semibold hover:bg-muted/40 transition-colors"
+const iconBox = "shrink-0 self-start p-2.5 bg-emerald-500/10 rounded-xl"
+---
+
+<Layout title={title} description={description} noindex={noindex} image={cardImage}>
+  <div class="min-h-screen bg-background text-foreground">
+    <div class="relative z-10">
+      <main id="contenido" class:list={["px-4 pt-24 pb-14", !event && "min-h-[75vh]"]}>
+        {
+          event ? (
+            <article class="max-w-xl mx-auto space-y-6">
+              <header class="space-y-3">
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-emerald-400">
+                  {event.past ? "Rodada que ya pasó" : "Rodada"}
+                </p>
+                <h1 class="font-serif font-black text-3xl leading-tight text-foreground text-balance break-words">
+                  {event.title}
+                </h1>
+              </header>
+
+              {event.past && (
+                <div class="flex gap-3 rounded-2xl border border-amber-500/40 bg-amber-500/10 p-4">
+                  <CalendarCheck className="w-5 h-5 mt-0.5 shrink-0 text-amber-300" aria-hidden="true" />
+                  <div class="text-sm leading-relaxed">
+                    <p class="font-semibold text-amber-200">Esta rodada ya pasó</p>
+                    {event.organizer && (
+                      <p class="text-foreground">
+                        Revisa las próximas rodadas de {event.organizer.name} en Rodar Libre.
+                      </p>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {event.imageUrl && (
+                <img
+                  src={event.imageUrl}
+                  alt={`Flyer de la rodada ${event.title}`}
+                  class="w-full h-auto max-h-[80vh] object-contain rounded-2xl border border-border bg-muted/20"
+                  fetchpriority="high"
+                  decoding="async"
+                  referrerpolicy="no-referrer"
+                />
+              )}
+
+              <dl class="rounded-2xl border border-border bg-muted/20 p-5 space-y-5">
+                <div class="flex gap-3">
+                  <div class={iconBox}>
+                    <CalendarDays className="w-5 h-5 text-emerald-400" aria-hidden="true" />
+                  </div>
+                  <div class="min-w-0">
+                    <dt class="text-xs text-muted-foreground">Día</dt>
+                    <dd class="font-semibold text-foreground">
+                      <time datetime={event.startsAt.toISOString()}>{capitalize(formatDay(event.startsAt))}</time>
+                    </dd>
+                  </div>
+                </div>
+
+                {hour && (
+                  <div class="flex gap-3">
+                    <div class={iconBox}>
+                      <Clock className="w-5 h-5 text-emerald-400" aria-hidden="true" />
+                    </div>
+                    <div class="min-w-0">
+                      <dt class="text-xs text-muted-foreground">Hora de encuentro</dt>
+                      <dd class="font-semibold text-foreground">
+                        {hour} <span class="font-normal text-muted-foreground">(hora de Bogotá)</span>
+                      </dd>
+                    </div>
+                  </div>
+                )}
+
+                {(event.meetingPoint || event.mapUrl) && (
+                  <div class="flex gap-3">
+                    <div class={iconBox}>
+                      <MapPin className="w-5 h-5 text-emerald-400" aria-hidden="true" />
+                    </div>
+                    <div class="min-w-0">
+                      <dt class="text-xs text-muted-foreground">Punto de encuentro</dt>
+                      <dd class="font-semibold text-foreground break-words">
+                        {event.meetingPoint ?? "Mira el punto en el mapa"}
+                        {event.city && event.meetingPoint && (
+                          <span class="font-normal text-muted-foreground">, {event.city}</span>
+                        )}
+                      </dd>
+                      {event.mapUrl && (
+                        <dd class="mt-1">
+                          <a
+                            href={event.mapUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-1.5 text-sm text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+                          >
+                            Ver en el mapa
+                            <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+                          </a>
+                        </dd>
+                      )}
+                    </div>
+                  </div>
+                )}
+
+                {distance && (
+                  <div class="flex gap-3">
+                    <div class={iconBox}>
+                      <Route className="w-5 h-5 text-emerald-400" aria-hidden="true" />
+                    </div>
+                    <div class="min-w-0">
+                      <dt class="text-xs text-muted-foreground">Distancia aproximada</dt>
+                      <dd class="font-semibold text-foreground">{distance}</dd>
+                    </div>
+                  </div>
+                )}
+
+                {fee && (
+                  <div class="flex gap-3">
+                    <div class={iconBox}>
+                      <Wallet className="w-5 h-5 text-emerald-400" aria-hidden="true" />
+                    </div>
+                    <div class="min-w-0">
+                      <dt class="text-xs text-muted-foreground">Aporte</dt>
+                      <dd class="font-semibold text-foreground">{fee}</dd>
+                    </div>
+                  </div>
+                )}
+              </dl>
+
+              {body && (
+                <section class="space-y-2" aria-labelledby="sobre-la-rodada">
+                  <h2 id="sobre-la-rodada" class="font-serif font-bold text-xl text-foreground">
+                    Sobre la rodada
+                  </h2>
+                  <p class="whitespace-pre-line break-words text-muted-foreground leading-relaxed">{body}</p>
+                </section>
+              )}
+
+              {!event.past && event.registrationUrl && (
+                <a href={event.registrationUrl} target="_blank" rel="noopener noreferrer" class={secondaryButton}>
+                  Ir a la inscripción
+                  <ExternalLink className="w-4 h-4" aria-hidden="true" />
+                </a>
+              )}
+
+              <section class="rounded-3xl border border-border bg-card p-5 space-y-4 text-center" aria-labelledby="en-la-app">
+                {event.goingCount !== null && !event.past && (
+                  <p class="inline-flex items-center gap-2 rounded-full bg-emerald-500/15 px-4 py-1.5 text-emerald-300 font-bold">
+                    <Users className="w-4 h-4" aria-hidden="true" />
+                    Van {event.goingCount}
+                  </p>
+                )}
+                {openInApp ? (
+                  <>
+                    <h2 id="en-la-app" class="font-serif font-bold text-xl text-foreground">
+                      ¿Vas a rodar?
+                    </h2>
+                    <a href={openInApp} class={primaryButton}>
+                      Abrir en Rodar Libre
+                    </a>
+                    <p class="text-sm text-muted-foreground">¿Aún no tienes la app? Descárgala:</p>
+                  </>
+                ) : (
+                  <h2 id="en-la-app" class="font-serif font-bold text-xl text-foreground">
+                    Descarga Rodar Libre
+                  </h2>
+                )}
+                <StoreButtons appStoreUrl={appStoreUrl} googlePlayUrl={googlePlayUrl} />
+              </section>
+
+              {event.organizer && (
+                <aside class="flex items-center gap-4 rounded-2xl border border-border bg-muted/20 p-5" aria-label="Organiza">
+                  {event.organizer.logoUrl && (
+                    <img
+                      src={event.organizer.logoUrl}
+                      alt={`Logo de ${event.organizer.name}`}
+                      width="56"
+                      height="56"
+                      loading="lazy"
+                      decoding="async"
+                      referrerpolicy="no-referrer"
+                      class="w-14 h-14 shrink-0 rounded-full object-cover bg-muted"
+                    />
+                  )}
+                  <div class="min-w-0">
+                    <p class="text-xs text-muted-foreground">Organiza</p>
+                    <p class="font-semibold text-foreground break-words">{event.organizer.name}</p>
+                    {event.organizer.instagramUrl && (
+                      <a
+                        href={event.organizer.instagramUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="mt-1 inline-flex items-center gap-1.5 text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground"
+                      >
+                        <Instagram className="w-4 h-4" aria-hidden="true" />
+                        Instagram
+                      </a>
+                    )}
+                  </div>
+                </aside>
+              )}
+            </article>
+          ) : result.status === "not_found" ? (
+            <div class="max-w-xl mx-auto py-8 text-center space-y-6">
+              <p class="text-xs font-bold uppercase tracking-[0.2em] text-emerald-400">Rodada</p>
+              <h1 class="font-serif font-black text-4xl leading-tight text-foreground text-balance">
+                No encontramos esta rodada
+              </h1>
+              <p class="text-muted-foreground text-base text-pretty">
+                El enlace puede estar mal escrito o la rodada ya no está publicada.
+              </p>
+              <a href="/" class={secondaryButton}>
+                Ir al inicio
+              </a>
+              <div class="space-y-4 pt-4">
+                <p class="text-sm text-muted-foreground">Descarga Rodar Libre y mira las rodadas de los clubes.</p>
+                <StoreButtons appStoreUrl={APP_STORE_URL} googlePlayUrl={GOOGLE_PLAY_URL} />
+              </div>
+            </div>
+          ) : (
+            <div class="max-w-xl mx-auto py-8 text-center space-y-6">
+              <p class="text-xs font-bold uppercase tracking-[0.2em] text-emerald-400">Rodada</p>
+              <h1 class="font-serif font-black text-4xl leading-tight text-foreground text-balance">
+                No pudimos cargar la rodada
+              </h1>
+              <p class="text-muted-foreground text-base text-pretty">
+                Algo falló de nuestro lado. Intenta de nuevo en unos minutos.
+              </p>
+              <div class="flex flex-col gap-3">
+                <a href={Astro.url.pathname} class={primaryButton}>
+                  Intentar de nuevo
+                </a>
+                <a href="/" class={secondaryButton}>
+                  Ir al inicio
+                </a>
+              </div>
+            </div>
+          )
+        }
+      </main>
+      <SiteFooter />
+    </div>
+  </div>
+</Layout>
