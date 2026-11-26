@@ -42,6 +42,6 @@ export default [
     languageOptions: { globals: { process: "readonly" } },
   },
   {
-    ignores: ["node_modules/", ".astro/", "dist/", "build/"],
+    ignores: ["node_modules/", ".astro/", ".vercel/", "dist/", "build/"],
   },
 ]
